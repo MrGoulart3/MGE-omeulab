@@ -456,9 +456,11 @@ h3.sub{font-size:1.15rem;margin:34px 0 14px}
     v.addModel(xyz,'xyz');
     v.setStyle({},{stick:{radius:0.15,colorscheme:'Jmol'},sphere:{scale:0.25,colorscheme:'Jmol'}});
     v.zoomTo(); v.zoom(1.15); v.render();
-    var calmo=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;
-    if(!calmo)v.spin('y',0.6);
-    if('IntersectionObserver' in window)new IntersectionObserver(function(e){if(calmo)return;v.spin(e[0].isIntersecting?'y':false,0.6)}).observe(el);
+    /* gira sempre (pedido do Mario); pausa só fora da tela e volta a girar depois de arrastar */
+    var gira=function(on){try{v.spin(on?'y':false,0.8)}catch(_){}};
+    gira(true); setTimeout(function(){gira(true)},400);
+    if('IntersectionObserver' in window)new IntersectionObserver(function(e){gira(e[0].isIntersecting)}).observe(el);
+    ['pointerup','touchend','mouseup'].forEach(function(n){el.addEventListener(n,function(){setTimeout(function(){gira(true)},600)})});
     addEventListener('resize',function(){v.resize();v.render()});
     window.__mol3dmol=v;
   }catch(e){window.__mol3dmol=null}
@@ -484,7 +486,7 @@ h3.sub{font-size:1.15rem;margin:34px 0 14px}
   var C={}; function cols(){['H','C','N','O','S'].forEach(function(e){C[e]=col(e)});C.bond=getComputedStyle(document.documentElement).getPropertyValue('--ink2').trim()}
   cols(); if(window.matchMedia)matchMedia('(prefers-color-scheme: dark)').addEventListener('change',cols);
   new MutationObserver(cols).observe(document.documentElement,{attributes:true,attributeFilter:['data-theme']});
-  var ry=0.6, rx=-0.35, auto=!(window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches), vis=true, drag=null;
+  var ry=0.6, rx=-0.35, auto=true, vis=true, drag=null;
   function shade(hex,k){var n=parseInt(hex.replace('#',''),16),r=n>>16,g=n>>8&255,b=n&255;
     function f(c){return Math.max(0,Math.min(255,Math.round(k>0?c+(255-c)*k:c*(1+k))))}return 'rgb('+f(r)+','+f(g)+','+f(b)+')'}
   function draw(){
