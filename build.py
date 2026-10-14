@@ -104,6 +104,7 @@ def main() -> None:
         raise ValueError("src/publicacoes.json deve conter uma lista.")
     source = source.replace("{{PUBLICACOES_HTML}}", render_publications(items))
     source = source.replace("{{PUBLICACOES_JSON}}", json_for_html(items))
+    source = source.replace("{{DIPIRONA_JSON}}", (ROOT / "src/dipirona.json").read_text(encoding="utf-8").strip())
     if re.search(r"\{\{[A-Z_]+\}\}", source):
         raise ValueError("Existe um marcador de build sem substituição.")
     head, body = source.split("<!-- /head -->", 1)
@@ -117,7 +118,13 @@ def main() -> None:
     document = re.sub(r'<div class="preview" id="previewbar">.*?</div>\s*', "", document, count=1, flags=re.S)
     document = re.sub(r'\s*<span class="pend">[^<]*</span>', "", document)
     (ROOT / "index.html").write_text(document, encoding="utf-8")
-    (ROOT / "_preview.html").write_text(head + body, encoding="utf-8")
+    # Prévia no Claude: imagens embutidas (a página não carrega arquivos relativos)
+    import base64
+    def inline(m):
+        f = ROOT / m.group(1)
+        mime = "image/svg+xml" if f.suffix == ".svg" else "image/png" if f.suffix == ".png" else "image/jpeg"
+        return 'src="data:%s;base64,%s"' % (mime, base64.b64encode(f.read_bytes()).decode())
+    (ROOT / "_preview.html").write_text(re.sub(r'src="(assets/[^"]+)"', inline, head + body), encoding="utf-8")
     style = re.search(r"<style>.*?</style>", head, re.S).group()
     error_page = f'''<!doctype html>
 <html lang="pt-BR"><head><meta charset="utf-8">
@@ -139,8 +146,9 @@ def main() -> None:
     for name in ("index.html", "404.html", "CNAME", ".nojekyll", "sitemap.xml", "robots.txt"):
         shutil.copyfile(ROOT / name, target / name)
     (target / "assets").mkdir(exist_ok=True)
-    for name in ("hdl_video.jpg", "favicon.svg"):
-        shutil.copyfile(ROOT / "assets" / name, target / "assets" / name)
+    for f in (ROOT / "assets").iterdir():
+        if f.suffix in (".jpg", ".png", ".svg"):
+            shutil.copyfile(f, target / "assets" / f.name)
     print(f"Build concluído: {len(items)} publicações; saída em index.html e _site/.")
 
 

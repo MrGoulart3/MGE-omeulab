@@ -133,6 +133,29 @@ a,button,summary{touch-action:manipulation}
   html{scroll-behavior:auto}
   *,*::before,*::after{animation:none!important;transition:none!important}
 }
+
+.avatar{width:96px;height:96px;border-radius:50%;object-fit:cover;border:3px solid var(--paper);box-shadow:0 0 0 1px var(--line);display:block;margin-bottom:16px}
+.profile.mol{padding:10px 14px 12px;position:relative}
+#mol3d{width:100%;height:auto;aspect-ratio:520/420;display:block;cursor:grab;touch-action:pan-y}
+#mol3d:active{cursor:grabbing}
+.legend{display:flex;gap:12px;flex-wrap:wrap;font-size:.75rem;color:var(--muted);padding:4px 2px}
+.legend i{display:inline-block;width:10px;height:10px;border-radius:50%;margin-right:4px;vertical-align:-1px}
+h3.sub{font-size:1.15rem;margin:34px 0 14px}
+.people{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:12px}
+.person{display:flex;gap:12px;align-items:center;background:var(--paper);border:1px solid var(--line);border-radius:10px;padding:12px;min-width:0}
+.person img,.person .ph{flex:none;width:64px;height:64px;border-radius:50%;object-fit:cover}
+.person .ph{display:grid;place-items:center;background:var(--navy-soft);color:var(--navy);font-weight:600}
+.person small{display:block;color:var(--muted);font-size:.82rem}
+.cardimg{width:calc(100% + 40px);max-width:none;margin:-20px -20px 14px;height:180px;object-fit:cover;border-radius:12px 12px 0 0;display:block}
+:root{--at-C:#3d4652;--at-H:#e8e6e1;--at-N:#3b6fd4;--at-O:#d8452f;--at-S:#e2b62a}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--at-C:#9aa5b4;--at-H:#f2f0ea}}
+:root[data-theme="dark"]{--at-C:#9aa5b4;--at-H:#f2f0ea}
+
+.gallery{display:grid;grid-template-columns:2fr 1fr 1fr;gap:12px;margin:4px 0 22px}
+.gallery figure{margin:0;min-width:0}
+.gallery img{width:100%;height:280px;object-fit:cover;border-radius:10px;border:1px solid var(--line);display:block}
+.gallery figcaption{font-size:.82rem;color:var(--muted);padding-top:6px}
+@media (max-width:860px){.gallery{grid-template-columns:1fr 1fr}.gallery .span2{grid-column:1/-1}.gallery img{height:220px}}
 </style>
 <!-- /head -->
 <a class="skip-link" href="#conteudo"><span lang="pt">Pular para o conteúdo</span><span lang="en">Skip to content</span></a>
@@ -167,33 +190,21 @@ a,button,summary{touch-action:manipulation}
 <header class="hero" id="inicio">
   <div class="wrap">
     <div>
+      <img class="avatar" src="assets/foto_mario.jpg" alt="Mário Goulart Envall" width="96" height="96">
       <div class="kicker"><span lang="pt">Química teórica e computacional</span><span lang="en">Theoretical &amp; computational chemistry</span></div>
       <h1>Mário Goulart Envall</h1>
-      <p class="lead" lang="pt">Químico industrial e mestrando em Ciências Moleculares pela UEG. Mapeio estados de transição e cinética de reações para entender como fármacos e poluentes se degradam, e levo essa ciência para fora do laboratório.</p>
-      <p class="lead" lang="en">Industrial chemist and M.Sc. candidate in Molecular Sciences at UEG (Brazil). I map transition states and reaction kinetics to understand how drugs and pollutants degrade, and I bring that science beyond the lab.</p>
+      <p class="lead" lang="pt">Químico industrial, doutorando em Ciências Moleculares pela UEG e analista pleno de desenvolvimento analítico na Brainfarma. Mapeio estados de transição e cinética de reações para entender como fármacos e poluentes se degradam, e levo essa ciência para fora do laboratório.</p>
+      <p class="lead" lang="en">Industrial chemist, Ph.D. student in Molecular Sciences at UEG (Brazil) and mid-level analytical development analyst at Brainfarma. I map transition states and reaction kinetics to understand how drugs and pollutants degrade, and I bring that science beyond the lab.</p>
       <div class="cta">
         <a class="btn primary" href="#publicacoes"><span lang="pt">Ver publicações</span><span lang="en">See publications</span></a>
         <a class="btn ghost" href="#contato"><span lang="pt">Contato e redes</span><span lang="en">Contact &amp; socials</span></a>
       </div>
     </div>
-    <figure class="profile" style="margin:0">
-      <svg viewBox="0 0 420 250" role="img" aria-label="Perfil de energia de uma reação: reagentes, estado de transição e produtos">
-        <g stroke="var(--grid)" stroke-width="1">
-          <line x1="40" y1="30" x2="40" y2="215"/><line x1="40" y1="215" x2="400" y2="215"/>
-        </g>
-        <path d="M50 160 C 110 160, 140 160, 175 120 S 215 52, 228 52 S 262 70, 290 130 S 340 190, 395 190" fill="none" stroke="var(--curve)" stroke-width="3" stroke-linecap="round"/>
-        <line x1="228" y1="52" x2="228" y2="160" stroke="var(--accent)" stroke-width="1.5" stroke-dasharray="4 4"/>
-        <line x1="60" y1="160" x2="236" y2="160" stroke="var(--accent)" stroke-width="1" stroke-dasharray="2 4"/>
-        <circle cx="228" cy="52" r="6" fill="var(--accent)"/>
-        <text x="228" y="38" text-anchor="middle" font-family="Fraunces,serif" font-size="18" font-weight="700" fill="var(--accent-ink)">TS‡</text>
-        <text x="238" y="112" font-family="IBM Plex Mono,monospace" font-size="13" fill="var(--accent-ink)">ΔG‡</text>
-        <text x="70" y="150" font-family="IBM Plex Mono,monospace" font-size="13" fill="var(--ink2)">R</text>
-        <text x="380" y="180" font-family="IBM Plex Mono,monospace" font-size="13" fill="var(--ink2)">P</text>
-        <text x="22" y="122" transform="rotate(-90 22 122)" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="11" fill="var(--muted)">G / kcal·mol⁻¹</text>
-        <text x="220" y="236" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="11" fill="var(--muted)">coordenada de reação · reaction coordinate</text>
-      </svg>
-      <figcaption lang="pt">O que eu estudo: a barreira ΔG‡ define a velocidade k(T) de uma reação, com correções de tunelamento.</figcaption>
-      <figcaption lang="en">What I study: the barrier ΔG‡ sets a reaction's rate k(T), with tunnelling corrections.</figcaption>
+    <figure class="profile mol" style="margin:0">
+      <canvas id="mol3d" width="520" height="420" role="img" aria-label="Molécula de dipirona em 3D girando / Rotating 3D dipyrone molecule"></canvas>
+      <div class="legend mono" aria-hidden="true"><span><i style="background:var(--at-C)"></i>C</span><span><i style="background:var(--at-H)"></i>H</span><span><i style="background:var(--at-N)"></i>N</span><span><i style="background:var(--at-O)"></i>O</span><span><i style="background:var(--at-S)"></i>S</span></div>
+      <figcaption lang="pt"><b>Dipirona</b> (ânion, C₁₃H₁₆N₃O₄S⁻): geometria otimizada no meu trabalho, M08-HX/aug-cc-pVDZ em água (SMD). Arraste para girar.</figcaption>
+      <figcaption lang="en"><b>Dipyrone</b> (anion, C₁₃H₁₆N₃O₄S⁻): geometry optimized in my own work, M08-HX/aug-cc-pVDZ in water (SMD). Drag to rotate.</figcaption>
     </figure>
   </div>
 </header>
@@ -219,9 +230,9 @@ a,button,summary{touch-action:manipulation}
       </article>
       <article class="card">
         <span class="tag hot"><span lang="pt">Prêmio · 2026</span><span lang="en">Award · 2026</span></span>
-        <h3 lang="pt">1º lugar no 6º SQTEA</h3><h3 lang="en">1st place at the 6th SQTEA</h3>
-        <p lang="pt">Comunicação oral e pôster sobre a conversão da dipirona em 4-metilaminoantipirina catalisada por ácido. Pirenópolis, ago. 2026. <span class="pend">confirmar categoria</span></p>
-        <p lang="en">Oral talk and poster on the acid-catalysed conversion of dipyrone into 4-methylaminoantipyrine. Pirenópolis, Aug 2026. <span class="pend">confirm category</span></p>
+        <h3 lang="pt">Melhor apresentação oral · doutorado</h3><h3 lang="en">Best oral talk · Ph.D. level</h3>
+        <p lang="pt">1º lugar no 6º SQTEA, com a comunicação oral (e pôster) sobre a conversão da dipirona em 4-metilaminoantipirina catalisada por ácido. Pirenópolis, ago. 2026. </p>
+        <p lang="en">1st place at the 6th SQTEA, with the oral talk (and poster) on the acid-catalysed conversion of dipyrone into 4-methylaminoantipyrine. Pirenópolis, Aug 2026.</p>
       </article>
     </div>
   </div>
@@ -276,8 +287,13 @@ a,button,summary{touch-action:manipulation}
   <div class="wrap">
     <div class="head"><h2><span lang="pt">Prêmios</span><span lang="en">Awards</span></h2><span class="num">03</span></div>
     <div class="grid g2" style="margin-bottom:16px">
-      <article class="card" style="border-color:var(--accent)"><span class="tag hot">2026 · 1º lugar</span><h3 lang="pt">1º lugar · 6º SQTEA / 5ª EQSB</h3><h3 lang="en">1st place · 6th SQTEA / 5th EQSB</h3><p>Pirenópolis, 19–21/08/2026 — <i>Theoretical Investigation of the Acid-Catalyzed Conversion of Dipyrone into 4-Methylaminoantipyrine</i> (<span lang="pt">comunicação oral e pôster P21A</span><span lang="en">oral talk and poster P21A</span>). <span class="pend">confirmar categoria</span></p></article>
+      <article class="card" style="border-color:var(--accent)"><span class="tag hot">2026 · 1º lugar</span><h3 lang="pt">Melhor apresentação oral (doutorado) · 6º SQTEA / 5ª EQSB</h3><h3 lang="en">Best oral talk (Ph.D. level) · 6th SQTEA / 5th EQSB</h3><p>Pirenópolis, 19–21/08/2026 — <i>Theoretical Investigation of the Acid-Catalyzed Conversion of Dipyrone into 4-Methylaminoantipyrine</i> (<span lang="pt">comunicação oral; também em pôster, P21A</span><span lang="en">oral talk; also as poster P21A</span>).</p></article>
       <article class="card"><span class="tag">2026</span><h3 lang="pt">Comissão organizadora</h3><h3 lang="en">Organizing committee</h3><p lang="pt">Membro da comissão organizadora do 6º SQTEA e da 5ª EQSB (UEG / UnB).</p><p lang="en">Member of the organizing committee of the 6th SQTEA and 5th EQSB (UEG / UnB).</p></article>
+    </div>
+    <div class="gallery">
+      <figure class="span2"><img src="assets/sqtea_palestra.jpg" alt="Mário apresentando a comunicação oral sobre a dipirona no 6º SQTEA"><figcaption lang="pt">Comunicação oral premiada: <i>“The observable model reproduces the trend — not every rate”</i>.</figcaption><figcaption lang="en">Award-winning oral talk: <i>“The observable model reproduces the trend — not every rate”</i>.</figcaption></figure>
+      <figure><img src="assets/sqtea_poster.jpg" alt="Mário ao lado do pôster P21A"><figcaption lang="pt">Pôster P21A.</figcaption><figcaption lang="en">Poster P21A.</figcaption></figure>
+      <figure><img src="assets/sqtea_premio.jpg" alt="Entrega do prêmio de melhor apresentação oral do doutorado"><figcaption lang="pt">Entrega do prêmio.</figcaption><figcaption lang="en">Award ceremony.</figcaption></figure>
     </div>
     <div class="grid g3">
       <article class="card"><span class="tag hot">2022</span><h3 lang="pt">Menção Honrosa · 2º melhor trabalho</h3><h3 lang="en">Honourable mention · 2nd best work</h3><p>III SQTEA, Pirenópolis — <i>Zn/Al-derived layered double hydroxide for SOx gas removal</i>.</p></article>
@@ -291,11 +307,19 @@ a,button,summary{touch-action:manipulation}
   <div class="wrap">
     <div class="head"><h2><span lang="pt">Trajetória</span><span lang="en">Path</span></h2><span class="num">04</span></div>
     <ol class="tl">
-      <li class="now"><div class="when">2024 – <span lang="pt">hoje</span><span lang="en">now</span> <span class="pend">confirmar</span></div><div class="what" lang="pt">Mestrado em Ciências Moleculares</div><div class="what" lang="en">M.Sc. in Molecular Sciences</div><div class="where">UEG · <span lang="pt">orientação</span><span lang="en">advisor</span>: Prof. Dr. Valter H. Carvalho-Silva</div></li>
-      <li><div class="when"><span class="pend">confirmar</span></div><div class="what" lang="pt">Analista de Desenvolvimento Analítico Jr.</div><div class="what" lang="en">Jr. Analytical Development Analyst</div><div class="where">Brainfarma · EPHAR</div></li>
+      <li class="now"><div class="when">2026 – <span lang="pt">hoje</span><span lang="en">now</span></div><div class="what" lang="pt">Doutorado em Ciências Moleculares</div><div class="what" lang="en">Ph.D. in Molecular Sciences</div><div class="where">UEG · <span lang="pt">orientação</span><span lang="en">advisor</span>: Prof. Dr. Valter H. Carvalho-Silva · <span lang="pt">coorientação</span><span lang="en">co-advisor</span>: Prof. Dr. Brenno Amaro da Silveira Neto (UnB)</div></li>
+      <li class="now"><div class="when"><span lang="pt">ago. 2024 – hoje</span><span lang="en">Aug 2024 – now</span></div><div class="what" lang="pt">Analista Pleno de Desenvolvimento Analítico</div><div class="what" lang="en">Mid-level Analytical Development Analyst</div><div class="where">Brainfarma</div></li>
+      <li><div class="when"><span lang="pt">concluído em 2024</span><span lang="en">completed in 2024</span></div><div class="what" lang="pt">Mestrado em Ciências Moleculares</div><div class="what" lang="en">M.Sc. in Molecular Sciences</div><div class="where">UEG · <span lang="pt">orientação</span><span lang="en">advisor</span>: Prof. Dr. Valter H. Carvalho-Silva</div></li>
+      <li><div class="when"><span class="pend">confirmar</span></div><div class="what" lang="pt">Analista Jr. de Desenvolvimento Analítico · estágio</div><div class="what" lang="en">Jr. Analytical Development Analyst · internship</div><div class="where">Brainfarma · EPHAR</div></li>
       <li><div class="when">2020 – 2023</div><div class="what" lang="pt">Iniciação científica (PBIT/UEG)</div><div class="what" lang="en">Undergraduate research (PBIT/UEG)</div><div class="where" lang="pt">Adsorção de gases de combustão em HDL · Prof. Dr. Renato Rosseto</div><div class="where" lang="en">Combustion-gas adsorption on LDHs · Prof. Dr. Renato Rosseto</div></li>
       <li><div class="when"><span class="pend">confirmar</span></div><div class="what" lang="pt">Graduação em Química Industrial</div><div class="what" lang="en">B.Sc. in Industrial Chemistry</div><div class="where">UEG · Campus de Ciências Exatas e Tecnológicas, Anápolis-GO</div></li>
     </ol>
+    <h3 class="sub"><span lang="pt">Orientação</span><span lang="en">Advisors</span></h3>
+    <div class="people">
+      <div class="person"><img src="assets/foto_valter.jpg" alt="Prof. Dr. Valter H. Carvalho-Silva" width="64" height="64"><div><b>Prof. Dr. Valter H. Carvalho-Silva</b><small lang="pt">UEG · orientador (mestrado e doutorado) · idealizador do Transitivity</small><small lang="en">UEG · advisor (M.Sc. and Ph.D.) · creator of Transitivity</small></div></div>
+      <div class="person"><span class="ph mono">BN</span><div><b>Prof. Dr. Brenno Amaro da Silveira Neto</b><small lang="pt">UnB · coorientador (doutorado)</small><small lang="en">UnB · co-advisor (Ph.D.)</small></div></div>
+      <div class="person"><img src="assets/foto_renato.jpg" alt="Prof. Dr. Renato Rosseto" width="64" height="64"><div><b>Prof. Dr. Renato Rosseto</b><small lang="pt">UEG · orientador da iniciação científica</small><small lang="en">UEG · undergraduate research advisor</small></div></div>
+    </div>
   </div>
 </section>
 
@@ -303,7 +327,7 @@ a,button,summary{touch-action:manipulation}
   <div class="wrap">
     <div class="head"><h2><span lang="pt">Divulgação científica</span><span lang="en">Science outreach</span></h2><span class="num">05</span></div>
     <div class="video">
-      <a class="thumb" href="https://www.youtube.com/watch?v=cuy9h5wwsVo"><img alt="Adsorção de gases em hidróxidos duplos lamelares" src="assets/hdl_video.jpg" width="320" height="180" loading="lazy" decoding="async"><span>▶ YouTube</span></a>
+      <a class="thumb" href="https://www.youtube.com/watch?v=cuy9h5wwsVo"><img alt="Adsorção de gases em hidróxidos duplos lamelares" src="assets/hdl_video.jpg" width="320" height="180" decoding="async"><span>▶ YouTube</span></a>
       <div>
         <span class="tag">Motion graphics</span>
         <h3 lang="pt">Adsorção de gases em hidróxidos duplos lamelares</h3><h3 lang="en">Gas adsorption on layered double hydroxides</h3>
@@ -319,7 +343,7 @@ a,button,summary{touch-action:manipulation}
         <p lang="en">Industrial Chemistry students talking about chemistry and other sciences (in Portuguese).</p>
         <p style="margin-top:10px"><a href="https://anchor.fm/atmicos-podcast1">Spotify / Anchor</a></p>
       </article>
-      <article class="card">
+      <article class="card"><img class="cardimg" src="assets/lab_ic_1.jpg" alt="Montagem experimental da iniciação científica no laboratório da UEG">
         <span class="tag"><span lang="pt">Origem</span><span lang="en">Origin</span></span>
         <h3 lang="pt">Por que este site existe</h3><h3 lang="en">Why this site exists</h3>
         <p lang="pt">Nasceu em 2020, quando a pandemia fechou os laboratórios: o ensaio experimental da IC virou um projeto de divulgação científica.</p>
@@ -423,5 +447,53 @@ a,button,summary{touch-action:manipulation}
     if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(t).then(ok,function(){sel()})}else sel();
     function sel(){var r=document.createRange();r.selectNodeContents(document.getElementById('mail'));var s=getSelection();s.removeAllRanges();s.addRange(r)}
   })});
+})();
+</script>
+<script id="dipirona-data" type="application/json">{{DIPIRONA_JSON}}</script>
+<script>
+/* Dipirona 3D: renderizador próprio em canvas (sem bibliotecas). Esferas sombreadas, ligações por distância,
+   ordem de pintura por profundidade, rotação automática, arraste para girar, pausa fora da tela. */
+(function(){
+  var cv=document.getElementById('mol3d'); if(!cv||!cv.getContext)return;
+  var A=JSON.parse(document.getElementById('dipirona-data').textContent);
+  var R={H:0.31,C:0.76,N:0.71,O:0.66,S:1.05}, VIS={H:0.25,C:0.38,N:0.37,O:0.36,S:0.50};
+  var cx=0,cy=0,cz=0; A.forEach(function(a){cx+=a[1];cy+=a[2];cz+=a[3]}); cx/=A.length;cy/=A.length;cz/=A.length;
+  var P=A.map(function(a){return {e:a[0],x:a[1]-cx,y:a[2]-cy,z:a[3]-cz}});
+  var B=[]; for(var i=0;i<P.length;i++)for(var j=i+1;j<P.length;j++){var d=Math.hypot(P[i].x-P[j].x,P[i].y-P[j].y,P[i].z-P[j].z);
+    if(d<1.18*(R[P[i].e]+R[P[j].e]))B.push([i,j]);}
+  var ext=0; P.forEach(function(p){ext=Math.max(ext,Math.hypot(p.x,p.y,p.z))});
+  var ctx=cv.getContext('2d'), dpr=Math.min(window.devicePixelRatio||1,2);
+  function size(){var w=cv.clientWidth||cv.parentNode.clientWidth||520,h=w*420/520;cv.width=w*dpr;cv.height=h*dpr}
+  size(); addEventListener('resize',function(){size();draw()});
+  function col(e){return getComputedStyle(document.documentElement).getPropertyValue('--at-'+e).trim()||'#888'}
+  var C={}; function cols(){['H','C','N','O','S'].forEach(function(e){C[e]=col(e)});C.bond=getComputedStyle(document.documentElement).getPropertyValue('--ink2').trim()}
+  cols(); if(window.matchMedia)matchMedia('(prefers-color-scheme: dark)').addEventListener('change',cols);
+  new MutationObserver(cols).observe(document.documentElement,{attributes:true,attributeFilter:['data-theme']});
+  var ry=0.6, rx=-0.35, auto=!(window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches), vis=true, drag=null;
+  function shade(hex,k){var n=parseInt(hex.replace('#',''),16),r=n>>16,g=n>>8&255,b=n&255;
+    function f(c){return Math.max(0,Math.min(255,Math.round(k>0?c+(255-c)*k:c*(1+k))))}return 'rgb('+f(r)+','+f(g)+','+f(b)+')'}
+  function draw(){
+    var W=cv.width,H=cv.height,s=Math.min(W,H)/(1.75*ext+0.6), cyw=Math.cos(ry),syw=Math.sin(ry),cxw=Math.cos(rx),sxw=Math.sin(rx);
+    var Q=P.map(function(p){var x=p.x*cyw+p.z*syw, z=-p.x*syw+p.z*cyw, y=p.y*cxw-z*sxw; z=p.y*sxw+z*cxw;
+      var f=1+z*0.04; return {e:p.e,X:W/2+x*s*f,Y:H/2-y*s*f,z:z,r:VIS[p.e]*s*f}});
+    ctx.clearRect(0,0,W,H);
+    var items=[]; Q.forEach(function(q,i){items.push({z:q.z,t:0,i:i})});
+    B.forEach(function(b){items.push({z:(Q[b[0]].z+Q[b[1]].z)/2-0.01,t:1,b:b})});
+    items.sort(function(a,b){return a.z-b.z});
+    items.forEach(function(it){
+      if(it.t===1){var a=Q[it.b[0]],c=Q[it.b[1]],mx=(a.X+c.X)/2,my=(a.Y+c.Y)/2;
+        ctx.lineCap='round';ctx.lineWidth=Math.max(2,0.11*s);
+        ctx.strokeStyle=shade(C[a.e],-0.15);ctx.beginPath();ctx.moveTo(a.X,a.Y);ctx.lineTo(mx,my);ctx.stroke();
+        ctx.strokeStyle=shade(C[c.e],-0.15);ctx.beginPath();ctx.moveTo(mx,my);ctx.lineTo(c.X,c.Y);ctx.stroke();return}
+      var q=Q[it.i],g=ctx.createRadialGradient(q.X-q.r*0.35,q.Y-q.r*0.4,q.r*0.1,q.X,q.Y,q.r);
+      g.addColorStop(0,shade(C[q.e],0.55));g.addColorStop(0.55,C[q.e]);g.addColorStop(1,shade(C[q.e],-0.45));
+      ctx.fillStyle=g;ctx.beginPath();ctx.arc(q.X,q.Y,q.r,0,6.2832);ctx.fill()});
+  }
+  draw(); var last=0; function loop(t){ if(vis&&auto&&!drag&&!document.hidden){ry+=(t-last)/1000*0.45} last=t; draw(); requestAnimationFrame(loop)}
+  requestAnimationFrame(function(t){last=t;loop(t)});
+  if('IntersectionObserver' in window)new IntersectionObserver(function(e){vis=e[0].isIntersecting}).observe(cv);
+  cv.addEventListener('pointerdown',function(e){drag={x:e.clientX,y:e.clientY};cv.setPointerCapture(e.pointerId)});
+  cv.addEventListener('pointermove',function(e){if(!drag)return;ry+=(e.clientX-drag.x)*0.01;rx=Math.max(-1.4,Math.min(1.4,rx+(e.clientY-drag.y)*0.01));drag={x:e.clientX,y:e.clientY}});
+  ['pointerup','pointercancel'].forEach(function(n){cv.addEventListener(n,function(){drag=null})});
 })();
 </script>

@@ -49,8 +49,7 @@ class BuildTest(unittest.TestCase):
     def test_deploy_artifact_contains_only_public_assets(self) -> None:
         expected = {
             "index.html", "404.html", "CNAME", ".nojekyll", "sitemap.xml", "robots.txt",
-            "assets/favicon.svg", "assets/hdl_video.jpg",
-        }
+        } | {"assets/" + f.name for f in (ROOT / "assets").iterdir() if f.suffix in (".jpg", ".png", ".svg")}
         actual = {str(path.relative_to(ROOT / "_site")) for path in (ROOT / "_site").rglob("*") if path.is_file()}
         self.assertEqual(expected, actual)
         self.assertEqual("omeulab.com\n", (ROOT / "_site/CNAME").read_text())

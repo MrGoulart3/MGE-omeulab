@@ -137,6 +137,29 @@ a,button,summary{touch-action:manipulation}
   html{scroll-behavior:auto}
   *,*::before,*::after{animation:none!important;transition:none!important}
 }
+
+.avatar{width:96px;height:96px;border-radius:50%;object-fit:cover;border:3px solid var(--paper);box-shadow:0 0 0 1px var(--line);display:block;margin-bottom:16px}
+.profile.mol{padding:10px 14px 12px;position:relative}
+#mol3d{width:100%;height:auto;aspect-ratio:520/420;display:block;cursor:grab;touch-action:pan-y}
+#mol3d:active{cursor:grabbing}
+.legend{display:flex;gap:12px;flex-wrap:wrap;font-size:.75rem;color:var(--muted);padding:4px 2px}
+.legend i{display:inline-block;width:10px;height:10px;border-radius:50%;margin-right:4px;vertical-align:-1px}
+h3.sub{font-size:1.15rem;margin:34px 0 14px}
+.people{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:12px}
+.person{display:flex;gap:12px;align-items:center;background:var(--paper);border:1px solid var(--line);border-radius:10px;padding:12px;min-width:0}
+.person img,.person .ph{flex:none;width:64px;height:64px;border-radius:50%;object-fit:cover}
+.person .ph{display:grid;place-items:center;background:var(--navy-soft);color:var(--navy);font-weight:600}
+.person small{display:block;color:var(--muted);font-size:.82rem}
+.cardimg{width:calc(100% + 40px);max-width:none;margin:-20px -20px 14px;height:180px;object-fit:cover;border-radius:12px 12px 0 0;display:block}
+:root{--at-C:#3d4652;--at-H:#e8e6e1;--at-N:#3b6fd4;--at-O:#d8452f;--at-S:#e2b62a}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--at-C:#9aa5b4;--at-H:#f2f0ea}}
+:root[data-theme="dark"]{--at-C:#9aa5b4;--at-H:#f2f0ea}
+
+.gallery{display:grid;grid-template-columns:2fr 1fr 1fr;gap:12px;margin:4px 0 22px}
+.gallery figure{margin:0;min-width:0}
+.gallery img{width:100%;height:280px;object-fit:cover;border-radius:10px;border:1px solid var(--line);display:block}
+.gallery figcaption{font-size:.82rem;color:var(--muted);padding-top:6px}
+@media (max-width:860px){.gallery{grid-template-columns:1fr 1fr}.gallery .span2{grid-column:1/-1}.gallery img{height:220px}}
 </style></head><body><header class="hero"><div class="wrap"><div>
 <a class="brand" href="/">O Meu Lab<b>‡</b></a>
 <h1>404 · Página não encontrada</h1>
