@@ -408,7 +408,7 @@ a,button,summary{touch-action:manipulation}
   setLang(store('oml_lang')||((navigator.language||'pt').toLowerCase().indexOf('pt')===0?'pt':'en'));
   document.querySelectorAll('[data-setlang]').forEach(function(b){b.addEventListener('click',function(){setLang(b.dataset.setlang)})});
   // marcações de pendência
-  document.getElementById('togglepend').addEventListener('click',function(){root.classList.toggle('nopend')});
+  var tp=document.getElementById('togglepend');if(tp)tp.addEventListener('click',function(){root.classList.toggle('nopend')});
   // publicações
   var P=JSON.parse(document.getElementById('publicacoes-data').textContent);
   var ol=document.getElementById('pubs');

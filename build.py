@@ -113,6 +113,9 @@ def main() -> None:
         '<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">\n'
         + head + metadata() + "\n</head>\n<body>\n" + body + "\n</body>\n</html>\n"
     )
+    # Site publicado: sem a faixa de prévia nem as marcações "confirmar" (ficam só em _preview.html)
+    document = re.sub(r'<div class="preview" id="previewbar">.*?</div>\s*', "", document, count=1, flags=re.S)
+    document = re.sub(r'\s*<span class="pend">[^<]*</span>', "", document)
     (ROOT / "index.html").write_text(document, encoding="utf-8")
     (ROOT / "_preview.html").write_text(head + body, encoding="utf-8")
     style = re.search(r"<style>.*?</style>", head, re.S).group()
