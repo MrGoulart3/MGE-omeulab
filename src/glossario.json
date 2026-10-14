@@ -1,0 +1,1080 @@
+[
+  {
+    "id": "hdl",
+    "pt": {
+      "name": "Hidróxido duplo lamelar (HDL)",
+      "definition": "É uma família de sólidos formada por camadas de hidróxidos que contêm, tipicamente, cátions metálicos divalentes e trivalentes. As camadas têm carga positiva, compensada por ânions entre elas, onde também pode haver água. Sua composição e a possibilidade de trocar esses ânions tornam os HDL úteis em estudos de adsorção, catálise e armazenamento de espécies químicas."
+    },
+    "en": {
+      "name": "Layered double hydroxide (LDH; HDL in Portuguese)",
+      "definition": "This family of solids consists of hydroxide layers containing, typically, divalent and trivalent metal cations. The positively charged layers are balanced by anions between them, where water may also be present. Their adjustable composition and anion-exchange ability make LDHs useful in adsorption, catalysis and chemical storage studies."
+    }
+  },
+  {
+    "id": "nox-sox",
+    "pt": {
+      "name": "NOx e SOx — óxidos de nitrogênio e enxofre",
+      "definition": "São nomes coletivos para grupos de óxidos, e não fórmulas de uma única substância. Em poluição atmosférica, NOx geralmente se refere principalmente a NO e NO₂, enquanto SOx inclui sobretudo SO₂ e SO₃. Suas emissões podem contribuir para problemas como formação de partículas e acidificação, dependendo das reações e das condições ambientais."
+    },
+    "en": {
+      "name": "NOx and SOx — nitrogen and sulfur oxides",
+      "definition": "These are collective names for groups of oxides, rather than formulas for a single substance. In air pollution, NOx usually refers mainly to NO and NO₂, while SOx chiefly includes SO₂ and SO₃. Their emissions can contribute to particle formation and acidification, depending on subsequent reactions and environmental conditions."
+    }
+  },
+  {
+    "id": "poa",
+    "pt": {
+      "name": "Processos oxidativos avançados (POA)",
+      "definition": "São processos de tratamento que geram espécies muito reativas, frequentemente radicais hidroxila, para transformar contaminantes. Exemplos incluem diferentes combinações de peróxido de hidrogênio, luz, ferro ou ozônio. A eficiência depende do poluente e da matriz: remover a molécula original não garante mineralização completa nem eliminação da toxicidade."
+    },
+    "en": {
+      "name": "Advanced oxidation processes (AOP; POA in Portuguese)",
+      "definition": "These treatment processes generate highly reactive species, often hydroxyl radicals, to transform contaminants. Examples involve various combinations of hydrogen peroxide, light, iron or ozone. Performance depends on the pollutant and the matrix: disappearance of the original molecule does not guarantee complete mineralization or elimination of toxicity."
+    }
+  },
+  {
+    "id": "aduto",
+    "pt": {
+      "name": "Aduto",
+      "definition": "É uma espécie formada pela associação ou adição direta de duas ou mais espécies, conservando os átomos dos participantes na composição do produto. A união pode envolver uma ligação covalente ou outro tipo de interação, conforme o contexto. Em espectrometria de massas, por exemplo, um aduto com sódio pode produzir um sinal diferente daquele da molécula protonada."
+    },
+    "en": {
+      "name": "Adduct",
+      "definition": "An adduct is a species formed by direct association or addition of two or more species, retaining the participants' atoms in the product composition. The association may involve a covalent bond or another interaction, depending on context. In mass spectrometry, for example, a sodium adduct can produce a different signal from the protonated molecule."
+    }
+  },
+  {
+    "id": "ozonio",
+    "pt": {
+      "name": "Ozônio (O₃)",
+      "definition": "É uma forma do elemento oxigênio cuja molécula tem três átomos, diferente do O₂ que respiramos. Atua como oxidante e pode ser empregado em tratamento de água e desinfecção. Seu uso exige controle: o gás é prejudicial quando inalado e suas reações podem gerar subprodutos, como bromato em águas que contêm brometo."
+    },
+    "en": {
+      "name": "Ozone (O₃)",
+      "definition": "Ozone is a form of elemental oxygen with three atoms per molecule, unlike the O₂ we breathe. It acts as an oxidant and can be used in water treatment and disinfection. Its use requires control: inhaling the gas is harmful, and its reactions can generate by-products such as bromate in bromide-containing water."
+    }
+  },
+  {
+    "id": "tom",
+    "pt": {
+      "name": "Teoria dos orbitais moleculares (TOM)",
+      "definition": "É uma maneira de descrever a estrutura eletrônica usando orbitais que podem se estender por vários átomos da molécula. A ocupação de orbitais ligantes e antiligantes ajuda a interpretar ligações, estabilidade e reatividade. Um orbital é uma função matemática usada nessa descrição, não uma trajetória percorrida pelo elétron."
+    },
+    "en": {
+      "name": "Molecular orbital theory (MO theory; TOM in Portuguese)",
+      "definition": "This approach describes electronic structure using orbitals that may extend over several atoms in a molecule. Occupation of bonding and antibonding orbitals helps interpret bonding, stability and reactivity. An orbital is a mathematical function used in this description, rather than a trajectory followed by an electron."
+    }
+  },
+  {
+    "id": "quimica-computacional",
+    "pt": {
+      "name": "Química computacional",
+      "definition": "Usa modelos matemáticos e computadores para investigar moléculas, materiais e transformações químicas. Pode estimar estruturas, energias, espectros e velocidades de reação, com métodos de diferentes custos e aproximações. Os resultados dependem do modelo escolhido e precisam ser avaliados à luz de sua precisão, das condições simuladas e de evidências experimentais."
+    },
+    "en": {
+      "name": "Computational chemistry",
+      "definition": "Computational chemistry uses mathematical models and computers to investigate molecules, materials and chemical transformations. It can estimate structures, energies, spectra and reaction rates using methods with different costs and approximations. Results depend on the chosen model and must be assessed against its accuracy, the simulated conditions and experimental evidence."
+    }
+  },
+  {
+    "id": "dft",
+    "pt": {
+      "name": "DFT — teoria do funcional da densidade",
+      "definition": "É uma abordagem de estrutura eletrônica na qual a densidade de elétrons é uma variável central para determinar propriedades do sistema. Na prática, aproximações chamadas funcionais de troca e correlação permitem calcular energias e outras propriedades. A DFT oferece um equilíbrio útil entre custo e precisão, mas nenhum funcional é igualmente confiável para todos os problemas."
+    },
+    "en": {
+      "name": "DFT — density functional theory",
+      "definition": "DFT is an electronic-structure approach in which electron density is a central variable for determining system properties. In practical calculations, approximations called exchange-correlation functionals enable evaluation of energies and other properties. DFT offers a useful balance of cost and accuracy, but no functional is equally reliable for every problem."
+    }
+  },
+  {
+    "id": "funcional",
+    "pt": {
+      "name": "Funcional de troca e correlação",
+      "definition": "Um funcional é uma regra matemática que recebe uma função, como a densidade eletrônica, e devolve um valor. Na DFT, o funcional de troca e correlação aproxima contribuições eletrônicas que não são descritas exatamente pelos termos mais simples do cálculo. Sua escolha afeta energias, geometrias e barreiras; exemplos são M08-HX e M06-2X."
+    },
+    "en": {
+      "name": "Exchange-correlation functional",
+      "definition": "A functional is a mathematical rule that takes a function, such as electron density, and returns a value. In DFT, the exchange-correlation functional approximates electronic contributions not exactly captured by the simpler calculation terms. Its choice affects energies, geometries and barriers; examples include M08-HX and M06-2X."
+    }
+  },
+  {
+    "id": "m08-hx",
+    "pt": {
+      "name": "M08-HX",
+      "definition": "É um funcional híbrido meta-GGA da família Minnesota usado em cálculos de DFT. Combina ingredientes ligados à densidade eletrônica com uma parcela de troca do tipo Hartree–Fock. Foi desenvolvido considerando propriedades de sistemas químicos, mas seu desempenho em uma aplicação deve ser verificado, e o nome não indica um conjunto de base."
+    },
+    "en": {
+      "name": "M08-HX",
+      "definition": "M08-HX is a Minnesota-family hybrid meta-GGA functional used in DFT calculations. It combines electron-density ingredients with a fraction of Hartree–Fock-type exchange. It was developed using chemical-system properties, but performance in a particular application needs assessment, and its name does not designate a basis set."
+    }
+  },
+  {
+    "id": "m06-2x",
+    "pt": {
+      "name": "M06-2X",
+      "definition": "É um funcional híbrido meta-GGA da família Minnesota, com uma proporção relativamente alta de troca do tipo Hartree–Fock. É empregado, entre outras aplicações, em estudos de termoquímica e cinética de sistemas de elementos representativos. Essa utilização não garante precisão universal, especialmente ao extrapolar para sistemas diferentes daqueles usados em seu desenvolvimento."
+    },
+    "en": {
+      "name": "M06-2X",
+      "definition": "M06-2X is a Minnesota-family hybrid meta-GGA functional with a relatively high fraction of Hartree–Fock-type exchange. Applications include thermochemistry and kinetics of main-group systems. Such use does not ensure universal accuracy, particularly when extrapolating to systems unlike those considered during its development."
+    }
+  },
+  {
+    "id": "conjunto-de-base",
+    "pt": {
+      "name": "Conjunto de base",
+      "definition": "É um conjunto de funções matemáticas usado para representar orbitais ou outras quantidades eletrônicas em um cálculo. Uma base maior geralmente oferece mais flexibilidade, mas também aumenta o custo computacional e não corrige todas as limitações do método. Funções de polarização descrevem deformações da distribuição eletrônica, enquanto funções difusas ajudam a representar regiões mais afastadas dos núcleos."
+    },
+    "en": {
+      "name": "Basis set",
+      "definition": "A basis set is a collection of mathematical functions used to represent orbitals or other electronic quantities in a calculation. A larger basis generally provides more flexibility but increases computational cost and does not fix every limitation of the method. Polarization functions describe distortions of electron distributions, while diffuse functions help represent regions farther from the nuclei."
+    }
+  },
+  {
+    "id": "aug-cc-pvdz",
+    "pt": {
+      "name": "aug-cc-pVDZ",
+      "definition": "É um conjunto de base de valência de qualidade dupla-zeta, polarizado e consistente com a correlação eletrônica. O prefixo aug indica a inclusão de funções difusas, úteis para distribuições eletrônicas extensas, como as de muitos ânions. É uma escolha finita de representação, e comparar com bases maiores ajuda a avaliar a sensibilidade dos resultados."
+    },
+    "en": {
+      "name": "aug-cc-pVDZ",
+      "definition": "This is an augmented correlation-consistent polarized valence double-zeta basis set. The aug prefix denotes added diffuse functions, useful for extended electron distributions such as those of many anions. It is a finite representation, and comparisons with larger bases help assess the sensitivity of results."
+    }
+  },
+  {
+    "id": "solvatacao-implicita",
+    "pt": {
+      "name": "Solvatação implícita",
+      "definition": "Representa o solvente como um meio contínuo ao redor do soluto, sem incluir individualmente todas as moléculas do líquido. Modelos como PCM e SMD estimam efeitos do ambiente sobre a energia e a distribuição eletrônica. A abordagem reduz o custo, mas pode não capturar interações locais específicas, como uma molécula de água participando diretamente de uma reação."
+    },
+    "en": {
+      "name": "Implicit solvation",
+      "definition": "Implicit solvation represents the solvent as a continuous medium surrounding the solute, without including every liquid molecule individually. Models such as PCM and SMD estimate environmental effects on energy and electron distribution. This reduces cost but may miss specific local interactions, such as a water molecule directly participating in a reaction."
+    }
+  },
+  {
+    "id": "smd",
+    "pt": {
+      "name": "SMD — modelo de solvatação",
+      "definition": "É um modelo implícito que usa a densidade eletrônica do soluto e propriedades do solvente para estimar a solvatação. Inclui uma contribuição eletrostática de contínuo e termos parametrizados associados à cavidade e a interações não eletrostáticas. Informar SMD em água descreve o modelo do meio, não a presença de moléculas explícitas de água no cálculo."
+    },
+    "en": {
+      "name": "SMD — solvation model",
+      "definition": "SMD is an implicit model that uses solute electron density and solvent properties to estimate solvation. It includes a continuum electrostatic contribution and parameterized terms associated with the cavity and nonelectrostatic interactions. Specifying SMD in water describes the environmental model, rather than the inclusion of explicit water molecules."
+    }
+  },
+  {
+    "id": "pcm",
+    "pt": {
+      "name": "PCM — modelo do contínuo polarizável",
+      "definition": "É uma família de modelos que coloca o soluto em uma cavidade cercada por um meio dielétrico contínuo. A polarização do meio e a distribuição de carga do soluto respondem uma à outra, aproximando efeitos eletrostáticos do solvente. Existem diferentes variantes de PCM, e detalhes da cavidade e da implementação podem alterar os resultados."
+    },
+    "en": {
+      "name": "PCM — polarizable continuum model",
+      "definition": "PCM is a family of models that places the solute in a cavity surrounded by a continuous dielectric medium. The medium's polarization and the solute's charge distribution respond to one another, approximating solvent electrostatic effects. Different PCM variants exist, and cavity and implementation details can affect results."
+    }
+  },
+  {
+    "id": "solvatacao-explicita",
+    "pt": {
+      "name": "Solvatação explícita",
+      "definition": "Inclui moléculas individuais de solvente no modelo, permitindo representar contatos e orientações locais. Pode ajudar a investigar ligações de hidrogênio, coordenação e transferências de prótons com participação do solvente. Uma única configuração não representa todo o líquido: a escolha do número de moléculas e a amostragem das configurações são importantes."
+    },
+    "en": {
+      "name": "Explicit solvation",
+      "definition": "Explicit solvation includes individual solvent molecules in the model, allowing local contacts and orientations to be represented. It can help investigate hydrogen bonding, coordination and solvent-assisted proton transfer. One configuration does not represent the entire liquid: the number of molecules and configuration sampling matter."
+    }
+  },
+  {
+    "id": "geometria-otimizada",
+    "pt": {
+      "name": "Geometria otimizada",
+      "definition": "É uma disposição dos átomos obtida ajustando suas posições até satisfazer critérios de convergência de energia e forças. O resultado depende do método, do ambiente e do ponto de partida. Otimizar uma estrutura não prova que ela seja o mínimo global; cálculos de frequências ajudam a distinguir mínimos locais de pontos de sela."
+    },
+    "en": {
+      "name": "Optimized geometry",
+      "definition": "An optimized geometry is an arrangement of atoms obtained by adjusting their positions until energy and force convergence criteria are met. The result depends on the method, environment and starting structure. Optimization does not prove that a structure is the global minimum; frequency calculations help distinguish local minima from saddle points."
+    }
+  },
+  {
+    "id": "superficie-de-energia-potencial",
+    "pt": {
+      "name": "Superfície de energia potencial (PES)",
+      "definition": "Relaciona a energia do sistema à posição dos núcleos dentro de uma descrição eletrônica escolhida. Pode ser imaginada como uma paisagem com vales, correspondentes a estruturas estáveis, e passagens entre eles, associadas a barreiras. Na realidade tem muitas dimensões, e um gráfico de energia versus coordenada de reação mostra apenas um recorte dessa paisagem."
+    },
+    "en": {
+      "name": "Potential energy surface (PES)",
+      "definition": "A potential energy surface relates system energy to nuclear positions within a chosen electronic description. It can be imagined as a landscape with valleys corresponding to stable structures and passes associated with barriers. It actually has many dimensions, and an energy-versus-reaction-coordinate plot displays only a slice of that landscape."
+    }
+  },
+  {
+    "id": "estado-de-transicao",
+    "pt": {
+      "name": "Estado de transição (TS‡)",
+      "definition": "Descreve a região de passagem entre reagentes e produtos de uma etapa de reação. Na busca computacional usual, uma estrutura de TS é um ponto de sela de primeira ordem: a energia diminui ao se afastar em uma direção e aumenta nas demais direções relevantes. Uma frequência imaginária compatível com a transformação e a análise do caminho de reação ajudam a validar essa estrutura."
+    },
+    "en": {
+      "name": "Transition state (TS‡)",
+      "definition": "A transition state describes the passage region between reactants and products of a reaction step. In conventional computational searches, a TS structure is a first-order saddle point: energy decreases away from it along one direction and increases along the other relevant directions. An imaginary frequency consistent with the transformation and reaction-path analysis help validate this structure."
+    }
+  },
+  {
+    "id": "frequencia-imaginaria",
+    "pt": {
+      "name": "Frequência imaginária",
+      "definition": "Surge na análise vibracional harmônica quando a curvatura da energia é negativa em uma direção, sendo frequentemente apresentada como um número negativo nos programas. Em um TS de primeira ordem, espera-se um modo imaginário que descreva o movimento associado à reação. Modos pequenos também podem refletir problemas numéricos ou convergência insuficiente, por isso o sinal sozinho não valida um mecanismo."
+    },
+    "en": {
+      "name": "Imaginary frequency",
+      "definition": "An imaginary frequency appears in harmonic vibrational analysis when energy curvature is negative along a direction, and programs often display it as a negative number. A first-order TS is expected to have one imaginary mode describing reaction-related motion. Small modes can also reflect numerical issues or insufficient convergence, so the sign alone does not validate a mechanism."
+    }
+  },
+  {
+    "id": "irc",
+    "pt": {
+      "name": "IRC — coordenada intrínseca de reação",
+      "definition": "É um caminho de descida de energia em coordenadas ponderadas pelas massas, seguido a partir de um estado de transição em suas duas direções. Ajuda a identificar quais mínimos locais aquele TS conecta. Esse caminho idealizado não é uma trajetória molecular no tempo nem demonstra, sozinho, que a rota domina em condições experimentais."
+    },
+    "en": {
+      "name": "IRC — intrinsic reaction coordinate",
+      "definition": "An IRC is a downhill energy path in mass-weighted coordinates followed from a transition state in both directions. It helps identify the local minima connected by that TS. This idealized path is not a molecular trajectory through time and does not, by itself, establish that the route dominates experimentally."
+    }
+  },
+  {
+    "id": "coordenada-de-reacao",
+    "pt": {
+      "name": "Coordenada de reação",
+      "definition": "É uma variável usada para acompanhar o progresso de uma transformação química. Pode ser uma distância de ligação, uma combinação de distâncias ou uma descrição mais complexa dos movimentos dos átomos. A escolha da coordenada simplifica a visualização, mas pode esconder etapas ou movimentos importantes quando o processo é multidimensional."
+    },
+    "en": {
+      "name": "Reaction coordinate",
+      "definition": "A reaction coordinate is a variable used to track the progress of a chemical transformation. It may be a bond distance, a combination of distances or a more complex description of atomic motion. Choosing a coordinate simplifies visualization but can hide important steps or motions in a multidimensional process."
+    }
+  },
+  {
+    "id": "energia-livre-de-gibbs",
+    "pt": {
+      "name": "Energia livre de Gibbs (G)",
+      "definition": "É uma função termodinâmica definida por G = H − TS, que combina entalpia, temperatura e entropia. Em condições adequadas de temperatura e pressão constantes, a variação de G indica o sentido termodinâmico favorável de uma transformação. Uma reação favorável pode ser lenta, porque essa informação não determina a barreira nem a velocidade da reação."
+    },
+    "en": {
+      "name": "Gibbs free energy (G)",
+      "definition": "Gibbs energy is a thermodynamic function defined by G = H − TS, combining enthalpy, temperature and entropy. Under suitable constant-temperature and constant-pressure conditions, its change indicates the thermodynamically favorable direction of a transformation. A favorable reaction can still be slow because this information does not determine the barrier or reaction rate."
+    }
+  },
+  {
+    "id": "barreira-de-ativacao",
+    "pt": {
+      "name": "Barreira de energia livre de ativação (ΔG‡)",
+      "definition": "É a diferença de energia livre entre o estado de transição e o estado de referência dos reagentes para uma etapa. Na teoria do estado de transição, barreiras maiores tendem a produzir constantes de velocidade menores à mesma temperatura. O valor depende das condições e do estado padrão, e não deve ser confundido com a variação de energia livre total da reação ou com a energia de ativação de Arrhenius."
+    },
+    "en": {
+      "name": "Activation free-energy barrier (ΔG‡)",
+      "definition": "This is the free-energy difference between the transition state and the reactant reference state for a step. In transition state theory, larger barriers generally yield smaller rate constants at the same temperature. The value depends on conditions and standard state, and differs from the overall reaction free-energy change and from Arrhenius activation energy."
+    }
+  },
+  {
+    "id": "energia-de-ponto-zero",
+    "pt": {
+      "name": "Energia de ponto zero (ZPE)",
+      "definition": "É a energia que um sistema quântico mantém em seu estado de menor energia, mesmo no limite de temperatura zero. Em cálculos moleculares, a contribuição vibracional costuma ser estimada pelas frequências no modelo de oscilador harmônico. Sua inclusão pode alterar energias relativas e barreiras, especialmente quando ligações envolvendo hidrogênio são modificadas."
+    },
+    "en": {
+      "name": "Zero-point energy (ZPE)",
+      "definition": "Zero-point energy is the energy retained by a quantum system in its lowest-energy state, even in the zero-temperature limit. In molecular calculations, the vibrational contribution is commonly estimated from frequencies in the harmonic-oscillator model. Including it can change relative energies and barriers, especially when hydrogen-containing bonds change."
+    }
+  },
+  {
+    "id": "tst",
+    "pt": {
+      "name": "Teoria do estado de transição (TST/Eyring)",
+      "definition": "Estima constantes de velocidade a partir da população de configurações próximas a uma superfície que separa reagentes e produtos. Na forma usual para uma etapa unimolecular, k = κ(kBT/h) exp(−ΔG‡/RT), com κ representando correções de transmissão. O modelo usa hipóteses estatísticas e dinâmicas; reações de outras molecularidades requerem atenção às unidades e ao estado padrão."
+    },
+    "en": {
+      "name": "Transition state theory (TST/Eyring)",
+      "definition": "TST estimates rate constants from the population of configurations near a dividing surface between reactants and products. In the usual unimolecular form, k = κ(kBT/h) exp(−ΔG‡/RT), with κ representing transmission corrections. The model relies on statistical and dynamical assumptions; other molecularities require attention to units and standard states."
+    }
+  },
+  {
+    "id": "constante-de-velocidade",
+    "pt": {
+      "name": "Constante de velocidade k(T)",
+      "definition": "É o parâmetro que relaciona a velocidade de uma reação às concentrações ou atividades na lei de velocidade adotada. A notação k(T) destaca sua dependência da temperatura, mesmo sendo chamada de constante. Suas unidades dependem da ordem da reação, e seu valor também pode depender do solvente e de outras condições."
+    },
+    "en": {
+      "name": "Rate constant k(T)",
+      "definition": "A rate constant relates reaction rate to concentrations or activities in the adopted rate law. The notation k(T) emphasizes temperature dependence despite the word constant. Its units depend on reaction order, and its value may also depend on solvent and other conditions."
+    }
+  },
+  {
+    "id": "arrhenius",
+    "pt": {
+      "name": "Equação de Arrhenius",
+      "definition": "Expressa uma dependência comum da constante de velocidade com a temperatura: k = A exp(−Ea/RT). A é o fator pré-exponencial, Ea é a energia de ativação e R é a constante dos gases. Se A e Ea forem aproximadamente constantes no intervalo estudado, o gráfico de ln k contra 1/T é uma reta; isso nem sempre ocorre."
+    },
+    "en": {
+      "name": "Arrhenius equation",
+      "definition": "The Arrhenius equation expresses a common temperature dependence of a rate constant: k = A exp(−Ea/RT). A is the pre-exponential factor, Ea is activation energy and R is the gas constant. If A and Ea are approximately constant over the studied range, plotting ln k against 1/T gives a straight line; this is not always the case."
+    }
+  },
+  {
+    "id": "cinetica-nao-arrhenius",
+    "pt": {
+      "name": "Cinética não-Arrhenius",
+      "definition": "É o comportamento em que a dependência da velocidade com a temperatura não segue a forma de Arrhenius com parâmetros constantes no intervalo observado. A curvatura pode resultar de tunelamento, mudanças de mecanismo, equilíbrios anteriores à reação ou efeitos do meio, entre outras causas. Observar uma curva não identifica automaticamente qual dessas explicações é correta."
+    },
+    "en": {
+      "name": "Non-Arrhenius kinetics",
+      "definition": "This behavior occurs when temperature dependence does not follow an Arrhenius form with constant parameters over the observed range. Curvature may arise from tunneling, mechanism changes, preceding equilibria or environmental effects, among other causes. Observing a curve does not automatically establish which explanation is correct."
+    }
+  },
+  {
+    "id": "tunelamento-quantico",
+    "pt": {
+      "name": "Tunelamento quântico",
+      "definition": "É a possibilidade de atravessar uma barreira de potencial mesmo com energia inferior à altura que impediria a passagem clássica. Em reações, pode aumentar a velocidade, especialmente para o movimento de partículas leves, como o hidrogênio. Sua importância depende da forma e largura da barreira, das massas e da temperatura, e sua estimativa exige um modelo adequado."
+    },
+    "en": {
+      "name": "Quantum tunneling",
+      "definition": "Quantum tunneling allows passage through a potential barrier even with energy below the height that would prevent classical crossing. In reactions, it can increase rates, especially for motion of light particles such as hydrogen. Its importance depends on barrier shape and width, masses and temperature, and estimation requires a suitable model."
+    }
+  },
+  {
+    "id": "wigner",
+    "pt": {
+      "name": "Correção de Wigner",
+      "definition": "É uma aproximação simples para corrigir uma constante de velocidade clássica por efeitos quânticos perto do topo da barreira. Usa a frequência imaginária do estado de transição e a temperatura para estimar um fator de correção. É uma expansão limitada, geralmente inadequada para descrever tunelamento profundo em temperaturas muito baixas."
+    },
+    "en": {
+      "name": "Wigner correction",
+      "definition": "The Wigner correction is a simple approximation for adding near-barrier-top quantum effects to a classical rate constant. It uses the transition state's imaginary frequency and temperature to estimate a correction factor. It is a limited expansion, generally unsuitable for describing deep tunneling at very low temperatures."
+    }
+  },
+  {
+    "id": "eckart",
+    "pt": {
+      "name": "Barreira e correção de Eckart",
+      "definition": "O modelo de Eckart representa a barreira de reação por um potencial unidimensional com forma analítica. Pode usar as alturas das barreiras direta e reversa e a curvatura próxima ao estado de transição para estimar transmissão quântica. É mais detalhado que uma correção local simples, mas não representa automaticamente movimentos multidimensionais nem toda a dinâmica do solvente."
+    },
+    "en": {
+      "name": "Eckart barrier and correction",
+      "definition": "The Eckart model represents a reaction barrier with an analytic one-dimensional potential. Forward and reverse barrier heights and curvature near the transition state can be used to estimate quantum transmission. It is more detailed than a simple local correction but does not automatically represent multidimensional motion or full solvent dynamics."
+    }
+  },
+  {
+    "id": "bell",
+    "pt": {
+      "name": "Correções de Bell",
+      "definition": "São aproximações para incluir efeitos de tunelamento em constantes de velocidade, associadas a modelos simplificados de barreira. Há diferentes formulações de Bell, com hipóteses e limites de aplicação próprios. Por isso, ao comparar resultados, é necessário identificar a formulação utilizada e os parâmetros da barreira."
+    },
+    "en": {
+      "name": "Bell corrections",
+      "definition": "Bell corrections approximate tunneling effects on rate constants using simplified barrier models. Different Bell formulations have their own assumptions and application limits. Comparing results therefore requires identifying the formulation used and its barrier parameters."
+    }
+  },
+  {
+    "id": "skodje-truhlar",
+    "pt": {
+      "name": "Correção de Skodje–Truhlar",
+      "definition": "É uma aproximação de transmissão quântica baseada em uma descrição parabólica da barreira. Pode corrigir constantes de velocidade da teoria do estado de transição. Sua validade depende do regime e dos parâmetros da barreira."
+    },
+    "en": {
+      "name": "Skodje–Truhlar correction",
+      "definition": "This quantum-transmission approximation uses a parabolic barrier description. It can correct transition-state-theory rate constants. Its validity depends on the regime and barrier parameters."
+    }
+  },
+  {
+    "id": "transitivity",
+    "pt": {
+      "name": "Transitivity (programa)",
+      "definition": "É um programa científico para calcular e analisar parâmetros cinéticos e grandezas relacionadas. Inclui cálculos baseados na teoria do estado de transição e modelos de correção. Os resultados dependem dos dados e das aproximações escolhidas."
+    },
+    "en": {
+      "name": "Transitivity (software)",
+      "definition": "Transitivity is scientific software for calculating and analyzing kinetic parameters and related quantities. It includes transition-state-theory calculations and correction models. Results depend on the input data and chosen approximations."
+    }
+  },
+  {
+    "id": "xtb",
+    "pt": {
+      "name": "xTB",
+      "definition": "Designa métodos e um programa de química quântica de ligação forte estendida, com aproximações e parametrizações que reduzem o custo computacional. É útil para explorar estruturas, otimizar geometrias e realizar triagens de sistemas relativamente grandes. Essa rapidez não substitui a avaliação de precisão: energias e barreiras podem precisar de refinamento com outros métodos."
+    },
+    "en": {
+      "name": "xTB",
+      "definition": "xTB denotes extended tight-binding quantum-chemical methods and a program using approximations and parameterization to reduce computational cost. It is useful for exploring structures, optimizing geometries and screening relatively large systems. Speed does not replace accuracy assessment: energies and barriers may need refinement with other methods."
+    }
+  },
+  {
+    "id": "crest",
+    "pt": {
+      "name": "CREST",
+      "definition": "É uma ferramenta para amostrar conjuntos de confôrmeros e rotâmeros, frequentemente usando métodos xTB. Explora diferentes arranjos espaciais para evitar que uma análise dependa apenas da primeira estrutura escolhida. As estruturas encontradas e suas populações estimadas dependem do método, da amostragem e do ambiente considerado."
+    },
+    "en": {
+      "name": "CREST",
+      "definition": "CREST is a tool for sampling conformer and rotamer ensembles, frequently using xTB methods. It explores spatial arrangements so an analysis need not rely solely on the first chosen structure. The structures found and estimated populations depend on the method, sampling and modeled environment."
+    }
+  },
+  {
+    "id": "conformero",
+    "pt": {
+      "name": "Confôrmero",
+      "definition": "É um arranjo espacial de uma molécula associado a um mínimo de energia e interconversível com outros por movimentos como rotações de ligações. Os confôrmeros mantêm a conectividade dos átomos, mas podem ter energias e reatividades diferentes. Em uma amostra, vários podem coexistir, e suas proporções dependem das condições e das energias livres relativas."
+    },
+    "en": {
+      "name": "Conformer",
+      "definition": "A conformer is a spatial arrangement of a molecule associated with an energy minimum and interconvertible with others through motions such as bond rotations. Conformers retain atomic connectivity but can have different energies and reactivities. Several may coexist in a sample, with proportions depending on conditions and relative free energies."
+    }
+  },
+  {
+    "id": "gaussian",
+    "pt": {
+      "name": "Gaussian",
+      "definition": "É um pacote de programas para cálculos de estrutura eletrônica e propriedades moleculares. Pode realizar tarefas como otimizações, análises vibracionais e estudos de caminhos de reação com diferentes métodos. O nome do programa sozinho não define a qualidade de um resultado: também é preciso informar método, base, ambiente e critérios de cálculo."
+    },
+    "en": {
+      "name": "Gaussian",
+      "definition": "Gaussian is a software package for electronic-structure calculations and molecular properties. It can perform geometry optimizations, vibrational analyses and reaction-path studies using different methods. The program name alone does not establish result quality: method, basis, environment and calculation criteria must also be specified."
+    }
+  },
+  {
+    "id": "orca",
+    "pt": {
+      "name": "ORCA",
+      "definition": "É um programa de química quântica que oferece métodos para calcular estruturas, energias e propriedades espectroscópicas. Permite combinar diferentes aproximações eletrônicas, bases e modelos de ambiente. Como em outros programas, a confiabilidade depende da configuração e da verificação do cálculo, não apenas do software utilizado."
+    },
+    "en": {
+      "name": "ORCA",
+      "definition": "ORCA is a quantum chemistry program providing methods for structures, energies and spectroscopic properties. It allows different electronic approximations, basis sets and environmental models to be combined. As with other programs, reliability depends on calculation setup and verification, rather than on software identity alone."
+    }
+  },
+  {
+    "id": "sella",
+    "pt": {
+      "name": "Sella",
+      "definition": "É um pacote de software para otimizar estruturas atômicas, incluindo pontos de sela associados a estados de transição. Usa algoritmos de otimização em combinação com uma fonte de energias e forças, fornecida por um modelo ou programa de cálculo. Encontrar um ponto de sela exige depois verificar sua natureza e as estruturas que ele conecta."
+    },
+    "en": {
+      "name": "Sella",
+      "definition": "Sella is a software package for optimizing atomic structures, including saddle points associated with transition states. It combines optimization algorithms with energies and forces supplied by a model or calculation program. A located saddle point still requires checks of its nature and the structures it connects."
+    }
+  },
+  {
+    "id": "cluster-hpc",
+    "pt": {
+      "name": "Cluster e computação de alto desempenho (HPC)",
+      "definition": "Um cluster é um conjunto de computadores interligados que pode executar tarefas de forma coordenada. HPC reúne recursos e técnicas para cálculos exigentes, usando múltiplos processadores, grande memória e sistemas de gerenciamento de tarefas. Distribuir um cálculo não garante aceleração proporcional, pois comunicação e partes não paralelizáveis também consomem tempo."
+    },
+    "en": {
+      "name": "Cluster and high-performance computing (HPC)",
+      "definition": "A cluster is a group of interconnected computers that can execute coordinated tasks. HPC combines resources and techniques for demanding calculations, using multiple processors, substantial memory and job-management systems. Distributing a calculation does not guarantee proportional acceleration because communication and nonparallel work also take time."
+    }
+  },
+  {
+    "id": "mecanismo-de-reacao",
+    "pt": {
+      "name": "Mecanismo de reação",
+      "definition": "É uma descrição das etapas pelas quais reagentes se transformam em produtos, incluindo intermediários e mudanças de ligações. Uma equação global informa o balanço de substâncias, mas não revela necessariamente essas etapas. Um mecanismo proposto deve ser confrontado com evidências como cinética, identificação de espécies e cálculos, considerando rotas alternativas."
+    },
+    "en": {
+      "name": "Reaction mechanism",
+      "definition": "A reaction mechanism describes the steps converting reactants into products, including intermediates and bond changes. An overall equation gives the substance balance but does not necessarily reveal those steps. Proposed mechanisms must be tested against evidence such as kinetics, species identification and calculations, while considering alternative routes."
+    }
+  },
+  {
+    "id": "catalise-acida",
+    "pt": {
+      "name": "Catálise ácida",
+      "definition": "Ocorre quando um ácido participa de uma rota que aumenta a velocidade de uma reação e é regenerado no ciclo catalítico. A transferência de próton pode facilitar mudanças de ligações ou tornar um grupo mais apto a sair. O catalisador altera a rota e as barreiras, mas não muda por si só a posição do equilíbrio termodinâmico global."
+    },
+    "en": {
+      "name": "Acid catalysis",
+      "definition": "Acid catalysis occurs when an acid participates in a route that increases reaction rate and is regenerated in the catalytic cycle. Proton transfer can facilitate bond changes or make a group more able to leave. The catalyst changes the route and barriers but does not itself change the overall thermodynamic equilibrium position."
+    }
+  },
+  {
+    "id": "protonacao",
+    "pt": {
+      "name": "Protonação",
+      "definition": "É a adição de um próton, H⁺, a uma espécie química, normalmente por transferência a partir de outra espécie. Pode alterar carga, solubilidade e reatividade, e ocorrer em diferentes locais de uma molécula. A forma predominante depende do meio, do pH e dos equilíbrios ácido-base, não apenas de uma estrutura desenhada."
+    },
+    "en": {
+      "name": "Protonation",
+      "definition": "Protonation is the addition of a proton, H⁺, to a chemical species, usually through transfer from another species. It can change charge, solubility and reactivity and may occur at different molecular sites. The predominant form depends on the medium, pH and acid-base equilibria, rather than only on a drawn structure."
+    }
+  },
+  {
+    "id": "pka",
+    "pt": {
+      "name": "pKa",
+      "definition": "É o negativo do logaritmo decimal da constante de dissociação ácida, Ka. Em condições comparáveis, um pKa menor indica um ácido com maior tendência a doar próton. Seu valor depende do solvente e da temperatura, e moléculas com vários grupos ionizáveis podem apresentar mais de um pKa."
+    },
+    "en": {
+      "name": "pKa",
+      "definition": "pKa is the negative base-ten logarithm of the acid dissociation constant, Ka. Under comparable conditions, a lower pKa indicates a stronger tendency to donate a proton. The value depends on solvent and temperature, and molecules with several ionizable groups may have multiple pKa values."
+    }
+  },
+  {
+    "id": "dipirona",
+    "pt": {
+      "name": "Dipirona (metamizol)",
+      "definition": "É um fármaco da família das pirazolonas, conhecido por suas atividades analgésica e antipirética. Em formulações pode aparecer na forma de um sal, e sua transformação em solução ou no organismo envolve outras espécies químicas, incluindo 4-MAA. Estudar sua estrutura e degradação ajuda a compreender estabilidade e análise farmacêutica; isso não determina, por si só, condições de uso clínico."
+    },
+    "en": {
+      "name": "Dipyrone (metamizole)",
+      "definition": "Dipyrone is a pyrazolone-family drug known for analgesic and antipyretic activity. Formulations may contain a salt, and transformations in solution or in the body involve other chemical species, including 4-MAA. Studying its structure and degradation helps explain stability and pharmaceutical analysis; this alone does not determine clinical-use conditions."
+    }
+  },
+  {
+    "id": "4-maa",
+    "pt": {
+      "name": "4-Metilaminoantipirina (4-MAA; impureza C)",
+      "definition": "É uma espécie relacionada à dipirona, conhecida como um de seus metabólitos ativos e também como produto de transformação química. É identificada como impureza C em contextos farmacopéicos de metamizol. Sua classificação depende do contexto: participar do metabolismo não impede que seja monitorada como impureza em um produto farmacêutico."
+    },
+    "en": {
+      "name": "4-Methylaminoantipyrine (4-MAA; impurity C)",
+      "definition": "4-MAA is a dipyrone-related species known as an active metabolite and as a chemical transformation product. It is identified as impurity C in metamizole pharmacopoeial contexts. Classification depends on context: participation in metabolism does not prevent monitoring it as an impurity in a pharmaceutical product."
+    }
+  },
+  {
+    "id": "impureza",
+    "pt": {
+      "name": "Impureza",
+      "definition": "É um componente diferente da substância ou composição pretendida, considerado no contexto de qualidade do material. Pode resultar da síntese, de matérias-primas, de contaminação ou de degradação durante o armazenamento. A identificação e os limites aceitáveis dependem do produto, da exposição e dos requisitos aplicáveis; presença de uma impureza não significa automaticamente risco elevado."
+    },
+    "en": {
+      "name": "Impurity",
+      "definition": "An impurity is a component other than the intended substance or composition, considered within a material-quality context. It may originate from synthesis, raw materials, contamination or degradation during storage. Identification and acceptable limits depend on the product, exposure and applicable requirements; an impurity's presence does not automatically imply high risk."
+    }
+  },
+  {
+    "id": "degradacao-forcada",
+    "pt": {
+      "name": "Degradação forçada",
+      "definition": "É um estudo que expõe uma substância ou produto a condições de estresse, como calor, luz, oxidação ou meios ácidos e básicos. Ajuda a revelar sensibilidades, produtos de degradação e a capacidade de um método analítico de distinguir esses produtos da substância original. As condições são intencionalmente intensificadas e não equivalem, por si só, ao comportamento durante o armazenamento normal."
+    },
+    "en": {
+      "name": "Forced degradation",
+      "definition": "Forced degradation exposes a substance or product to stress conditions such as heat, light, oxidation or acidic and basic media. It helps reveal sensitivities, degradation products and an analytical method's ability to distinguish them from the original substance. Conditions are deliberately intensified and do not, by themselves, reproduce normal storage behavior."
+    }
+  },
+  {
+    "id": "estudo-de-estabilidade",
+    "pt": {
+      "name": "Estudo de estabilidade",
+      "definition": "Acompanha como a qualidade de uma substância ou produto muda com o tempo sob condições definidas. Avalia atributos relevantes, como teor, impurezas e características físicas, para apoiar prazo de validade e condições de armazenamento. Estudos acelerados e de longa duração fornecem informações diferentes e devem ser interpretados dentro de protocolos e requisitos adequados."
+    },
+    "en": {
+      "name": "Stability study",
+      "definition": "A stability study tracks changes in substance or product quality over time under defined conditions. It assesses relevant attributes such as assay, impurities and physical characteristics to support shelf life and storage conditions. Accelerated and long-term studies provide different information and must be interpreted within appropriate protocols and requirements."
+    }
+  },
+  {
+    "id": "perfil-de-degradacao",
+    "pt": {
+      "name": "Perfil de degradação",
+      "definition": "É o conjunto de informações sobre quais produtos de degradação aparecem e como variam nas condições estudadas. Pode reunir sinais cromatográficos, quantidades estimadas e identificação estrutural, conforme a investigação. Um novo pico indica uma mudança analítica, mas sua identidade não pode ser concluída apenas pelo tempo de retenção."
+    },
+    "en": {
+      "name": "Degradation profile",
+      "definition": "A degradation profile brings together information about which degradation products appear and how they vary under the studied conditions. It may include chromatographic signals, estimated amounts and structural identification, depending on the investigation. A new peak signals an analytical change, but its identity cannot be established from retention time alone."
+    }
+  },
+  {
+    "id": "anvisa-rdc",
+    "pt": {
+      "name": "ANVISA e RDC",
+      "definition": "A ANVISA é a Agência Nacional de Vigilância Sanitária do Brasil, responsável por regulação e ações de vigilância sanitária em sua área de competência. RDC significa Resolução da Diretoria Colegiada, um tipo de ato normativo da agência. Os requisitos concretos dependem do tema e da norma vigente, por isso o número, a versão e o escopo devem ser consultados na fonte oficial."
+    },
+    "en": {
+      "name": "ANVISA and RDC",
+      "definition": "ANVISA is Brazil's National Health Surveillance Agency, responsible for regulation and health-surveillance actions within its remit. RDC denotes a resolution of its collegiate board, a type of regulatory act. Specific requirements depend on the subject and current regulation, so its number, version and scope should be checked in the official source."
+    }
+  },
+  {
+    "id": "desenvolvimento-analitico",
+    "pt": {
+      "name": "Desenvolvimento analítico",
+      "definition": "É o trabalho de escolher e ajustar procedimentos para identificar ou medir componentes de uma amostra. Inclui avaliar preparo da amostra, técnica de medição, separação e possíveis interferências. O objetivo é obter um método adequado à pergunta e à matriz, que depois possa ser validado para o uso pretendido."
+    },
+    "en": {
+      "name": "Analytical development",
+      "definition": "Analytical development selects and adjusts procedures to identify or measure sample components. It includes evaluating sample preparation, measurement technique, separation and potential interferences. The goal is a method suited to the question and matrix, which can then be validated for its intended use."
+    }
+  },
+  {
+    "id": "validacao-de-metodo",
+    "pt": {
+      "name": "Validação de método analítico",
+      "definition": "É a demonstração documentada de que um procedimento é adequado à finalidade analítica definida. Conforme o uso, avalia características como seletividade, precisão, exatidão, faixa e limites de detecção ou quantificação. Um método validado para uma matriz ou faixa não está automaticamente validado para todas as outras aplicações."
+    },
+    "en": {
+      "name": "Analytical method validation",
+      "definition": "Method validation is documented evidence that a procedure is suitable for a defined analytical purpose. Depending on the use, it evaluates characteristics such as selectivity, precision, accuracy, range and detection or quantitation limits. Validation for one matrix or range does not automatically validate every other application."
+    }
+  },
+  {
+    "id": "hplc",
+    "pt": {
+      "name": "HPLC — cromatografia líquida de alta eficiência",
+      "definition": "É uma técnica de separação em que uma fase móvel líquida leva a amostra através de uma coluna com fase estacionária. Os componentes interagem de formas diferentes com essas fases e chegam ao detector em tempos distintos. Identificar ou quantificar exige condições apropriadas e referências; a área de um pico não é uma concentração sem uma relação de calibração."
+    },
+    "en": {
+      "name": "HPLC — high-performance liquid chromatography",
+      "definition": "HPLC separates a sample carried by a liquid mobile phase through a column containing a stationary phase. Components interact differently with these phases and reach the detector at different times. Identification or quantitation requires appropriate conditions and references; peak area is not a concentration without a calibration relationship."
+    }
+  },
+  {
+    "id": "ftir",
+    "pt": {
+      "name": "Espectroscopia no infravermelho (FTIR)",
+      "definition": "Investiga a absorção de radiação infravermelha associada, principalmente, a vibrações de ligações químicas. FTIR indica que o espectro é obtido a partir de um interferograma usando uma transformada de Fourier. Bandas ajudam a caracterizar materiais e podem apoiar quantificação, mas sobreposição de sinais e preparo da amostra precisam ser considerados."
+    },
+    "en": {
+      "name": "Infrared spectroscopy (FTIR)",
+      "definition": "Infrared spectroscopy investigates infrared absorption associated mainly with chemical-bond vibrations. FTIR means that the spectrum is obtained from an interferogram using a Fourier transform. Bands help characterize materials and can support quantitation, but signal overlap and sample preparation must be considered."
+    }
+  },
+  {
+    "id": "espectrometria-de-massas",
+    "pt": {
+      "name": "Espectrometria de massas (MS)",
+      "definition": "Analisa íons pela razão entre massa e carga, representada por m/z. A ionização e a fragmentação podem fornecer informações sobre composição e estrutura, especialmente quando combinadas com separação cromatográfica. Um sinal de massa não identifica sozinho uma substância: adutos, isótopos e moléculas com massas semelhantes também precisam ser avaliados."
+    },
+    "en": {
+      "name": "Mass spectrometry (MS)",
+      "definition": "Mass spectrometry analyzes ions by their mass-to-charge ratio, written m/z. Ionization and fragmentation can provide composition and structure information, especially when combined with chromatographic separation. A mass signal alone does not identify a substance: adducts, isotopes and molecules with similar masses must also be considered."
+    }
+  },
+  {
+    "id": "tetraciclina",
+    "pt": {
+      "name": "Tetraciclina",
+      "definition": "É um antibiótico da classe das tetraciclinas, cuja estrutura possui um sistema de quatro anéis fundidos. Sua ocorrência em águas e efluentes motiva estudos de remoção e transformação ambiental. Seus produtos de degradação podem ter propriedades diferentes das originais, portanto acompanhar apenas a diminuição do antibiótico não descreve todo o impacto do tratamento."
+    },
+    "en": {
+      "name": "Tetracycline",
+      "definition": "Tetracycline is an antibiotic in the tetracycline class, with a fused four-ring structural system. Its occurrence in water and wastewater motivates studies of removal and environmental transformation. Degradation products may have different properties, so tracking only the antibiotic's decrease does not describe the treatment's full impact."
+    }
+  },
+  {
+    "id": "fenton",
+    "pt": {
+      "name": "Fenton",
+      "definition": "No processo clássico, espécies de ferro reagem com peróxido de hidrogênio e geram espécies oxidantes, incluindo radicais hidroxila. Essas espécies podem atacar compostos orgânicos em solução. A eficiência depende de fatores como pH, disponibilidade do ferro e consumo de oxidantes por outros componentes, e o processo pode exigir manejo do ferro residual."
+    },
+    "en": {
+      "name": "Fenton",
+      "definition": "In the classical Fenton process, iron species react with hydrogen peroxide to generate oxidizing species, including hydroxyl radicals. These species can attack organic compounds in solution. Performance depends on pH, iron availability and oxidant consumption by other components, and residual iron may require management."
+    }
+  },
+  {
+    "id": "foto-fenton",
+    "pt": {
+      "name": "Foto-Fenton",
+      "definition": "Combina a química de Fenton com irradiação, que pode favorecer ciclos do ferro e a produção de espécies oxidantes. A resposta depende do comprimento de onda, da composição da solução e das espécies de ferro presentes. A luz pode melhorar o tratamento, mas não elimina a necessidade de controlar reagentes, subprodutos e condições operacionais."
+    },
+    "en": {
+      "name": "Photo-Fenton",
+      "definition": "Photo-Fenton combines Fenton chemistry with irradiation, which can promote iron cycling and oxidant production. The response depends on wavelength, solution composition and the iron species present. Light can improve treatment but does not remove the need to control reagents, by-products and operating conditions."
+    }
+  },
+  {
+    "id": "solar-fenton",
+    "pt": {
+      "name": "Solar-Fenton",
+      "definition": "É uma aplicação do processo foto-Fenton que usa radiação solar como fonte de luz. Pode reduzir a necessidade de iluminação artificial, mas a intensidade solar varia com horário, clima e geometria do reator. Comparar resultados exige considerar a exposição à luz e a composição do efluente, além do tempo de reação."
+    },
+    "en": {
+      "name": "Solar-Fenton",
+      "definition": "Solar-Fenton is a photo-Fenton application using sunlight as the light source. It can reduce artificial-lighting needs, but solar intensity varies with time, weather and reactor geometry. Comparing results requires considering light exposure and wastewater composition as well as reaction time."
+    }
+  },
+  {
+    "id": "fitotoxicidade",
+    "pt": {
+      "name": "Fitotoxicidade",
+      "definition": "É a capacidade de uma substância ou mistura de causar efeitos prejudiciais em plantas. Pode ser avaliada por indicadores como germinação e crescimento das raízes em condições de ensaio definidas. O resultado depende da espécie vegetal, da concentração e da exposição; reduzir um contaminante não garante reduzir a fitotoxicidade da mistura."
+    },
+    "en": {
+      "name": "Phytotoxicity",
+      "definition": "Phytotoxicity is the ability of a substance or mixture to cause harmful effects in plants. It can be assessed using indicators such as germination and root growth under defined test conditions. Results depend on plant species, concentration and exposure; reducing one contaminant does not guarantee reduced mixture phytotoxicity."
+    }
+  },
+  {
+    "id": "adsorcao",
+    "pt": {
+      "name": "Adsorção",
+      "definition": "É o acúmulo de espécies na superfície ou interface de um material devido a interações físicas ou químicas. Difere de absorção, em que a espécie entra no volume de uma fase. Pode retirar um poluente de um fluido sem destruí-lo, por isso regeneração e destinação do adsorvente também fazem parte da avaliação do processo."
+    },
+    "en": {
+      "name": "Adsorption",
+      "definition": "Adsorption is accumulation of species at a material's surface or interface through physical or chemical interactions. It differs from absorption, in which a species enters the bulk of a phase. It may remove a pollutant from a fluid without destroying it, so adsorbent regeneration and disposal also matter."
+    }
+  },
+  {
+    "id": "efluente",
+    "pt": {
+      "name": "Efluente",
+      "definition": "É uma corrente que sai de um processo ou instalação, frequentemente usada para designar águas residuais. Sua composição depende da origem e pode incluir matéria orgânica, sais, partículas e contaminantes em pequenas concentrações. Mesmo um efluente secundário, após tratamento biológico, pode conter substâncias que exigem avaliação ou tratamento adicional."
+    },
+    "en": {
+      "name": "Effluent",
+      "definition": "An effluent is a stream leaving a process or facility, commonly referring to wastewater. Its composition depends on its origin and may include organic matter, salts, particles and low-concentration contaminants. Even secondary effluent, after biological treatment, may contain substances requiring further assessment or treatment."
+    }
+  },
+  {
+    "id": "pfas",
+    "pt": {
+      "name": "PFAS — substâncias per e polifluoroalquiladas",
+      "definition": "São uma ampla família de substâncias fluoradas definida por características estruturais, incluindo grupos metila ou metileno totalmente fluorados na definição abrangente da OCDE. Muitos integrantes apresentam alta persistência e têm sido investigados como contaminantes ambientais. A família é diversa: mobilidade, toxicidade e possibilidades de tratamento não são iguais para todos os PFAS."
+    },
+    "en": {
+      "name": "PFAS — per- and polyfluoroalkyl substances",
+      "definition": "PFAS form a broad family of fluorinated substances defined by structural features, including fully fluorinated methyl or methylene groups in the OECD's broad definition. Many members are highly persistent and have been investigated as environmental contaminants. The family is diverse: mobility, toxicity and treatment options are not identical across all PFAS."
+    }
+  },
+  {
+    "id": "pfos",
+    "pt": {
+      "name": "PFOS — perfluorooctanossulfonato",
+      "definition": "É um composto da família dos PFAS com uma cadeia perfluorada de oito carbonos e um grupo sulfonato. A sigla também aparece em contextos que abrangem o ácido perfluorooctanossulfônico e seus sais. Sua persistência ambiental motiva monitoramento e estudos de tratamento, e adsorvê-lo não equivale a romper suas ligações carbono–flúor."
+    },
+    "en": {
+      "name": "PFOS — perfluorooctane sulfonate",
+      "definition": "PFOS is a PFAS-family compound with an eight-carbon perfluorinated chain and a sulfonate group. The abbreviation also appears in contexts covering perfluorooctanesulfonic acid and its salts. Environmental persistence motivates monitoring and treatment studies, and adsorption does not mean breaking its carbon–fluorine bonds."
+    }
+  },
+  {
+    "id": "tia-michael",
+    "pt": {
+      "name": "Reação tia-Michael",
+      "definition": "É uma adição conjugada de uma espécie de enxofre, geralmente um tiol ou tiolato, a um sistema insaturado ativado por um grupo retirador de elétrons. Em uma carbonila α,β-insaturada, a ligação com enxofre se forma tipicamente no carbono β. Sua velocidade e reversibilidade dependem da estrutura e do meio, e a reação não implica, sozinha, uma atividade biológica específica."
+    },
+    "en": {
+      "name": "Thia-Michael reaction",
+      "definition": "A thia-Michael reaction is conjugate addition of a sulfur species, usually a thiol or thiolate, to an unsaturated system activated by an electron-withdrawing group. In an α,β-unsaturated carbonyl, the sulfur bond typically forms at the β carbon. Rate and reversibility depend on structure and medium, and the reaction alone does not imply a specific biological activity."
+    }
+  },
+  {
+    "id": "chalcona",
+    "pt": {
+      "name": "Chalcona",
+      "definition": "É uma classe de compostos que apresenta dois grupos aromáticos ligados por uma unidade de carbonila α,β-insaturada. Esse sistema conjugado influencia suas propriedades e permite reações de adição, incluindo adições de tióis em condições apropriadas. Análogos cíclicos mantêm características relacionadas, mas não são necessariamente equivalentes à estrutura da chalcona original."
+    },
+    "en": {
+      "name": "Chalcone",
+      "definition": "Chalcones are compounds with two aromatic groups linked by an α,β-unsaturated carbonyl unit. This conjugated system affects their properties and permits addition reactions, including thiol additions under suitable conditions. Cyclic analogues retain related features but are not necessarily equivalent to the original chalcone structure."
+    }
+  },
+  {
+    "id": "tiol",
+    "pt": {
+      "name": "Tiol",
+      "definition": "É um composto que contém o grupo sulfidrila, representado por R–SH, com enxofre ligado a hidrogênio. Ao perder esse próton, pode formar um tiolato, frequentemente mais nucleofílico. Tióis aparecem em moléculas biológicas como cisteína e glutationa e participam de reações cuja ocorrência depende do meio e dos parceiros químicos."
+    },
+    "en": {
+      "name": "Thiol",
+      "definition": "A thiol contains a sulfhydryl group, written R–SH, with sulfur bonded to hydrogen. Losing that proton can form a thiolate, often a stronger nucleophile. Thiols occur in biological molecules such as cysteine and glutathione and participate in reactions governed by their environment and chemical partners."
+    }
+  },
+  {
+    "id": "doi",
+    "pt": {
+      "name": "DOI — identificador de objeto digital",
+      "definition": "É um identificador persistente atribuído a um objeto, como artigo, conjunto de dados ou preprint. O endereço doi.org usa esse identificador para encaminhar à localização registrada do objeto. Ter DOI facilita localização e citação, mas não certifica qualidade científica nem garante que o conteúdo tenha passado por revisão por pares."
+    },
+    "en": {
+      "name": "DOI — digital object identifier",
+      "definition": "A DOI is a persistent identifier assigned to an object such as an article, dataset or preprint. The doi.org address uses it to direct users to the object's registered location. A DOI supports discovery and citation but does not certify scientific quality or guarantee peer review."
+    }
+  },
+  {
+    "id": "preprint",
+    "pt": {
+      "name": "Preprint",
+      "definition": "É uma versão de um manuscrito compartilhada publicamente antes da publicação formal em periódico, em geral antes da conclusão da revisão por pares. Permite acesso antecipado às ideias e resultados e pode receber atualizações. Ao citar, convém indicar a versão consultada e verificar se existe uma publicação posterior, pois conclusões e texto podem mudar."
+    },
+    "en": {
+      "name": "Preprint",
+      "definition": "A preprint is a manuscript version shared publicly before formal journal publication, generally before peer review is complete. It provides early access to ideas and findings and may be updated. Citations should identify the version consulted and check for a later publication because conclusions and text may change."
+    }
+  },
+  {
+    "id": "orcid",
+    "pt": {
+      "name": "ORCID",
+      "definition": "É um identificador persistente de pesquisador que ajuda a distinguir pessoas com nomes semelhantes. Seu registro pode conectar publicações, vínculos e outras atividades, conforme as informações adicionadas e suas permissões de visibilidade. O identificador não é um currículo completo obrigatório nem uma certificação da qualidade das obras associadas."
+    },
+    "en": {
+      "name": "ORCID",
+      "definition": "ORCID is a persistent researcher identifier that helps distinguish people with similar names. Its record can connect publications, affiliations and other activities according to supplied information and visibility permissions. The identifier is neither a mandatory complete résumé nor a certification of associated works' quality."
+    }
+  },
+  {
+    "id": "lattes",
+    "pt": {
+      "name": "Lattes",
+      "definition": "A Plataforma Lattes reúne currículos e informações acadêmicas no sistema brasileiro de ciência e tecnologia, sob responsabilidade do CNPq. Um currículo pode registrar formação, produção e atividades de pesquisa. Como parte das informações depende de atualização pelo titular, sua data e a documentação das atividades também importam na interpretação."
+    },
+    "en": {
+      "name": "Lattes",
+      "definition": "The Lattes Platform collects résumés and academic information within Brazil's science and technology system under CNPq. A résumé can record education, publications and research activities. Because some information depends on updates by the record holder, update dates and supporting activity documentation also matter."
+    }
+  },
+  {
+    "id": "iniciacao-cientifica",
+    "pt": {
+      "name": "Iniciação científica (IC)",
+      "definition": "É uma atividade de formação em pesquisa, geralmente voltada a estudantes de graduação sob orientação. Inclui aprender a formular perguntas, consultar literatura, planejar métodos e analisar resultados. Pode ter bolsa ou ser voluntária, e seu valor formativo não depende de produzir um resultado positivo ou uma publicação."
+    },
+    "en": {
+      "name": "Undergraduate research (IC in Brazil)",
+      "definition": "This is research training generally involving undergraduate students working with a supervisor. It includes learning to formulate questions, consult literature, plan methods and analyze results. It may be funded or voluntary, and its educational value does not depend on a positive result or a publication."
+    }
+  },
+  {
+    "id": "motion-graphics",
+    "pt": {
+      "name": "Motion graphics",
+      "definition": "É o uso de elementos gráficos em movimento, como formas, texto e diagramas, para comunicar uma ideia. Na divulgação científica, pode representar processos difíceis de observar diretamente. A animação é uma escolha de representação: cores, tamanhos e movimentos precisam ser interpretados segundo o modelo, e não como uma filmagem do fenômeno."
+    },
+    "en": {
+      "name": "Motion graphics",
+      "definition": "Motion graphics use moving graphic elements, such as shapes, text and diagrams, to communicate an idea. In science communication, they can depict processes difficult to observe directly. Animation is a representational choice: colors, sizes and motions must be interpreted according to the model, rather than as footage of the phenomenon."
+    }
+  },
+  {
+    "id": "divulgacao-cientifica",
+    "pt": {
+      "name": "Divulgação científica",
+      "definition": "É a comunicação de conhecimento, métodos e questões científicas para públicos além dos especialistas. Usa linguagem e formatos acessíveis, preservando o significado e as incertezas relevantes. Uma explicação didática pode simplificar detalhes, mas deve distinguir evidência, hipótese e recurso visual para evitar interpretações enganosas."
+    },
+    "en": {
+      "name": "Science communication",
+      "definition": "Science communication shares scientific knowledge, methods and questions with audiences beyond specialists. It uses accessible language and formats while preserving meaning and relevant uncertainty. A teaching explanation may simplify details but should distinguish evidence, hypotheses and visual devices to avoid misleading interpretations."
+    }
+  },
+  {
+    "id": "cinetica-quimica",
+    "pt": {
+      "name": "Cinética química",
+      "definition": "Estuda a rapidez das transformações químicas e os fatores que a influenciam. Relaciona variações de composição com tempo, temperatura, concentrações e mecanismos possíveis. É diferente de avaliar apenas a estabilidade termodinâmica: uma transformação favorável pode ocorrer tão lentamente que seja difícil observá-la."
+    },
+    "en": {
+      "name": "Chemical kinetics",
+      "definition": "Chemical kinetics studies how fast chemical transformations occur and what influences their rates. It relates composition changes to time, temperature, concentrations and possible mechanisms. It differs from assessing thermodynamic stability alone: a favorable transformation may proceed too slowly to be easily observed."
+    }
+  },
+  {
+    "id": "hidrolise",
+    "pt": {
+      "name": "Hidrólise",
+      "definition": "É uma transformação em que a água participa da quebra de uma ligação química. Sua velocidade pode depender de pH, temperatura e estrutura da substância, e a reação pode ser catalisada por ácidos ou bases. Estar em solução aquosa não significa que toda transformação observada seja uma hidrólise."
+    },
+    "en": {
+      "name": "Hydrolysis",
+      "definition": "Hydrolysis is a transformation in which water participates in breaking a chemical bond. Its rate may depend on pH, temperature and substance structure, and acids or bases may catalyze it. Being in aqueous solution does not mean that every observed transformation is hydrolysis."
+    }
+  },
+  {
+    "id": "oxidacao",
+    "pt": {
+      "name": "Oxidação",
+      "definition": "É um processo associado à perda de elétrons ou ao aumento do estado de oxidação de uma espécie. Em química orgânica, também pode ser reconhecido por mudanças como aumento de ligações com oxigênio ou perda de hidrogênio, conforme a reação. Oxidar um poluente pode gerar outros compostos, sem necessariamente convertê-lo por completo em espécies inorgânicas."
+    },
+    "en": {
+      "name": "Oxidation",
+      "definition": "Oxidation involves electron loss or an increase in a species' oxidation state. In organic chemistry, changes such as increased bonding to oxygen or loss of hydrogen may also indicate oxidation, depending on the reaction. Oxidizing a pollutant can generate other compounds without necessarily converting it completely into inorganic species."
+    }
+  },
+  {
+    "id": "mineralizacao",
+    "pt": {
+      "name": "Mineralização",
+      "definition": "No tratamento de compostos orgânicos, significa sua conversão em produtos inorgânicos, como CO₂ e formas inorgânicas dos demais elementos. É mais abrangente que o desaparecimento da molécula original, que pode apenas ter virado intermediários orgânicos. Sua avaliação costuma exigir medidas complementares, como carbono orgânico total e balanços de elementos."
+    },
+    "en": {
+      "name": "Mineralization",
+      "definition": "In organic-compound treatment, mineralization means conversion into inorganic products such as CO₂ and inorganic forms of other elements. It goes beyond disappearance of the original molecule, which may simply have become organic intermediates. Assessment usually requires complementary measurements such as total organic carbon and elemental balances."
+    }
+  },
+  {
+    "id": "radical-hidroxila",
+    "pt": {
+      "name": "Radical hidroxila (•OH)",
+      "definition": "É uma espécie muito reativa com um elétron desemparelhado, distinta do íon hidróxido OH⁻. Pode atacar muitas moléculas orgânicas por diferentes vias e participa de diversos processos oxidativos avançados. Por ter vida curta e reagir com componentes da matriz, sua geração não garante que todo radical alcance o contaminante de interesse."
+    },
+    "en": {
+      "name": "Hydroxyl radical (•OH)",
+      "definition": "The hydroxyl radical is a highly reactive species with an unpaired electron, distinct from the hydroxide ion OH⁻. It can attack many organic molecules through different pathways and participates in several advanced oxidation processes. Its short lifetime and reactions with matrix components mean not every generated radical reaches the target contaminant."
+    }
+  },
+  {
+    "id": "ph",
+    "pt": {
+      "name": "pH",
+      "definition": "É uma medida logarítmica relacionada à atividade dos íons hidrogênio em solução. Ajuda a descrever o meio ácido-base e influencia estados de protonação, solubilidade e muitas velocidades de reação. Sua interpretação e medição dependem do solvente, da temperatura e da calibração, e a escala não é universalmente limitada de zero a quatorze."
+    },
+    "en": {
+      "name": "pH",
+      "definition": "pH is a logarithmic measure related to hydrogen-ion activity in solution. It describes acid-base conditions and influences protonation states, solubility and many reaction rates. Interpretation and measurement depend on solvent, temperature and calibration, and the scale is not universally limited to zero through fourteen."
+    }
+  },
+  {
+    "id": "anion",
+    "pt": {
+      "name": "Ânion",
+      "definition": "É um íon com carga elétrica líquida negativa. Pode ser um átomo ou uma espécie com vários átomos, formada por processos como ganho de elétrons ou perda de um próton por uma espécie neutra. Sua interação com solvente e contraíons influencia propriedades e deve ser considerada ao representar uma substância em solução."
+    },
+    "en": {
+      "name": "Anion",
+      "definition": "An anion is an ion with a net negative electric charge. It may be an atom or a multi-atom species formed through processes such as electron gain or proton loss from a neutral species. Interactions with solvent and counterions influence its properties and matter when representing a substance in solution."
+    }
+  },
+  {
+    "id": "cation",
+    "pt": {
+      "name": "Cátion",
+      "definition": "É um íon com carga elétrica líquida positiva, que pode conter um ou vários átomos. Pode se formar por perda de elétrons ou por protonação de uma espécie neutra, entre outros processos. Em sólidos e soluções, interage com outras espécies, e sua carga não determina sozinha toda a sua reatividade."
+    },
+    "en": {
+      "name": "Cation",
+      "definition": "A cation is an ion with a net positive electric charge and may contain one or several atoms. It may form through electron loss or protonation of a neutral species, among other processes. In solids and solutions it interacts with other species, and charge alone does not determine all its reactivity."
+    }
+  },
+  {
+    "id": "ligacao-de-hidrogenio",
+    "pt": {
+      "name": "Ligação de hidrogênio",
+      "definition": "É uma interação atrativa envolvendo um hidrogênio ligado a um átomo ou grupo e outro átomo ou grupo capaz de interagir com ele. É comum em água e em sistemas com oxigênio ou nitrogênio, embora não se limite a esses exemplos. Pode afetar estrutura, solubilidade e barreiras, mas não equivale automaticamente a uma transferência completa de próton."
+    },
+    "en": {
+      "name": "Hydrogen bond",
+      "definition": "A hydrogen bond is an attractive interaction involving hydrogen bonded to an atom or group and another atom or group able to interact with it. It is common in water and oxygen- or nitrogen-containing systems, though not restricted to those examples. It can affect structure, solubility and barriers but does not automatically imply complete proton transfer."
+    }
+  },
+  {
+    "id": "nucleofilo",
+    "pt": {
+      "name": "Nucleófilo",
+      "definition": "É uma espécie que doa um par de elétrons para formar uma ligação com um parceiro eletrofílico. Pode ser neutra ou carregada, e sua reatividade depende de estrutura, solvente e impedimento estérico. Nucleofilicidade descreve um comportamento reacional e não é sinônimo exato de basicidade, que se refere a equilíbrios de aceitação de prótons."
+    },
+    "en": {
+      "name": "Nucleophile",
+      "definition": "A nucleophile donates an electron pair to form a bond with an electrophilic partner. It can be neutral or charged, and reactivity depends on structure, solvent and steric hindrance. Nucleophilicity describes reaction behavior and is not exactly synonymous with basicity, which concerns proton-acceptance equilibria."
+    }
+  },
+  {
+    "id": "eletrofilo",
+    "pt": {
+      "name": "Eletrófilo",
+      "definition": "É uma espécie ou região de uma molécula que aceita um par de elétrons de um nucleófilo na formação de uma ligação. Pode apresentar carga positiva ou apenas uma distribuição eletrônica que favoreça essa interação. A eletrofilicidade depende da estrutura e do meio, e não deve ser deduzida exclusivamente da carga total da molécula."
+    },
+    "en": {
+      "name": "Electrophile",
+      "definition": "An electrophile is a species or molecular region that accepts an electron pair from a nucleophile during bond formation. It may have a positive charge or simply an electron distribution favoring that interaction. Electrophilicity depends on structure and environment and should not be inferred solely from a molecule's total charge."
+    }
+  },
+  {
+    "id": "matriz-analitica",
+    "pt": {
+      "name": "Matriz analítica",
+      "definition": "É o conjunto de componentes da amostra além da espécie que se deseja medir. Pode incluir solventes, excipientes, sais e outros compostos que alteram preparo, separação ou resposta instrumental. Validar um método na matriz relevante ajuda a evitar que resultados de uma solução padrão simples sejam aplicados indevidamente a uma amostra complexa."
+    },
+    "en": {
+      "name": "Analytical matrix",
+      "definition": "The matrix consists of sample components other than the species being measured. It can include solvents, excipients, salts and other compounds affecting preparation, separation or instrumental response. Validation in the relevant matrix helps avoid incorrectly applying results from a simple standard solution to a complex sample."
+    }
+  },
+  {
+    "id": "calibracao",
+    "pt": {
+      "name": "Calibração analítica",
+      "definition": "Estabelece uma relação entre valores conhecidos de uma grandeza e a resposta de um sistema de medição. Na quantificação química, pode usar padrões de concentrações conhecidas para relacionar sinal e concentração. Essa relação tem faixa e incerteza próprias, e obter uma reta com boa correlação não demonstra, sozinho, que todo o método seja adequado."
+    },
+    "en": {
+      "name": "Analytical calibration",
+      "definition": "Calibration establishes a relationship between known quantity values and a measurement system's response. Chemical quantitation may use standards of known concentration to relate signal and concentration. The relationship has its own range and uncertainty, and a line with high correlation alone does not establish overall method suitability."
+    }
+  },
+  {
+    "id": "precisao-exatidao",
+    "pt": {
+      "name": "Precisão e exatidão",
+      "definition": "Precisão descreve a concordância entre resultados repetidos sob condições definidas. Exatidão descreve a proximidade de um resultado com um valor verdadeiro ou de referência e envolve considerar erros sistemáticos e aleatórios. Um conjunto de medidas pode ser muito preciso e ainda apresentar um desvio consistente em relação à referência."
+    },
+    "en": {
+      "name": "Precision and accuracy",
+      "definition": "Precision describes agreement among repeated results under specified conditions. Accuracy describes closeness to a true or reference value and requires consideration of systematic and random errors. A measurement set can be very precise yet show a consistent deviation from the reference."
+    }
+  },
+  {
+    "id": "intermediario",
+    "pt": {
+      "name": "Intermediário de reação",
+      "definition": "É uma espécie formada em uma etapa e consumida em outra durante um mecanismo. Em uma descrição de energia potencial, costuma corresponder a um mínimo local, diferentemente de um estado de transição. Pode ter vida muito curta ou ser detectável, dependendo de suas velocidades de formação e consumo."
+    },
+    "en": {
+      "name": "Reaction intermediate",
+      "definition": "A reaction intermediate is formed in one step and consumed in another within a mechanism. In a potential-energy description, it commonly corresponds to a local minimum, unlike a transition state. It may be very short-lived or detectable depending on its formation and consumption rates."
+    }
+  },
+  {
+    "id": "amonia",
+    "pt": {
+      "name": "Amônia (NH₃)",
+      "definition": "É um composto de nitrogênio e hidrogênio que pode ocorrer na fase gasosa ou dissolvido em água. Em solução, participa de um equilíbrio ácido-base com o íon amônio, NH₄⁺, cuja distribuição depende do pH e da temperatura. Estudos de remoção precisam distinguir essas formas, pois suas propriedades e interações não são iguais."
+    },
+    "en": {
+      "name": "Ammonia (NH₃)",
+      "definition": "Ammonia is a nitrogen-hydrogen compound occurring as a gas or dissolved in water. In solution it participates in an acid-base equilibrium with ammonium, NH₄⁺, with distribution depending on pH and temperature. Removal studies need to distinguish these forms because their properties and interactions differ."
+    }
+  },
+  {
+    "id": "caracterizacao",
+    "pt": {
+      "name": "Caracterização química",
+      "definition": "É a investigação de composição, estrutura e propriedades de uma substância ou material por técnicas adequadas. Pode combinar espectroscopia, difração, análise térmica e outros métodos, pois cada técnica observa aspectos diferentes. Um único sinal raramente descreve toda a amostra, e a concordância entre evidências fortalece a interpretação."
+    },
+    "en": {
+      "name": "Chemical characterization",
+      "definition": "Characterization investigates a substance or material's composition, structure and properties using suitable techniques. It may combine spectroscopy, diffraction, thermal analysis and other methods because each observes different aspects. One signal rarely describes the entire sample, and agreement among evidence strengthens interpretation."
+    }
+  },
+  {
+    "id": "sintese",
+    "pt": {
+      "name": "Síntese química",
+      "definition": "É a preparação de uma substância ou material a partir de reagentes por uma sequência planejada de operações. Envolve controlar condições, separar produtos e verificar sua identidade e pureza. Obter um material com aparência esperada não basta para confirmar que a síntese produziu a composição desejada."
+    },
+    "en": {
+      "name": "Chemical synthesis",
+      "definition": "Chemical synthesis prepares a substance or material from reagents through a planned sequence of operations. It involves controlling conditions, separating products and verifying identity and purity. Obtaining a material with the expected appearance is insufficient to confirm that the desired composition was produced."
+    }
+  },
+  {
+    "id": "revisao-por-pares",
+    "pt": {
+      "name": "Revisão por pares",
+      "definition": "É a avaliação de um trabalho por especialistas para examinar qualidade, clareza e adequação antes ou após sua divulgação. Pode apontar problemas e solicitar mudanças, conforme o processo editorial. É uma etapa de controle crítico, mas não garante ausência de erros nem substitui reprodução e debate científico posteriores."
+    },
+    "en": {
+      "name": "Peer review",
+      "definition": "Peer review is evaluation by specialists to examine a work's quality, clarity and suitability before or after dissemination. It can identify problems and request changes according to the editorial process. It provides critical scrutiny but does not guarantee freedom from errors or replace later reproduction and scientific debate."
+    }
+  },
+  {
+    "id": "incerteza",
+    "pt": {
+      "name": "Incerteza de medição",
+      "definition": "É um parâmetro que descreve a dispersão de valores que podem ser atribuídos à grandeza medida com base nas informações disponíveis. Pode reunir contribuições de calibração, preparo, repetição e outras fontes. Não é o mesmo que um erro conhecido: ajuda a expressar o alcance e a confiabilidade da interpretação de um resultado."
+    },
+    "en": {
+      "name": "Measurement uncertainty",
+      "definition": "Measurement uncertainty characterizes the dispersion of values that can be attributed to a measured quantity based on available information. It may combine contributions from calibration, preparation, repetition and other sources. It is not the same as a known error: it helps express the scope and reliability of result interpretation."
+    }
+  }
+]

@@ -110,9 +110,17 @@ html.nopend .pend{display:none}
 .thumb img{width:100%;height:100%;object-fit:cover;display:block}
 .thumb span{position:absolute;inset:auto 12px 12px auto;background:var(--accent-ink);color:var(--paper);font-weight:600;font-size:.85rem;padding:6px 10px;border-radius:6px}
 @media (max-width:860px){.video{grid-template-columns:1fr}}
-details.gl{border-bottom:1px solid var(--line);padding:10px 0}
-details.gl summary{cursor:pointer;font-weight:600}
-details.gl p{margin:8px 0 0;color:var(--ink2)}
+/* glossary */
+.glossary-search{display:block;margin:16px 0 8px}
+.glossary-search input{display:block;width:100%;max-width:640px;font:inherit;color:var(--ink);background:var(--paper);border:1px solid var(--line);border-radius:8px;padding:12px;margin-top:8px}
+.alphabet{display:flex;flex-wrap:wrap;gap:8px;margin:20px 0}
+.alphabet a{display:grid;place-items:center;min-width:44px;min-height:44px;border:1px solid var(--line);border-radius:6px;text-decoration:none;background:var(--paper)}
+.glossary-group{margin-top:32px}
+.glossary-group h2{color:var(--accent-ink);margin-bottom:16px}
+.glossary-entries{display:grid;gap:14px}
+.glossary-term h3 a{font-family:system-ui,sans-serif;font-size:.9rem;margin-left:8px}
+.glossary-term p+p{margin-top:8px}
+.glossary-term:target{border:2px solid var(--accent-ink)}
 .list{margin:0;padding:0;list-style:none;display:grid;gap:8px}
 .list li{display:flex;justify-content:space-between;gap:12px;border-bottom:1px dotted var(--line);padding-bottom:6px}
 .list li span:last-child{color:var(--muted);font-size:.88rem;text-align:right}
@@ -160,6 +168,9 @@ h3.sub{font-size:1.15rem;margin:34px 0 14px}
 .gallery img{width:100%;height:280px;object-fit:cover;border-radius:10px;border:1px solid var(--line);display:block}
 .gallery figcaption{font-size:.82rem;color:var(--muted);padding-top:6px}
 @media (max-width:860px){.gallery{grid-template-columns:1fr 1fr}.gallery .span2{grid-column:1/-1}.gallery img{height:220px}}
+
+#molview{position:relative;width:100%;aspect-ratio:520/420;max-width:100%;cursor:grab}
+#molview canvas{border-radius:10px}
 </style></head><body><header class="hero"><div class="wrap"><div>
 <a class="brand" href="/">O Meu Lab<b>‡</b></a>
 <h1>404 · Página não encontrada</h1>

@@ -106,9 +106,17 @@ html.nopend .pend{display:none}
 .thumb img{width:100%;height:100%;object-fit:cover;display:block}
 .thumb span{position:absolute;inset:auto 12px 12px auto;background:var(--accent-ink);color:var(--paper);font-weight:600;font-size:.85rem;padding:6px 10px;border-radius:6px}
 @media (max-width:860px){.video{grid-template-columns:1fr}}
-details.gl{border-bottom:1px solid var(--line);padding:10px 0}
-details.gl summary{cursor:pointer;font-weight:600}
-details.gl p{margin:8px 0 0;color:var(--ink2)}
+/* glossary */
+.glossary-search{display:block;margin:16px 0 8px}
+.glossary-search input{display:block;width:100%;max-width:640px;font:inherit;color:var(--ink);background:var(--paper);border:1px solid var(--line);border-radius:8px;padding:12px;margin-top:8px}
+.alphabet{display:flex;flex-wrap:wrap;gap:8px;margin:20px 0}
+.alphabet a{display:grid;place-items:center;min-width:44px;min-height:44px;border:1px solid var(--line);border-radius:6px;text-decoration:none;background:var(--paper)}
+.glossary-group{margin-top:32px}
+.glossary-group h2{color:var(--accent-ink);margin-bottom:16px}
+.glossary-entries{display:grid;gap:14px}
+.glossary-term h3 a{font-family:system-ui,sans-serif;font-size:.9rem;margin-left:8px}
+.glossary-term p+p{margin-top:8px}
+.glossary-term:target{border:2px solid var(--accent-ink)}
 .list{margin:0;padding:0;list-style:none;display:grid;gap:8px}
 .list li{display:flex;justify-content:space-between;gap:12px;border-bottom:1px dotted var(--line);padding-bottom:6px}
 .list li span:last-child{color:var(--muted);font-size:.88rem;text-align:right}
@@ -156,6 +164,9 @@ h3.sub{font-size:1.15rem;margin:34px 0 14px}
 .gallery img{width:100%;height:280px;object-fit:cover;border-radius:10px;border:1px solid var(--line);display:block}
 .gallery figcaption{font-size:.82rem;color:var(--muted);padding-top:6px}
 @media (max-width:860px){.gallery{grid-template-columns:1fr 1fr}.gallery .span2{grid-column:1/-1}.gallery img{height:220px}}
+
+#molview{position:relative;width:100%;aspect-ratio:520/420;max-width:100%;cursor:grab}
+#molview canvas{border-radius:10px}
 </style>
 <!-- /head -->
 <a class="skip-link" href="#conteudo"><span lang="pt">Pular para o conteúdo</span><span lang="en">Skip to content</span></a>
@@ -175,6 +186,7 @@ h3.sub{font-size:1.15rem;margin:34px 0 14px}
       <a href="#publicacoes"><span lang="pt">Publicações</span><span lang="en">Publications</span></a>
       <a href="#premios"><span lang="pt">Prêmios</span><span lang="en">Awards</span></a>
       <a href="#trajetoria"><span lang="pt">Trajetória</span><span lang="en">Path</span></a>
+      <a href="glossario.html"><span lang="pt">Glossário</span><span lang="en">Glossary</span></a>
       <a href="#divulgacao"><span lang="pt">Divulgação</span><span lang="en">Outreach</span></a>
       <a href="#codigo"><span lang="pt">Código</span><span lang="en">Code</span></a>
       <a href="#cultura"><span lang="pt">Cultura</span><span lang="en">Culture</span></a>
@@ -183,6 +195,7 @@ h3.sub{font-size:1.15rem;margin:34px 0 14px}
     <div class="tools" role="group" aria-label="idioma / language">
       <button type="button" data-setlang="pt" aria-pressed="true">PT</button>
       <button type="button" data-setlang="en" aria-pressed="false">EN</button>
+      <button type="button" id="theme-toggle" aria-pressed="false"><span lang="pt">Tema escuro</span><span lang="en">Dark theme</span></button>
     </div>
   </div>
 </nav>
@@ -201,10 +214,11 @@ h3.sub{font-size:1.15rem;margin:34px 0 14px}
       </div>
     </div>
     <figure class="profile mol" style="margin:0">
-      <canvas id="mol3d" width="520" height="420" role="img" aria-label="Molécula de dipirona em 3D girando / Rotating 3D dipyrone molecule"></canvas>
+      <div id="molview" role="img" aria-label="Molécula de dipirona em 3D girando / Rotating 3D dipyrone molecule"></div>
+      <canvas id="mol3d" hidden width="520" height="420" role="img" aria-label="Molécula de dipirona em 3D girando / Rotating 3D dipyrone molecule"></canvas>
       <div class="legend mono" aria-hidden="true"><span><i style="background:var(--at-C)"></i>C</span><span><i style="background:var(--at-H)"></i>H</span><span><i style="background:var(--at-N)"></i>N</span><span><i style="background:var(--at-O)"></i>O</span><span><i style="background:var(--at-S)"></i>S</span></div>
-      <figcaption lang="pt"><b>Dipirona</b> (ânion, C₁₃H₁₆N₃O₄S⁻): geometria otimizada no meu trabalho, M08-HX/aug-cc-pVDZ em água (SMD). Arraste para girar.</figcaption>
-      <figcaption lang="en"><b>Dipyrone</b> (anion, C₁₃H₁₆N₃O₄S⁻): geometry optimized in my own work, M08-HX/aug-cc-pVDZ in water (SMD). Drag to rotate.</figcaption>
+      <figcaption lang="pt"><b>Dipirona</b> (ânion, C₁₃H₁₆N₃O₄S⁻): geometria otimizada no meu trabalho, <a href="glossario.html#m08-hx">M08-HX</a>/<a href="glossario.html#aug-cc-pvdz">aug-cc-pVDZ</a> em água (<a href="glossario.html#smd">SMD</a>). Arraste para girar.</figcaption>
+      <figcaption lang="en"><b>Dipyrone</b> (anion, C₁₃H₁₆N₃O₄S⁻): geometry optimized in my own work, <a href="glossario.html#m08-hx">M08-HX</a>/<a href="glossario.html#aug-cc-pvdz">aug-cc-pVDZ</a> in water (<a href="glossario.html#smd">SMD</a>). Drag to rotate.</figcaption>
     </figure>
   </div>
 </header>
@@ -245,8 +259,8 @@ h3.sub{font-size:1.15rem;margin:34px 0 14px}
       <article class="card">
         <span class="tag hot"><span lang="pt">Atual</span><span lang="en">Current</span></span>
         <h3 lang="pt">Estados de transição e cinética</h3><h3 lang="en">Transition states &amp; kinetics</h3>
-        <p lang="pt">Busca e validação de estados de transição (DFT, xTB, IRC) e constantes de velocidade com correções de tunelamento, no Laboratório de Modelagem de Transformações Físicas e Químicas da UEG, com o Prof. Valter H. Carvalho-Silva.</p>
-        <p lang="en">Locating and validating transition states (DFT, xTB, IRC) and rate constants with tunnelling corrections, at UEG's Physical and Chemical Transformations Modelling Lab, with Prof. Valter H. Carvalho-Silva.</p>
+        <p lang="pt">Busca e validação de estados de transição (<a href="glossario.html#dft">DFT</a>, xTB, <a href="glossario.html#irc">IRC</a>) e constantes de velocidade com correções de tunelamento, no Laboratório de Modelagem de Transformações Físicas e Químicas da UEG, com o Prof. Valter H. Carvalho-Silva.</p>
+        <p lang="en">Locating and validating transition states (<a href="glossario.html#dft">DFT</a>, xTB, <a href="glossario.html#irc">IRC</a>) and rate constants with tunnelling corrections, at UEG's Physical and Chemical Transformations Modelling Lab, with Prof. Valter H. Carvalho-Silva.</p>
       </article>
       <article class="card">
         <span class="tag hot"><span lang="pt">Atual</span><span lang="en">Current</span></span>
@@ -336,27 +350,19 @@ h3.sub{font-size:1.15rem;margin:34px 0 14px}
       </div>
     </div>
     <div class="grid g2" style="margin-top:24px">
-      <article class="card">
-        <span class="tag">Podcast</span>
-        <h3>Atômicos Podcast</h3>
-        <p lang="pt">Graduandos de Química Industrial conversando sobre química e outras ciências.</p>
-        <p lang="en">Industrial Chemistry students talking about chemistry and other sciences (in Portuguese).</p>
-        <p style="margin-top:10px"><a href="https://anchor.fm/atmicos-podcast1">Spotify / Anchor</a></p>
-      </article>
       <article class="card"><img class="cardimg" src="assets/lab_ic_1.jpg" alt="Montagem experimental da iniciação científica no laboratório da UEG">
         <span class="tag"><span lang="pt">Origem</span><span lang="en">Origin</span></span>
         <h3 lang="pt">Por que este site existe</h3><h3 lang="en">Why this site exists</h3>
         <p lang="pt">Nasceu em 2020, quando a pandemia fechou os laboratórios: o ensaio experimental da IC virou um projeto de divulgação científica.</p>
         <p lang="en">Born in 2020, when the pandemic closed the labs: my experimental project turned into a science-outreach project.</p>
       </article>
+      <article class="card">
+        <h3><span lang="pt">Glossário: dúvida sobre algum termo?</span><span lang="en">Glossary: wondering what a term means?</span></h3>
+        <p lang="pt">Explore definições de química e pesquisa em português e inglês, com busca e índice alfabético.</p>
+        <p lang="en">Explore chemistry and research definitions in Portuguese and English, with search and an alphabetical index.</p>
+        <p style="margin-top:12px"><a href="glossario.html"><span lang="pt">Abrir o glossário →</span><span lang="en">Open the glossary →</span></a></p>
+      </article>
     </div>
-    <h3 style="margin:32px 0 6px;font-size:1.2rem"><span lang="pt">Glossário</span><span lang="en">Glossary</span> <span class="mono" style="font-size:.8rem;color:var(--muted)">PT</span></h3>
-    <details class="gl"><summary>Hidróxido duplo lamelar (HDL)</summary><p>Também chamados de compostos do tipo hidrotalcita ou argilas aniônicas: lamelas com cátions divalentes e trivalentes (M<sup>II</sup> e M<sup>III</sup>) em coordenação octaédrica, com ânions entre as lamelas.</p></details>
-    <details class="gl"><summary>Gases NOx e SOx</summary><p>Conjuntos de gases com nitrogênio (NO, NO₂…) ou enxofre (SO₂, SO₃…) ligados a oxigênio, liberados na combustão.</p></details>
-    <details class="gl"><summary>POA — processos oxidativos avançados</summary><p>Técnicas que oxidam rapidamente uma grande variedade de poluentes, chegando a degradações próximas de 100%.</p></details>
-    <details class="gl"><summary>Aduto</summary><p>Produto da adição direta de duas ou mais moléculas, que contém todos os átomos dos componentes iniciais.</p></details>
-    <details class="gl"><summary>Ozônio</summary><p>Alótropo triatômico do oxigênio, com alta capacidade de desinfecção e oxidação sem gerar resíduos poluentes.</p></details>
-    <details class="gl"><summary>Teoria dos Orbitais Moleculares (TOM)</summary><p>Explica as ligações covalentes: um orbital molecular é uma função que descreve o comportamento da nuvem eletrônica numa molécula.</p></details>
   </div>
 </section>
 
@@ -404,33 +410,18 @@ h3.sub{font-size:1.15rem;margin:34px 0 14px}
 
 <footer>
   <div class="wrap">
+    <a href="glossario.html"><span lang="pt">Glossário</span><span lang="en">Glossary</span></a>
     <span>© 2020–2026 Mário Goulart Envall · O Meu Laboratório</span>
     <span lang="pt">Anápolis, Goiás · Divulgação científica desde 2020</span>
     <span lang="en">Anápolis, Brazil · Science outreach since 2020</span>
   </div>
 </footer>
 
+<script id="site-script">{{SITE_SCRIPT}}</script>
 <script id="publicacoes-data" type="application/json">{{PUBLICACOES_JSON}}</script>
 <script>
 (function(){
   var root=document.documentElement;
-  var menu=document.querySelector('.menu-toggle');
-  var links=document.getElementById('nav-links');
-  var narrow=matchMedia('(max-width:860px)');
-  function setMenu(open){menu.setAttribute('aria-expanded',String(open));links.dataset.open=String(open);links.inert=narrow.matches&&!open}
-  menu.addEventListener('click',function(){setMenu(menu.getAttribute('aria-expanded')!=='true')});
-  links.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){
-    if(narrow.matches){setMenu(false);var target=document.querySelector(a.getAttribute('href'));if(target){target.tabIndex=-1;target.focus({preventScroll:true})}}
-  })});
-  document.addEventListener('keydown',function(e){if(e.key==='Escape'&&narrow.matches&&menu.getAttribute('aria-expanded')==='true'){setMenu(false);menu.focus()}});
-  narrow.addEventListener('change',function(){setMenu(false)});
-  root.classList.add('js');setMenu(false);
-  function store(k,v){try{if(v===undefined)return localStorage.getItem(k);localStorage.setItem(k,v)}catch(e){return null}}
-  // idioma
-  function setLang(l){l=l==='en'?'en':'pt';root.setAttribute('data-lang',l);root.lang=l==='en'?'en':'pt-BR';
-    document.querySelectorAll('[data-setlang]').forEach(function(b){b.setAttribute('aria-pressed',String(b.dataset.setlang===l))});store('oml_lang',l)}
-  setLang(store('oml_lang')||((navigator.language||'pt').toLowerCase().indexOf('pt')===0?'pt':'en'));
-  document.querySelectorAll('[data-setlang]').forEach(function(b){b.addEventListener('click',function(){setLang(b.dataset.setlang)})});
   // marcações de pendência
   var tp=document.getElementById('togglepend');if(tp)tp.addEventListener('click',function(){root.classList.toggle('nopend')});
   // publicações
@@ -450,11 +441,33 @@ h3.sub{font-size:1.15rem;margin:34px 0 14px}
 })();
 </script>
 <script id="dipirona-data" type="application/json">{{DIPIRONA_JSON}}</script>
+<script src="https://cdn.jsdelivr.net/npm/3dmol@2.5.5/build/3Dmol-min.js"></script>
+<script>
+/* Dipirona 3D com 3Dmol.js (WebGL): esferas e bastões sombreados, cores Jmol, giro lento; arraste para girar. */
+(function(){
+  var el=document.getElementById('molview'); if(!el||!window.$3Dmol)return;
+  var A=JSON.parse(document.getElementById('dipirona-data').textContent);
+  var xyz=A.length+'\ndipirona\n'+A.map(function(a){return a[0]+' '+a[1]+' '+a[2]+' '+a[3]}).join('\n');
+  try{
+    var v=$3Dmol.createViewer(el,{backgroundColor:'white',backgroundAlpha:0,antialias:true});
+    if(!v)return;
+    v.addModel(xyz,'xyz');
+    v.setStyle({},{stick:{radius:0.15,colorscheme:'Jmol'},sphere:{scale:0.25,colorscheme:'Jmol'}});
+    v.zoomTo(); v.zoom(1.15); v.render();
+    var calmo=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if(!calmo)v.spin('y',0.6);
+    if('IntersectionObserver' in window)new IntersectionObserver(function(e){if(calmo)return;v.spin(e[0].isIntersecting?'y':false,0.6)}).observe(el);
+    addEventListener('resize',function(){v.resize();v.render()});
+    window.__mol3dmol=v;
+  }catch(e){window.__mol3dmol=null}
+})();
+</script>
 <script>
 /* Dipirona 3D: renderizador próprio em canvas (sem bibliotecas). Esferas sombreadas, ligações por distância,
    ordem de pintura por profundidade, rotação automática, arraste para girar, pausa fora da tela. */
 (function(){
   var cv=document.getElementById('mol3d'); if(!cv||!cv.getContext)return;
+  if(window.$3Dmol&&window.__mol3dmol)return; cv.hidden=false; var mv=document.getElementById('molview'); if(mv)mv.hidden=true;
   var A=JSON.parse(document.getElementById('dipirona-data').textContent);
   var R={H:0.31,C:0.76,N:0.71,O:0.66,S:1.05}, VIS={H:0.25,C:0.38,N:0.37,O:0.36,S:0.50};
   var cx=0,cy=0,cz=0; A.forEach(function(a){cx+=a[1];cy+=a[2];cz+=a[3]}); cx/=A.length;cy/=A.length;cz/=A.length;
@@ -481,10 +494,13 @@ h3.sub{font-size:1.15rem;margin:34px 0 14px}
     B.forEach(function(b){items.push({z:(Q[b[0]].z+Q[b[1]].z)/2-0.01,t:1,b:b})});
     items.sort(function(a,b){return a.z-b.z});
     items.forEach(function(it){
-      if(it.t===1){var a=Q[it.b[0]],c=Q[it.b[1]],mx=(a.X+c.X)/2,my=(a.Y+c.Y)/2;
-        ctx.lineCap='round';ctx.lineWidth=Math.max(2,0.11*s);
-        ctx.strokeStyle=shade(C[a.e],-0.15);ctx.beginPath();ctx.moveTo(a.X,a.Y);ctx.lineTo(mx,my);ctx.stroke();
-        ctx.strokeStyle=shade(C[c.e],-0.15);ctx.beginPath();ctx.moveTo(mx,my);ctx.lineTo(c.X,c.Y);ctx.stroke();return}
+      if(it.t===1){var a=Q[it.b[0]],c=Q[it.b[1]],dx=c.X-a.X,dy=c.Y-a.Y,L=Math.hypot(dx,dy)||1,ux=dx/L,uy=dy/L;
+        /* bastão começa e termina na borda das esferas (não entra nelas) */
+        var ax=a.X+ux*a.r*0.82,ay=a.Y+uy*a.r*0.82,cx2=c.X-ux*c.r*0.82,cy2=c.Y-uy*c.r*0.82,mx=(ax+cx2)/2,my=(ay+cy2)/2;
+        if(L<(a.r+c.r)*0.82)return;
+        ctx.lineCap='butt';ctx.lineWidth=Math.max(2,0.13*s);
+        ctx.strokeStyle=shade(C[a.e],-0.1);ctx.beginPath();ctx.moveTo(ax,ay);ctx.lineTo(mx,my);ctx.stroke();
+        ctx.strokeStyle=shade(C[c.e],-0.1);ctx.beginPath();ctx.moveTo(mx,my);ctx.lineTo(cx2,cy2);ctx.stroke();return}
       var q=Q[it.i],g=ctx.createRadialGradient(q.X-q.r*0.35,q.Y-q.r*0.4,q.r*0.1,q.X,q.Y,q.r);
       g.addColorStop(0,shade(C[q.e],0.55));g.addColorStop(0.55,C[q.e]);g.addColorStop(1,shade(C[q.e],-0.45));
       ctx.fillStyle=g;ctx.beginPath();ctx.arc(q.X,q.Y,q.r,0,6.2832);ctx.fill()});
