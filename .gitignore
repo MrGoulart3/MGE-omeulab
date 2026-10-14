@@ -1,3 +1,8 @@
 _preview.html
 assets/hdl_video.b64
 __pycache__/
+
+.vevn/
+.venv/
+.omc/
+_site/
