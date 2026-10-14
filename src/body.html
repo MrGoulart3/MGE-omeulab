@@ -1,0 +1,415 @@
+<title>O Meu Laboratório</title>
+<meta name="description" content="Mário Goulart Envall — química teórica e computacional, cinética e estados de transição. Pesquisa, publicações, prêmios e divulgação científica.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+:root{
+  --bg:#f6f4ef; --paper:#fffdf8; --ink:#16202c; --ink2:#465364; --muted:#6c7684;
+  --line:#dcd7cc; --accent:#c2611f; --accent-ink:#9a4a12; --accent-soft:#f6e3d3;
+  --navy:#1d3a5c; --navy-soft:#e4ebf3; --pend:#8a5a00; --pend-bg:#fff2cc;
+  --curve:#1d3a5c; --grid:#e7e2d8;
+  color-scheme:light;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#10161e; --paper:#161e28; --ink:#e9e6df; --ink2:#b5bdc8; --muted:#8a94a2;
+  --line:#2a3542; --accent:#e8894a; --accent-ink:#f0a46f; --accent-soft:#3a2617;
+  --navy:#8fb3da; --navy-soft:#1c2a3a; --pend:#ffd27a; --pend-bg:#3b2f12;
+  --curve:#8fb3da; --grid:#222c38; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#10161e; --paper:#161e28; --ink:#e9e6df; --ink2:#b5bdc8; --muted:#8a94a2;
+  --line:#2a3542; --accent:#e8894a; --accent-ink:#f0a46f; --accent-soft:#3a2617;
+  --navy:#8fb3da; --navy-soft:#1c2a3a; --pend:#ffd27a; --pend-bg:#3b2f12;
+  --curve:#8fb3da; --grid:#222c38; color-scheme:dark}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:72px}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.65 "IBM Plex Sans",system-ui,-apple-system,"Segoe UI",sans-serif}
+html[data-lang="pt"] [lang="en"], html[data-lang="en"] [lang="pt"]{display:none!important}
+a{color:var(--accent-ink);text-underline-offset:3px}
+h1,h2,h3{font-family:Fraunces,Georgia,"Times New Roman",serif;line-height:1.15;text-wrap:balance;margin:0}
+.mono{font-family:"IBM Plex Mono",ui-monospace,Menlo,monospace}
+.wrap{max-width:1080px;margin:0 auto;padding-inline:20px}
+/* nav */
+.nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:10;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.nav .wrap{display:flex;align-items:center;gap:16px;height:60px}
+.brand{font-family:Fraunces,serif;font-weight:700;font-size:1.15rem;color:var(--ink);text-decoration:none;white-space:nowrap}
+.brand b{color:var(--accent);font-weight:700}
+.links{display:flex;gap:18px;margin-left:auto;overflow-x:auto;scrollbar-width:none}
+.links a{color:var(--ink2);text-decoration:none;font-size:.92rem;white-space:nowrap}
+.links a:hover{color:var(--accent-ink)}
+.tools{display:flex;gap:6px}
+.tools button{font:500 .78rem "IBM Plex Mono",monospace;background:transparent;border:1px solid var(--line);color:var(--ink2);border-radius:6px;padding:5px 8px;cursor:pointer}
+.tools button[aria-pressed="true"]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+@media (max-width:860px){.links{display:none}.tools{margin-left:auto}}
+/* hero */
+.hero{padding-block:56px 40px}
+.hero .wrap{display:grid;grid-template-columns:1.1fr 1fr;gap:40px;align-items:center}
+.kicker{font:500 .78rem "IBM Plex Mono",monospace;letter-spacing:.08em;text-transform:uppercase;color:var(--accent-ink)}
+.hero h1{font-size:clamp(2.2rem,5vw,3.4rem);margin:10px 0 14px}
+.hero p.lead{font-size:1.12rem;color:var(--ink2);max-width:34em;margin:0 0 22px}
+.cta{display:flex;flex-wrap:wrap;gap:10px}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:10px 16px;border-radius:8px;font-weight:600;font-size:.95rem;text-decoration:none;border:1px solid var(--ink)}
+.btn.primary{background:var(--ink);color:var(--bg)}
+.btn.ghost{color:var(--ink)}
+.profile{background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:18px 18px 10px}
+.profile svg{width:100%;height:auto;display:block}
+.profile figcaption{font-size:.82rem;color:var(--muted);padding-top:6px}
+@media (max-width:860px){.hero .wrap{grid-template-columns:1fr}.hero{padding-block:32px 24px}}
+/* sections */
+section.block{padding-block:56px;border-top:1px solid var(--line)}
+.head{display:flex;align-items:baseline;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-bottom:26px}
+.head h2{font-size:clamp(1.6rem,3.4vw,2.2rem)}
+.head .num{font:500 .8rem "IBM Plex Mono",monospace;color:var(--muted)}
+.grid{display:grid;gap:16px}
+.g3{grid-template-columns:repeat(3,minmax(0,1fr))}
+.g2{grid-template-columns:repeat(2,minmax(0,1fr))}
+@media (max-width:860px){.g3,.g2{grid-template-columns:1fr}}
+.card{background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:20px;min-width:0}
+.card h3{font-size:1.15rem;margin-bottom:6px}
+.card p{margin:0;color:var(--ink2)}
+.tag{display:inline-block;font:500 .72rem "IBM Plex Mono",monospace;letter-spacing:.04em;text-transform:uppercase;color:var(--navy);background:var(--navy-soft);padding:3px 8px;border-radius:4px;margin-bottom:10px}
+.tag.hot{color:var(--accent-ink);background:var(--accent-soft)}
+.pend{display:inline-block;font:500 .7rem "IBM Plex Mono",monospace;color:var(--pend);background:var(--pend-bg);border:1px dashed var(--pend);padding:1px 6px;border-radius:4px;vertical-align:middle;margin-left:4px}
+html.nopend .pend{display:none}
+/* publications */
+.filters{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:18px}
+.filters button{font:500 .85rem "IBM Plex Sans",sans-serif;border:1px solid var(--line);background:var(--paper);color:var(--ink2);padding:6px 12px;border-radius:999px;cursor:pointer}
+.filters button[aria-pressed="true"]{border-color:var(--accent);color:var(--accent-ink);background:var(--accent-soft)}
+.pubs{list-style:none;margin:0;padding:0;display:grid;gap:12px}
+.pub{display:grid;grid-template-columns:72px minmax(0,1fr);gap:16px;background:var(--paper);border:1px solid var(--line);border-radius:10px;padding:16px}
+.pub .yr{font:600 1.05rem "IBM Plex Mono",monospace;color:var(--accent-ink)}
+.pub .kind{display:block;font:500 .68rem "IBM Plex Mono",monospace;text-transform:uppercase;letter-spacing:.05em;color:var(--muted);margin-top:2px}
+.pub .t{font-weight:600;line-height:1.4}
+.pub .a{font-size:.9rem;color:var(--ink2);margin-top:4px}
+.pub .a b{color:var(--ink)}
+.pub .v{font-size:.85rem;color:var(--muted);margin-top:2px}
+.pub .award{display:inline-block;margin-top:8px;font-size:.82rem;font-weight:600;color:var(--accent-ink)}
+@media (max-width:520px){.pub{grid-template-columns:1fr;gap:4px}}
+/* timeline */
+.tl{list-style:none;margin:0;padding:0 0 0 22px;border-left:2px solid var(--line);display:grid;gap:22px}
+.tl li{position:relative}
+.tl li::before{content:"";position:absolute;left:-29px;top:6px;width:12px;height:12px;border-radius:50%;background:var(--paper);border:2px solid var(--navy)}
+.tl li.now::before{background:var(--accent);border-color:var(--accent)}
+.tl .when{font:500 .8rem "IBM Plex Mono",monospace;color:var(--muted)}
+.tl .what{font-weight:600}
+.tl .where{color:var(--ink2);font-size:.95rem}
+/* media */
+.video{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:20px;align-items:center}
+.thumb{position:relative;display:block;border-radius:10px;overflow:hidden;border:1px solid var(--line);aspect-ratio:16/9;max-width:100%}
+.thumb img{width:100%;height:100%;object-fit:cover;display:block}
+.thumb span{position:absolute;inset:auto 12px 12px auto;background:var(--accent);color:#fff;font-weight:600;font-size:.85rem;padding:6px 10px;border-radius:6px}
+@media (max-width:860px){.video{grid-template-columns:1fr}}
+details.gl{border-bottom:1px solid var(--line);padding:10px 0}
+details.gl summary{cursor:pointer;font-weight:600}
+details.gl p{margin:8px 0 0;color:var(--ink2)}
+.list{margin:0;padding:0;list-style:none;display:grid;gap:8px}
+.list li{display:flex;justify-content:space-between;gap:12px;border-bottom:1px dotted var(--line);padding-bottom:6px}
+.list li span:last-child{color:var(--muted);font-size:.88rem;text-align:right}
+/* contact */
+.socials{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:12px}
+.social{display:flex;align-items:center;gap:12px;background:var(--paper);border:1px solid var(--line);border-radius:10px;padding:14px;text-decoration:none;color:var(--ink);min-width:0}
+.social .ic{flex:none;width:36px;height:36px;border-radius:8px;display:grid;place-items:center;background:var(--navy-soft);color:var(--navy);font:600 .8rem "IBM Plex Mono",monospace}
+.social small{display:block;color:var(--muted);font-size:.8rem;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.social.todo{border-style:dashed;opacity:.85}
+.copy{font:inherit;font-size:.8rem;border:1px solid var(--line);background:transparent;color:var(--ink2);border-radius:6px;padding:2px 8px;cursor:pointer;margin-left:auto}
+footer{padding-block:32px;border-top:1px solid var(--line);color:var(--muted);font-size:.85rem}
+footer .wrap{display:flex;flex-wrap:wrap;gap:12px;justify-content:space-between}
+.preview{background:var(--pend-bg);color:var(--pend);font-size:.85rem;text-align:center;padding:8px 16px;border-bottom:1px dashed var(--pend)}
+.preview button{font:inherit;font-weight:600;color:inherit;background:none;border:0;text-decoration:underline;cursor:pointer}
+</style>
+
+<div class="preview" id="previewbar">
+  <span lang="pt">Prévia para avaliação · itens <span class="pend">confirmar</span> esperam seus dados.</span>
+  <span lang="en">Review preview · <span class="pend">confirm</span> items await your input.</span>
+  <button type="button" id="togglepend"><span lang="pt">ocultar marcações</span><span lang="en">hide markers</span></button>
+</div>
+
+<nav class="nav" aria-label="principal">
+  <div class="wrap">
+    <a class="brand" href="#inicio">O Meu Lab<b>‡</b></a>
+    <div class="links">
+      <a href="#pesquisa"><span lang="pt">Pesquisa</span><span lang="en">Research</span></a>
+      <a href="#publicacoes"><span lang="pt">Publicações</span><span lang="en">Publications</span></a>
+      <a href="#premios"><span lang="pt">Prêmios</span><span lang="en">Awards</span></a>
+      <a href="#trajetoria"><span lang="pt">Trajetória</span><span lang="en">Path</span></a>
+      <a href="#divulgacao"><span lang="pt">Divulgação</span><span lang="en">Outreach</span></a>
+      <a href="#codigo"><span lang="pt">Código</span><span lang="en">Code</span></a>
+      <a href="#cultura"><span lang="pt">Cultura</span><span lang="en">Culture</span></a>
+      <a href="#contato"><span lang="pt">Contato</span><span lang="en">Contact</span></a>
+    </div>
+    <div class="tools" role="group" aria-label="idioma / language">
+      <button type="button" data-setlang="pt" aria-pressed="true">PT</button>
+      <button type="button" data-setlang="en" aria-pressed="false">EN</button>
+    </div>
+  </div>
+</nav>
+
+<header class="hero" id="inicio">
+  <div class="wrap">
+    <div>
+      <div class="kicker"><span lang="pt">Química teórica e computacional</span><span lang="en">Theoretical &amp; computational chemistry</span></div>
+      <h1>Mário Goulart Envall</h1>
+      <p class="lead" lang="pt">Químico industrial e mestrando em Ciências Moleculares pela UEG. Mapeio estados de transição e cinética de reações para entender como fármacos e poluentes se degradam, e levo essa ciência para fora do laboratório.</p>
+      <p class="lead" lang="en">Industrial chemist and M.Sc. candidate in Molecular Sciences at UEG (Brazil). I map transition states and reaction kinetics to understand how drugs and pollutants degrade, and I bring that science beyond the lab.</p>
+      <div class="cta">
+        <a class="btn primary" href="#publicacoes"><span lang="pt">Ver publicações</span><span lang="en">See publications</span></a>
+        <a class="btn ghost" href="#contato"><span lang="pt">Contato e redes</span><span lang="en">Contact &amp; socials</span></a>
+      </div>
+    </div>
+    <figure class="profile" style="margin:0">
+      <svg viewBox="0 0 420 250" role="img" aria-label="Perfil de energia de uma reação: reagentes, estado de transição e produtos">
+        <g stroke="var(--grid)" stroke-width="1">
+          <line x1="40" y1="30" x2="40" y2="215"/><line x1="40" y1="215" x2="400" y2="215"/>
+        </g>
+        <path d="M50 160 C 110 160, 140 160, 175 120 S 215 52, 228 52 S 262 70, 290 130 S 340 190, 395 190" fill="none" stroke="var(--curve)" stroke-width="3" stroke-linecap="round"/>
+        <line x1="228" y1="52" x2="228" y2="160" stroke="var(--accent)" stroke-width="1.5" stroke-dasharray="4 4"/>
+        <line x1="60" y1="160" x2="236" y2="160" stroke="var(--accent)" stroke-width="1" stroke-dasharray="2 4"/>
+        <circle cx="228" cy="52" r="6" fill="var(--accent)"/>
+        <text x="228" y="38" text-anchor="middle" font-family="Fraunces,serif" font-size="18" font-weight="700" fill="var(--accent-ink)">TS‡</text>
+        <text x="238" y="112" font-family="IBM Plex Mono,monospace" font-size="13" fill="var(--accent-ink)">ΔG‡</text>
+        <text x="70" y="150" font-family="IBM Plex Mono,monospace" font-size="13" fill="var(--ink2)">R</text>
+        <text x="380" y="180" font-family="IBM Plex Mono,monospace" font-size="13" fill="var(--ink2)">P</text>
+        <text x="22" y="122" transform="rotate(-90 22 122)" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="11" fill="var(--muted)">G / kcal·mol⁻¹</text>
+        <text x="220" y="236" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="11" fill="var(--muted)">coordenada de reação · reaction coordinate</text>
+      </svg>
+      <figcaption lang="pt">O que eu estudo: a barreira ΔG‡ define a velocidade k(T) de uma reação, com correções de tunelamento.</figcaption>
+      <figcaption lang="en">What I study: the barrier ΔG‡ sets a reaction's rate k(T), with tunnelling corrections.</figcaption>
+    </figure>
+  </div>
+</header>
+
+<main>
+<section class="block" id="destaques">
+  <div class="wrap">
+    <div class="head"><h2><span lang="pt">Destaques</span><span lang="en">Highlights</span></h2><span class="num">2025–2026</span></div>
+    <div class="grid g3">
+      <article class="card">
+        <span class="tag hot"><span lang="pt">Artigo · 2025</span><span lang="en">Article · 2025</span></span>
+        <h3>Int. J. Mol. Sci. 26, 10573</h3>
+        <p lang="pt">Reatividade de análogos cíclicos de chalconas com tióis celulares: reações tia-Michael de indanonas, tetralonas e benzosuberonas.</p>
+        <p lang="en">Reactivity of cyclic chalcone analogs with cellular thiols: thia-Michael reactions of indanone, tetralone and benzosuberone analogs.</p>
+        <p style="margin-top:10px"><a href="https://doi.org/10.3390/ijms262110573">doi:10.3390/ijms262110573</a></p>
+      </article>
+      <article class="card">
+        <span class="tag"><span lang="pt">Preprint · 2025</span><span lang="en">Preprint · 2025</span></span>
+        <h3 lang="pt">Solar-Fenton e tetraciclina</h3><h3 lang="en">Solar-Fenton &amp; tetracycline</h3>
+        <p lang="pt">Degradação de tetraciclina em efluente secundário: otimização, rotas de degradação e fitotoxicidade.</p>
+        <p lang="en">Tetracycline degradation in secondary wastewater: optimization, degradation pathways and phytotoxicity.</p>
+        <p style="margin-top:10px"><a href="https://doi.org/10.2139/ssrn.5387059">SSRN · doi:10.2139/ssrn.5387059</a></p>
+      </article>
+      <article class="card">
+        <span class="tag hot"><span lang="pt">Prêmio · 2026</span><span lang="en">Award · 2026</span></span>
+        <h3 lang="pt">1º lugar no 6º SQTEA</h3><h3 lang="en">1st place at the 6th SQTEA</h3>
+        <p lang="pt">Comunicação oral e pôster sobre a conversão da dipirona em 4-metilaminoantipirina catalisada por ácido. Pirenópolis, ago. 2026. <span class="pend">confirmar categoria</span></p>
+        <p lang="en">Oral talk and poster on the acid-catalysed conversion of dipyrone into 4-methylaminoantipyrine. Pirenópolis, Aug 2026. <span class="pend">confirm category</span></p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="block" id="pesquisa">
+  <div class="wrap">
+    <div class="head"><h2><span lang="pt">Pesquisa</span><span lang="en">Research</span></h2><span class="num">01</span></div>
+    <div class="grid g2">
+      <article class="card">
+        <span class="tag hot"><span lang="pt">Atual</span><span lang="en">Current</span></span>
+        <h3 lang="pt">Estados de transição e cinética</h3><h3 lang="en">Transition states &amp; kinetics</h3>
+        <p lang="pt">Busca e validação de estados de transição (DFT, xTB, IRC) e constantes de velocidade com correções de tunelamento, no Laboratório de Modelagem de Transformações Físicas e Químicas da UEG, com o Prof. Valter H. Carvalho-Silva.</p>
+        <p lang="en">Locating and validating transition states (DFT, xTB, IRC) and rate constants with tunnelling corrections, at UEG's Physical and Chemical Transformations Modelling Lab, with Prof. Valter H. Carvalho-Silva.</p>
+      </article>
+      <article class="card">
+        <span class="tag hot"><span lang="pt">Atual</span><span lang="en">Current</span></span>
+        <h3 lang="pt">Degradação de fármacos e poluentes</h3><h3 lang="en">Drug &amp; pollutant degradation</h3>
+        <p lang="pt">Rotas de degradação em meio aquoso e processos oxidativos avançados: estabilidade de fármacos, antibióticos em efluentes e contaminantes persistentes. <span class="pend">confirmar o que pode aparecer</span></p>
+        <p lang="en">Aqueous degradation pathways and advanced oxidation processes: drug stability, antibiotics in wastewater and persistent contaminants. <span class="pend">confirm what can be shown</span></p>
+      </article>
+      <article class="card">
+        <span class="tag"><span lang="pt">Iniciação científica</span><span lang="en">Undergraduate research</span></span>
+        <h3 lang="pt">Hidróxidos duplos lamelares</h3><h3 lang="en">Layered double hydroxides</h3>
+        <p lang="pt">Síntese e caracterização de HDL Zn/Al e Zn/Fe para remoção de gases SOx e amônia, com o Prof. Renato Rosseto (bolsa PBIT/UEG).</p>
+        <p lang="en">Synthesis and characterization of Zn/Al and Zn/Fe LDHs for SOx and ammonia removal, with Prof. Renato Rosseto (PBIT/UEG fellowship).</p>
+      </article>
+      <article class="card">
+        <span class="tag"><span lang="pt">Indústria</span><span lang="en">Industry</span></span>
+        <h3 lang="pt">Desenvolvimento analítico</h3><h3 lang="en">Analytical development</h3>
+        <p lang="pt">Métodos de quantificação por espectroscopia no infravermelho e desenvolvimento de métodos para matéria-prima na indústria farmacêutica.</p>
+        <p lang="en">Infrared quantification methods and raw-material method development in the pharmaceutical industry.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="block" id="publicacoes">
+  <div class="wrap">
+    <div class="head"><h2><span lang="pt">Publicações</span><span lang="en">Publications</span></h2><span class="num">02 · <span class="pend">ORCID/Lattes</span></span></div>
+    <div class="filters" role="group" aria-label="filtro">
+      <button type="button" data-f="all" aria-pressed="true"><span lang="pt">Todas</span><span lang="en">All</span></button>
+      <button type="button" data-f="art" aria-pressed="false"><span lang="pt">Artigos</span><span lang="en">Articles</span></button>
+      <button type="button" data-f="pre" aria-pressed="false">Preprints</button>
+      <button type="button" data-f="cong" aria-pressed="false"><span lang="pt">Congressos</span><span lang="en">Conferences</span></button>
+    </div>
+    <ol class="pubs" id="pubs"></ol>
+  </div>
+</section>
+
+<section class="block" id="premios">
+  <div class="wrap">
+    <div class="head"><h2><span lang="pt">Prêmios</span><span lang="en">Awards</span></h2><span class="num">03</span></div>
+    <div class="grid g2" style="margin-bottom:16px">
+      <article class="card" style="border-color:var(--accent)"><span class="tag hot">2026 · 1º lugar</span><h3 lang="pt">1º lugar · 6º SQTEA / 5ª EQSB</h3><h3 lang="en">1st place · 6th SQTEA / 5th EQSB</h3><p>Pirenópolis, 19–21/08/2026 — <i>Theoretical Investigation of the Acid-Catalyzed Conversion of Dipyrone into 4-Methylaminoantipyrine</i> (<span lang="pt">comunicação oral e pôster P21A</span><span lang="en">oral talk and poster P21A</span>). <span class="pend">confirmar categoria</span></p></article>
+      <article class="card"><span class="tag">2026</span><h3 lang="pt">Comissão organizadora</h3><h3 lang="en">Organizing committee</h3><p lang="pt">Membro da comissão organizadora do 6º SQTEA e da 5ª EQSB (UEG / UnB).</p><p lang="en">Member of the organizing committee of the 6th SQTEA and 5th EQSB (UEG / UnB).</p></article>
+    </div>
+    <div class="grid g3">
+      <article class="card"><span class="tag hot">2022</span><h3 lang="pt">Menção Honrosa · 2º melhor trabalho</h3><h3 lang="en">Honourable mention · 2nd best work</h3><p>III SQTEA, Pirenópolis — <i>Zn/Al-derived layered double hydroxide for SOx gas removal</i>.</p></article>
+      <article class="card"><span class="tag hot">2022</span><h3 lang="pt">4º melhor trabalho de IC</h3><h3 lang="en">4th best undergraduate work</h3><p>35º CLAQ / 61º CBQ, Rio de Janeiro — <span lang="pt">HDL Zn/Al e Zn/Fe com gases SOx.</span><span lang="en">Zn/Al and Zn/Fe LDHs with SOx gases.</span></p></article>
+      <article class="card"><span class="tag hot">2023</span><h3 lang="pt">Menção Honrosa</h3><h3 lang="en">Honourable mention</h3><p lang="pt">V Escola de Química (UEG-CET) — pela própria homepage O Meu Laboratório como divulgação científica.</p><p lang="en">5th UEG Chemistry School — for this very homepage as science outreach.</p></article>
+    </div>
+  </div>
+</section>
+
+<section class="block" id="trajetoria">
+  <div class="wrap">
+    <div class="head"><h2><span lang="pt">Trajetória</span><span lang="en">Path</span></h2><span class="num">04</span></div>
+    <ol class="tl">
+      <li class="now"><div class="when">2024 – <span lang="pt">hoje</span><span lang="en">now</span> <span class="pend">confirmar</span></div><div class="what" lang="pt">Mestrado em Ciências Moleculares</div><div class="what" lang="en">M.Sc. in Molecular Sciences</div><div class="where">UEG · <span lang="pt">orientação</span><span lang="en">advisor</span>: Prof. Dr. Valter H. Carvalho-Silva</div></li>
+      <li><div class="when"><span class="pend">confirmar</span></div><div class="what" lang="pt">Analista de Desenvolvimento Analítico Jr.</div><div class="what" lang="en">Jr. Analytical Development Analyst</div><div class="where">Brainfarma · EPHAR</div></li>
+      <li><div class="when">2020 – 2023</div><div class="what" lang="pt">Iniciação científica (PBIT/UEG)</div><div class="what" lang="en">Undergraduate research (PBIT/UEG)</div><div class="where" lang="pt">Adsorção de gases de combustão em HDL · Prof. Dr. Renato Rosseto</div><div class="where" lang="en">Combustion-gas adsorption on LDHs · Prof. Dr. Renato Rosseto</div></li>
+      <li><div class="when"><span class="pend">confirmar</span></div><div class="what" lang="pt">Graduação em Química Industrial</div><div class="what" lang="en">B.Sc. in Industrial Chemistry</div><div class="where">UEG · Campus de Ciências Exatas e Tecnológicas, Anápolis-GO</div></li>
+    </ol>
+  </div>
+</section>
+
+<section class="block" id="divulgacao">
+  <div class="wrap">
+    <div class="head"><h2><span lang="pt">Divulgação científica</span><span lang="en">Science outreach</span></h2><span class="num">05</span></div>
+    <div class="video">
+      <a class="thumb" href="https://www.youtube.com/watch?v=cuy9h5wwsVo"><img alt="Adsorção de gases em hidróxidos duplos lamelares" src="data:image/jpeg;base64,{{HDL_THUMB}}"><span>▶ YouTube</span></a>
+      <div>
+        <span class="tag">Motion graphics</span>
+        <h3 lang="pt">Adsorção de gases em hidróxidos duplos lamelares</h3><h3 lang="en">Gas adsorption on layered double hydroxides</h3>
+        <p lang="pt" style="color:var(--ink2)">Vídeo da minha IC: o problema dos gases de combustão e como os HDL podem retirá-los do ambiente. Novos vídeos animados estão a caminho.</p>
+        <p lang="en" style="color:var(--ink2)">From my undergraduate research: the combustion-gas problem and how LDHs can remove these gases. New animated videos are on the way.</p>
+      </div>
+    </div>
+    <div class="grid g2" style="margin-top:24px">
+      <article class="card">
+        <span class="tag">Podcast</span>
+        <h3>Atômicos Podcast</h3>
+        <p lang="pt">Graduandos de Química Industrial conversando sobre química e outras ciências.</p>
+        <p lang="en">Industrial Chemistry students talking about chemistry and other sciences (in Portuguese).</p>
+        <p style="margin-top:10px"><a href="https://anchor.fm/atmicos-podcast1">Spotify / Anchor</a></p>
+      </article>
+      <article class="card">
+        <span class="tag"><span lang="pt">Origem</span><span lang="en">Origin</span></span>
+        <h3 lang="pt">Por que este site existe</h3><h3 lang="en">Why this site exists</h3>
+        <p lang="pt">Nasceu em 2020, quando a pandemia fechou os laboratórios: o ensaio experimental da IC virou um projeto de divulgação científica.</p>
+        <p lang="en">Born in 2020, when the pandemic closed the labs: my experimental project turned into a science-outreach project.</p>
+      </article>
+    </div>
+    <h3 style="margin:32px 0 6px;font-size:1.2rem"><span lang="pt">Glossário</span><span lang="en">Glossary</span> <span class="mono" style="font-size:.8rem;color:var(--muted)">PT</span></h3>
+    <details class="gl"><summary>Hidróxido duplo lamelar (HDL)</summary><p>Também chamados de compostos do tipo hidrotalcita ou argilas aniônicas: lamelas com cátions divalentes e trivalentes (M<sup>II</sup> e M<sup>III</sup>) em coordenação octaédrica, com ânions entre as lamelas.</p></details>
+    <details class="gl"><summary>Gases NOx e SOx</summary><p>Conjuntos de gases com nitrogênio (NO, NO₂…) ou enxofre (SO₂, SO₃…) ligados a oxigênio, liberados na combustão.</p></details>
+    <details class="gl"><summary>POA — processos oxidativos avançados</summary><p>Técnicas que oxidam rapidamente uma grande variedade de poluentes, chegando a degradações próximas de 100%.</p></details>
+    <details class="gl"><summary>Aduto</summary><p>Produto da adição direta de duas ou mais moléculas, que contém todos os átomos dos componentes iniciais.</p></details>
+    <details class="gl"><summary>Ozônio</summary><p>Alótropo triatômico do oxigênio, com alta capacidade de desinfecção e oxidação sem gerar resíduos poluentes.</p></details>
+    <details class="gl"><summary>Teoria dos Orbitais Moleculares (TOM)</summary><p>Explica as ligações covalentes: um orbital molecular é uma função que descreve o comportamento da nuvem eletrônica numa molécula.</p></details>
+  </div>
+</section>
+
+<section class="block" id="codigo">
+  <div class="wrap">
+    <div class="head"><h2><span lang="pt">Código e ferramentas</span><span lang="en">Code &amp; tools</span></h2><span class="num">06 · github.com/MrGoulart3</span></div>
+    <div class="grid g3">
+      <article class="card"><span class="tag">Python · herdr</span><h3>MGE-AgentPortal</h3><p lang="pt">Portal web seguro para acompanhar e conversar com agentes de IA (Claude Code, Codex) rodando num PC remoto.</p><p lang="en">A secure web portal to follow and talk to AI coding agents (Claude Code, Codex) on a remote machine.</p><p style="margin-top:10px"><a href="https://github.com/MrGoulart3/MGE-AgentPortal">GitHub</a></p></article>
+      <article class="card"><span class="tag">Claude Code</span><h3>MGE-UAH-Orquestra</h3><p lang="pt">Kit para orquestrar vários agentes de IA em projetos de pesquisa: planos, checkpoints, vigias e avisos.</p><p lang="en">A kit to orchestrate many AI agents across research projects: plans, checkpoints, watchers and notifications.</p><p style="margin-top:10px"><a href="https://github.com/MrGoulart3/MGE-UAH-Orquestra">GitHub</a></p></article>
+      <article class="card"><span class="tag">Skills</span><h3>MGE-Skills</h3><p lang="pt">Skills para agentes de IA usadas no dia a dia da pesquisa.</p><p lang="en">Agent skills used in everyday research work.</p><p style="margin-top:10px"><a href="https://github.com/MrGoulart3/MGE-Skills">GitHub</a></p></article>
+    </div>
+  </div>
+</section>
+
+<section class="block" id="cultura">
+  <div class="wrap">
+    <div class="head"><h2><span lang="pt">Dicas culturais</span><span lang="en">Culture picks</span></h2><span class="num">07</span></div>
+    <div class="grid g3">
+      <article class="card"><span class="tag"><span lang="pt">Filmes e séries</span><span lang="en">Film &amp; TV</span></span>
+        <ul class="list"><li><span>Breaking Bad</span><span lang="pt">série</span><span lang="en">series</span></li><li><span>Chernobyl</span><span lang="pt">série</span><span lang="en">series</span></li><li><span>Dark</span><span lang="pt">série</span><span lang="en">series</span></li><li><span lang="pt">Interestelar</span><span lang="en">Interstellar</span><span lang="pt">filme</span><span lang="en">film</span></li><li><span>Radioactive</span><span lang="pt">filme</span><span lang="en">film</span></li><li><span>The Expanse</span><span lang="pt">série</span><span lang="en">series</span></li></ul></article>
+      <article class="card"><span class="tag"><span lang="pt">Livros e autores</span><span lang="en">Books &amp; authors</span></span>
+        <ul class="list"><li><span>Carl Sagan</span><span lang="pt">divulgação</span><span lang="en">popular science</span></li><li><span>Aldous Huxley</span><span lang="pt">Admirável Mundo Novo</span><span lang="en">Brave New World</span></li><li><span>George Orwell</span><span lang="pt">A Revolução dos Bichos</span><span lang="en">Animal Farm</span></li><li><span>Nassim Taleb</span><span>Antifragile</span></li><li><span>Paulo Coelho</span><span lang="pt">O Alquimista</span><span lang="en">The Alchemist</span></li><li><span>Rick Riordan</span><span>Percy Jackson</span></li></ul></article>
+      <article class="card"><span class="tag"><span lang="pt">Músicas e podcasts</span><span lang="en">Music &amp; podcasts</span></span>
+        <ul class="list"><li><span>Any Colour You Like</span><span>Pink Floyd</span></li><li><span>Bohemian Rhapsody</span><span>Queen</span></li><li><span>Do I Wanna Know?</span><span>Arctic Monkeys</span></li><li><span>Faroeste Caboclo</span><span>Legião Urbana</span></li><li><span>Moléculas</span><span>podcast</span></li><li><span>Sinapse · Fisicast</span><span>podcasts</span></li></ul></article>
+    </div>
+  </div>
+</section>
+
+<section class="block" id="contato">
+  <div class="wrap">
+    <div class="head"><h2><span lang="pt">Contato e redes</span><span lang="en">Contact &amp; socials</span></h2><span class="num">08</span></div>
+    <div class="socials">
+      <div class="social"><span class="ic">@</span><div style="min-width:0"><b>E-mail</b><small id="mail">mariogoulart3@gmail.com</small></div><button type="button" class="copy" data-copy="mariogoulart3@gmail.com"><span lang="pt">copiar</span><span lang="en">copy</span></button></div>
+      <a class="social" href="https://www.instagram.com/mrgoulart3/"><span class="ic">IG</span><div style="min-width:0"><b>Instagram</b><small>@mrgoulart3</small></div></a>
+      <a class="social" href="https://github.com/MrGoulart3"><span class="ic">GH</span><div style="min-width:0"><b>GitHub</b><small>MrGoulart3</small></div></a>
+      <a class="social" href="http://lattes.cnpq.br/7173567211044314"><span class="ic">L</span><div style="min-width:0"><b>Lattes</b><small>CNPq <span class="pend">confirmar</span></small></div></a>
+      <div class="social todo"><span class="ic">iD</span><div style="min-width:0"><b>ORCID</b><small><span class="pend">adicionar</span></small></div></div>
+      <div class="social todo"><span class="ic">GS</span><div style="min-width:0"><b>Google Scholar</b><small><span class="pend">adicionar</span></small></div></div>
+      <div class="social todo"><span class="ic">in</span><div style="min-width:0"><b>LinkedIn</b><small><span class="pend">adicionar</span></small></div></div>
+      <div class="social todo"><span class="ic">RG</span><div style="min-width:0"><b>ResearchGate</b><small><span class="pend">adicionar</span></small></div></div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© 2020–2026 Mário Goulart Envall · O Meu Laboratório</span>
+    <span lang="pt">Anápolis, Goiás · Divulgação científica desde 2020</span>
+    <span lang="en">Anápolis, Brazil · Science outreach since 2020</span>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var root=document.documentElement;
+  function store(k,v){try{if(v===undefined)return localStorage.getItem(k);localStorage.setItem(k,v)}catch(e){return null}}
+  // idioma
+  function setLang(l){root.setAttribute('data-lang',l);root.lang=l==='en'?'en':'pt-BR';
+    document.querySelectorAll('[data-setlang]').forEach(function(b){b.setAttribute('aria-pressed',String(b.dataset.setlang===l))});store('oml_lang',l)}
+  setLang(store('oml_lang')||((navigator.language||'pt').toLowerCase().indexOf('pt')===0?'pt':'en'));
+  document.querySelectorAll('[data-setlang]').forEach(function(b){b.addEventListener('click',function(){setLang(b.dataset.setlang)})});
+  // marcações de pendência
+  document.getElementById('togglepend').addEventListener('click',function(){root.classList.toggle('nopend')});
+  // publicações
+  var P=[
+    {y:2026,k:'cong',t:'Theoretical investigation of the acid-catalyzed conversion of dipyrone into 4-methylaminoantipyrine',a:'<b>Envall M. G.</b>, Silveira Neto B. A., Carvalho-Silva V. H.',v:'6º SQTEA / 5ª EQSB, Pirenópolis (2026) · comunicação oral e pôster',aw:'1º lugar'},
+    {y:2025,k:'art',t:'(E)-2-Benzylidenecyclanones: Part XXI — Reaction of cyclic chalcone analogs with cellular thiols: comparison of reactivity of (E)-2-arylidene-1-indanone with -1-tetralone and -1-benzosuberone analogs in thia-Michael reactions',
+     a:'Kadlecsik C., Bognár G., Kenari F., Pintér Z., Ribeiro J. C. O., <b>Envall M. G.</b>, Carvalho-Silva V. H., Napolitano H. B., Perjési P.',v:'International Journal of Molecular Sciences, 26, 10573 (2025)',doi:'10.3390/ijms262110573'},
+    {y:2025,k:'pre',t:'Solar-Fenton of tetracycline degradation from secondary wastewater: optimization, degradation pathways, and phytotoxicity assessment',
+     a:'Costa T. A., Jesus J. M. S., Ribeiro J. C. O., <b>Envall M. G.</b>, Carvalho-Silva V. H., Bueno R. F.',v:'SSRN preprint (2025)',doi:'10.2139/ssrn.5387059'},
+    {y:2023,k:'cong',t:'Hospedagem da homepage O Meu Laboratório: a importância de divulgar pesquisas científicas',a:'<b>Envall M. G.</b>, Ribeiro J. C. O., Machado L. B., Ferreira V. F. G., Rosseto R.',v:'V Escola de Química UEG-CET / VI SMAT (2023)',aw:'Menção Honrosa'},
+    {y:2023,k:'cong',t:'Preparation of a fermented alcoholic beverage using passion fruit',a:'Ribeiro J. C. O., Machado L. B., <b>Envall M. G.</b>, Reis V. A., Costa O. S.',v:'V Escola de Química UEG-CET / VI SMAT (2023)'},
+    {y:2022,k:'cong',t:'Zn/Al-derived layered double hydroxide for SOx gas removal',a:'<b>Envall M. G.</b>, Rosseto R.',v:'III SQTEA, Pirenópolis (2022)',aw:'Menção Honrosa · 2º melhor trabalho'},
+    {y:2022,k:'cong',t:'Comparação entre a capacidade de interação de hidróxidos duplos lamelares derivados de Zn/Al e Zn/Fe com os gases SOx',a:'<b>Envall M. G.</b>, Ribeiro J. C. O., Rosseto R.',v:'35º CLAQ / 61º CBQ, Rio de Janeiro (2022)',aw:'4º melhor trabalho de IC'},
+    {y:2022,k:'cong',t:'Identificação e quantificação de SOx incorporado a hidróxido duplo lamelar derivado de Zn/Fe',a:'<b>Envall M. G.</b>, Ribeiro J. C. O., Ferreira V. F. G., Rosseto R.',v:'IX CEPE UEG, Anápolis (2022)'},
+    {y:2022,k:'cong',t:'Estudo de adsorção de amônia empregando hidróxidos duplos lamelares',a:'Ferreira V. F. G., <b>Envall M. G.</b>, Ribeiro J. C. O., Rosseto R.',v:'IX CEPE UEG, Anápolis (2022)'},
+    {y:2022,k:'cong',t:'Desenvolvimento de interface utilizando psicologia das cores e princípios de UX para o ensino de química',a:'Machado L. B., Ribeiro J. C. O., <b>Envall M. G.</b>, Rosseto R.',v:'35º CLAQ / 61º CBQ (2022)'},
+    {y:2022,k:'cong',t:'Estudo da adsorção do corante cristal violeta utilizando areia modificada',a:'Ribeiro J. C. O., <b>Envall M. G.</b>, Bevilaqua G. B., Rosseto R.',v:'35º CLAQ / 61º CBQ (2022)'}
+  ];
+  var K={art:['Artigo','Article'],pre:['Preprint','Preprint'],cong:['Congresso','Conference']};
+  var ol=document.getElementById('pubs');
+  function esc(s){return s.replace(/[&<>"]/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]})}
+  P.forEach(function(p){
+    var li=document.createElement('li');li.className='pub';li.dataset.k=p.k;
+    li.innerHTML='<div><div class="yr">'+p.y+'</div><span class="kind"><span lang="pt">'+K[p.k][0]+'</span><span lang="en">'+K[p.k][1]+'</span></span></div>'+
+      '<div><div class="t">'+esc(p.t)+'</div><div class="a">'+p.a+'</div><div class="v">'+esc(p.v)+
+      (p.doi?' · <a href="https://doi.org/'+p.doi+'">doi:'+p.doi+'</a>':'')+'</div>'+(p.aw?'<span class="award">★ '+esc(p.aw)+'</span>':'')+'</div>';
+    ol.appendChild(li)});
+  document.querySelectorAll('[data-f]').forEach(function(b){b.addEventListener('click',function(){
+    document.querySelectorAll('[data-f]').forEach(function(x){x.setAttribute('aria-pressed',String(x===b))});
+    ol.querySelectorAll('.pub').forEach(function(li){li.hidden=!(b.dataset.f==='all'||li.dataset.k===b.dataset.f)})})});
+  // copiar e-mail
+  document.querySelectorAll('[data-copy]').forEach(function(b){b.addEventListener('click',function(){
+    var t=b.dataset.copy;var ok=function(){b.textContent='✓'};
+    if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(t).then(ok,function(){sel()})}else sel();
+    function sel(){var r=document.createRange();r.selectNodeContents(document.getElementById('mail'));var s=getSelection();s.removeAllRanges();s.addRange(r)}
+  })});
+})();
+</script>
