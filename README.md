@@ -6,6 +6,7 @@ Source of [omeulab.com](https://omeulab.com), the bilingual (PT/EN) personal res
 research, publications, awards, science outreach, code and contact.
 
 - Static site, no framework: content in `src/body.html`, publications in `src/publicacoes.json`.
+- Styles and scripts live in `assets/` (`site.css`, `*.js`, self-hosted fonts); `scripts/make_images.py` regenerates WebP, the social card and icons (needs Pillow).
 - `python3 build.py` generates `index.html`, `404.html` and the publish folder `_site/`.
 - `scripts/orcid_sync.py <ORCID-iD>` refreshes the publication list from the public ORCID API.
 - Deployed with GitHub Pages through the manual workflow `.github/workflows/pages.yml` (tests run first).

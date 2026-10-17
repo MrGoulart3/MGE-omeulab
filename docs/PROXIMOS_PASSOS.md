@@ -113,8 +113,8 @@ um novo build. A rotina não altera o perfil/link ORCID na página automaticamen
   sobre projetos de pesquisa em andamento.
 - Datas de mestrado, graduação e experiência profissional marcadas como pendentes.
 - Dados bibliográficos e premiações preservados da semente, antes da publicação.
-- A imagem social usa a miniatura já existente de 320 × 180; pode ser substituída
-  futuramente por uma imagem específica para compartilhamento.
+- A imagem social (`assets/og.png`, 1200 × 630) é gerada por `scripts/make_images.py`
+  (nome, linha de atuação e a molécula do site); revise o texto antes de publicar.
 - A barra de prévia e as marcações permanecem até a revisão editorial. Ocultar
   marcações pelo botão não elimina as informações pendentes do HTML público.
 
@@ -130,3 +130,32 @@ claro e 5,47:1 no escuro. Bordas de controles foram escurecidas para atingir
 3:1 nos fundos claros. Isso não substitui uma auditoria WCAG completa.
 Ainda falta inspeção visual em navegador real, teclado/leitor de tela e
 validação do ambiente GitHub Pages, certificado e DNS após publicar.
+
+## Melhorias de 17/10/2026 (branch `melhorias-2026-10-17`, sem publicação)
+
+- Fontes autohospedadas (Fraunces variável opsz/wght, IBM Plex Sans 400/600, Plex Mono
+  500/600; WOFF2 latin + latin-ext, licença OFL em `assets/fonts`), `font-display:swap`,
+  preload só de Fraunces e Plex Sans 400. O ‡ do logo não existe nessas fontes e usa a
+  serifa do sistema (como antes).
+- og:image 1200×630, `twitter:card=summary_large_image`, favicon.ico, apple-touch-icon,
+  manifest, `theme-color` claro/escuro. Imagens derivadas: `python3 scripts/make_images.py`.
+- JSON-LD: `WebSite`, `Person` completo, `ScholarlyArticle` por publicação (home) e
+  `DefinedTermSet`/`DefinedTerm` (glossário), gerados no build.
+- CSS e JS externos em `assets/` (com `?v=hash`), sem `style=` nem script inline; CSP por
+  `<meta>` sem `unsafe-inline`/`unsafe-eval` (o 3Dmol 2.5.5 funciona assim; vem do jsDelivr
+  com SRI). `frame-ancestors` e `report-uri` não funcionam em `<meta>`.
+- 3Dmol carregado sem bloquear (script injetado por `assets/mol.js`); a dipirona continua
+  girando sempre e volta a girar depois de arrastar; se o 3Dmol falhar, usa o canvas próprio.
+- Imagens em WebP (`<picture>`, jpg de reserva), `width`/`height`, `loading="lazy"` abaixo
+  da dobra. Os recortes de altura fixa (galeria e cartão) seguem com `object-fit:cover`.
+- Sitemap com `lastmod` (data do último commit das fontes; hoje se houver edição pendente).
+
+Próximos passos sugeridos (não feitos):
+
+- Rotas `/en/` e `/en/glossario.html` geradas no build, com `hreflang` + `x-default`
+  e sitemap com `xhtml:link` (hoje o título e a descrição são bilíngues numa única URL).
+- Estética: cartões em lista tipográfica (Pesquisa/Cultura), hero mais compacto,
+  cabeçalho móvel menor, rótulos mono de 12 px (ESTÉTICA-2 a 4 do relatório).
+- Conteúdo: promessa "novos vídeos a caminho", datas pendentes da trajetória, e-mail
+  ofuscado, ORCID real.
+- Opcional: autohospedar o 3Dmol (permitiria `script-src 'self'`).

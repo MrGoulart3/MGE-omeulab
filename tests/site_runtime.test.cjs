@@ -8,13 +8,10 @@ const vm = require('node:vm');
 
 const html = fs.readFileSync(path.join(__dirname, '..', 'index.html'), 'utf8');
 const data = JSON.parse(html.match(/<script id="publicacoes-data" type="application\/json">([\s\S]*?)<\/script>/)[1]);
-function scripts(page) {
-  return [...page.matchAll(/<script([^>]*)>([\s\S]*?)<\/script>/g)]
-    .filter(match => !match[1].includes('type=')).map(match => match[2]);
-}
-const indexScripts = scripts(html);
+const asset = name => fs.readFileSync(path.join(__dirname, '..', 'assets', name), 'utf8');
+const indexScripts = ['site.js', 'pubs.js'].map(asset);
 const glossaryHTML = fs.readFileSync(path.join(__dirname, '..', 'glossario.html'), 'utf8');
-const glossaryScripts = scripts(glossaryHTML);
+const glossaryScripts = ['site.js', 'glossario.js'].map(asset);
 
 class Element {
   constructor(dataset = {}, attributes = {}) {

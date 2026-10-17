@@ -1,174 +1,3 @@
-<title>O Meu Laboratório</title>
-<meta name="description" content="Mário Goulart Envall — química teórica e computacional, cinética e estados de transição. Pesquisa, publicações, prêmios e divulgação científica.">
-<style>
-:root{
-  --bg:#f6f4ef; --paper:#fffdf8; --ink:#16202c; --ink2:#465364; --muted:#586473;
-  --line:#8b8478; --accent:#c2611f; --accent-ink:#9a4a12; --accent-soft:#f6e3d3;
-  --navy:#1d3a5c; --navy-soft:#e4ebf3; --pend:#8a5a00; --pend-bg:#fff2cc;
-  --curve:#1d3a5c; --grid:#e7e2d8;
-  color-scheme:light;
-}
-@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
-  --bg:#10161e; --paper:#161e28; --ink:#e9e6df; --ink2:#b5bdc8; --muted:#8a94a2;
-  --line:#617084; --accent:#e8894a; --accent-ink:#f0a46f; --accent-soft:#3a2617;
-  --navy:#8fb3da; --navy-soft:#1c2a3a; --pend:#ffd27a; --pend-bg:#3b2f12;
-  --curve:#8fb3da; --grid:#222c38; color-scheme:dark}}
-:root[data-theme="dark"]{
-  --bg:#10161e; --paper:#161e28; --ink:#e9e6df; --ink2:#b5bdc8; --muted:#8a94a2;
-  --line:#617084; --accent:#e8894a; --accent-ink:#f0a46f; --accent-soft:#3a2617;
-  --navy:#8fb3da; --navy-soft:#1c2a3a; --pend:#ffd27a; --pend-bg:#3b2f12;
-  --curve:#8fb3da; --grid:#222c38; color-scheme:dark}
-*{box-sizing:border-box}
-html{scroll-behavior:smooth;scroll-padding-top:72px}
-body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.65 "IBM Plex Sans",system-ui,-apple-system,"Segoe UI",sans-serif}
-html[data-lang="pt"] [lang="en"], html[data-lang="en"] [lang="pt"]{display:none!important}
-a{color:var(--accent-ink);text-underline-offset:3px}
-h1,h2,h3{font-family:Fraunces,Georgia,"Times New Roman",serif;line-height:1.15;text-wrap:balance;margin:0}
-.mono{font-family:"IBM Plex Mono",ui-monospace,Menlo,monospace}
-.wrap{max-width:1080px;margin:0 auto;padding-inline:20px}
-/* nav */
-.nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:10;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
-.nav .wrap{display:flex;align-items:center;gap:16px;min-height:60px}
-.brand{font-family:Fraunces,serif;font-weight:700;font-size:1.15rem;color:var(--ink);text-decoration:none;white-space:nowrap}
-.brand b{color:var(--accent-ink);font-weight:700}
-.links{display:flex;gap:12px;margin-left:auto;overflow-x:auto;scrollbar-width:none}
-.links a{color:var(--ink2);text-decoration:none;font-size:.92rem;white-space:nowrap}
-.links a:hover{color:var(--accent-ink)}
-.tools{display:flex;gap:6px}
-.tools button{font:500 .78rem "IBM Plex Mono",monospace;background:transparent;border:1px solid var(--line);color:var(--ink2);border-radius:6px;padding:5px 8px;cursor:pointer}
-.tools button[aria-pressed="true"]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
-.menu-toggle{display:none;font:inherit;color:var(--ink);background:var(--paper);border:1px solid var(--line);border-radius:6px;padding:8px 10px;cursor:pointer}
-@media (max-width:860px){
-  html{scroll-padding-top:10rem}
-  .nav .wrap{flex-wrap:wrap;gap:10px;padding-block:8px}
-  .brand{margin-right:auto}.tools{margin-left:0}
-  .links{order:4;flex-basis:100%;display:flex;flex-wrap:wrap;gap:8px 16px;margin:0;padding:8px 0}
-  .js .menu-toggle{display:inline-flex}
-  .js .links{display:none}
-  .js .links[data-open="true"]{display:flex}
-}
-@media (min-width:861px){.links{display:flex!important}}
-/* hero */
-.hero{padding-block:56px 40px}
-.hero .wrap{display:grid;grid-template-columns:1.1fr 1fr;gap:40px;align-items:center}
-.kicker{font:500 .78rem "IBM Plex Mono",monospace;letter-spacing:.08em;text-transform:uppercase;color:var(--accent-ink)}
-.hero h1{font-size:clamp(2.2rem,5vw,3.4rem);margin:10px 0 14px}
-.hero p.lead{font-size:1.12rem;color:var(--ink2);max-width:34em;margin:0 0 22px}
-.cta{display:flex;flex-wrap:wrap;gap:10px}
-.btn{display:inline-flex;align-items:center;gap:8px;padding:10px 16px;border-radius:8px;font-weight:600;font-size:.95rem;text-decoration:none;border:1px solid var(--ink)}
-.btn.primary{background:var(--ink);color:var(--bg)}
-.btn.ghost{color:var(--ink)}
-.profile{background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:18px 18px 10px}
-.profile svg{width:100%;height:auto;display:block}
-.profile figcaption{font-size:.82rem;color:var(--muted);padding-top:6px}
-@media (max-width:860px){.hero .wrap{grid-template-columns:1fr}.hero{padding-block:32px 24px}}
-/* sections */
-section.block{padding-block:56px;border-top:1px solid var(--line)}
-.head{display:flex;align-items:baseline;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-bottom:26px}
-.head h2{font-size:clamp(1.6rem,3.4vw,2.2rem)}
-.head .num{font:500 .8rem "IBM Plex Mono",monospace;color:var(--muted)}
-.grid{display:grid;gap:16px}
-.g3{grid-template-columns:repeat(3,minmax(0,1fr))}
-.g2{grid-template-columns:repeat(2,minmax(0,1fr))}
-@media (max-width:860px){.g3,.g2{grid-template-columns:1fr}}
-.card{background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:20px;min-width:0}
-.card h3{font-size:1.15rem;margin-bottom:6px}
-.card p{margin:0;color:var(--ink2)}
-.tag{display:inline-block;font:500 .72rem "IBM Plex Mono",monospace;letter-spacing:.04em;text-transform:uppercase;color:var(--navy);background:var(--navy-soft);padding:3px 8px;border-radius:4px;margin-bottom:10px}
-.tag.hot{color:var(--accent-ink);background:var(--accent-soft)}
-.pend{display:inline-block;font:500 .7rem "IBM Plex Mono",monospace;color:var(--pend);background:var(--pend-bg);border:1px dashed var(--pend);padding:1px 6px;border-radius:4px;vertical-align:middle;margin-left:4px}
-html.nopend .pend{display:none}
-/* publications */
-.filters{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:18px}
-.filters button{font:500 .85rem "IBM Plex Sans",sans-serif;border:1px solid var(--line);background:var(--paper);color:var(--ink2);padding:6px 12px;border-radius:999px;cursor:pointer}
-.filters button[aria-pressed="true"]{border-color:var(--accent);color:var(--accent-ink);background:var(--accent-soft)}
-.pubs{list-style:none;margin:0;padding:0;display:grid;gap:12px}
-.pub{display:grid;grid-template-columns:72px minmax(0,1fr);gap:16px;background:var(--paper);border:1px solid var(--line);border-radius:10px;padding:16px}
-.pub .yr{font:600 1.05rem "IBM Plex Mono",monospace;color:var(--accent-ink)}
-.pub .kind{display:block;font:500 .68rem "IBM Plex Mono",monospace;text-transform:uppercase;letter-spacing:.05em;color:var(--muted);margin-top:2px}
-.pub .t{font-weight:600;line-height:1.4}
-.pub .a{font-size:.9rem;color:var(--ink2);margin-top:4px}
-.pub .a b{color:var(--ink)}
-.pub .v{font-size:.85rem;color:var(--muted);margin-top:2px}
-.pub .award{display:inline-block;margin-top:8px;font-size:.82rem;font-weight:600;color:var(--accent-ink)}
-@media (max-width:520px){.pub{grid-template-columns:1fr;gap:4px}}
-/* timeline */
-.tl{list-style:none;margin:0;padding:0 0 0 22px;border-left:2px solid var(--line);display:grid;gap:22px}
-.tl li{position:relative}
-.tl li::before{content:"";position:absolute;left:-29px;top:6px;width:12px;height:12px;border-radius:50%;background:var(--paper);border:2px solid var(--navy)}
-.tl li.now::before{background:var(--accent);border-color:var(--accent)}
-.tl .when{font:500 .8rem "IBM Plex Mono",monospace;color:var(--muted)}
-.tl .what{font-weight:600}
-.tl .where{color:var(--ink2);font-size:.95rem}
-/* media */
-.video{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:20px;align-items:center}
-.thumb{position:relative;display:block;border-radius:10px;overflow:hidden;border:1px solid var(--line);aspect-ratio:16/9;max-width:100%}
-.thumb img{width:100%;height:100%;object-fit:cover;display:block}
-.thumb span{position:absolute;inset:auto 12px 12px auto;background:var(--accent-ink);color:var(--paper);font-weight:600;font-size:.85rem;padding:6px 10px;border-radius:6px}
-@media (max-width:860px){.video{grid-template-columns:1fr}}
-/* glossary */
-.glossary-search{display:block;margin:16px 0 8px}
-.glossary-search input{display:block;width:100%;max-width:640px;font:inherit;color:var(--ink);background:var(--paper);border:1px solid var(--line);border-radius:8px;padding:12px;margin-top:8px}
-.alphabet{display:flex;flex-wrap:wrap;gap:8px;margin:20px 0}
-.alphabet a{display:grid;place-items:center;min-width:44px;min-height:44px;border:1px solid var(--line);border-radius:6px;text-decoration:none;background:var(--paper)}
-.glossary-group{margin-top:32px}
-.glossary-group h2{color:var(--accent-ink);margin-bottom:16px}
-.glossary-entries{display:grid;gap:14px}
-.glossary-term h3 a{font-family:system-ui,sans-serif;font-size:.9rem;margin-left:8px}
-.glossary-term p+p{margin-top:8px}
-.glossary-term:target{border:2px solid var(--accent-ink)}
-.list{margin:0;padding:0;list-style:none;display:grid;gap:8px}
-.list li{display:flex;justify-content:space-between;gap:12px;border-bottom:1px dotted var(--line);padding-bottom:6px}
-.list li span:last-child{color:var(--muted);font-size:.88rem;text-align:right}
-/* contact */
-.socials{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:12px}
-.social{display:flex;align-items:center;gap:12px;background:var(--paper);border:1px solid var(--line);border-radius:10px;padding:14px;text-decoration:none;color:var(--ink);min-width:0}
-.social .ic{flex:none;width:36px;height:36px;border-radius:8px;display:grid;place-items:center;background:var(--navy-soft);color:var(--navy);font:600 .8rem "IBM Plex Mono",monospace}
-.social small{display:block;color:var(--muted);font-size:.8rem;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
-.social.todo{border-style:dashed}
-.copy{font:inherit;font-size:.8rem;border:1px solid var(--line);background:transparent;color:var(--ink2);border-radius:6px;padding:2px 8px;cursor:pointer;margin-left:auto}
-footer{padding-block:32px;border-top:1px solid var(--line);color:var(--muted);font-size:.85rem}
-footer .wrap{display:flex;flex-wrap:wrap;gap:12px;justify-content:space-between}
-.preview{background:var(--pend-bg);color:var(--pend);font-size:.85rem;text-align:center;padding:8px 16px;border-bottom:1px dashed var(--pend)}
-.preview button{font:inherit;font-weight:600;color:inherit;background:none;border:0;text-decoration:underline;cursor:pointer}
-[hidden]{display:none!important}
-:focus-visible{outline:3px solid var(--accent-ink);outline-offset:4px}
-a,button,summary{touch-action:manipulation}
-.tools button,.filters button,.copy{min-height:44px}
-.skip-link{position:absolute;left:16px;top:8px;transform:translateY(-180%);z-index:20;background:var(--paper);color:var(--ink);padding:10px 16px;border:2px solid var(--ink)}
-.skip-link:focus{position:fixed;transform:none}
-@media (prefers-reduced-motion:reduce){
-  html{scroll-behavior:auto}
-  *,*::before,*::after{animation:none!important;transition:none!important}
-}
-
-.avatar{width:96px;height:96px;border-radius:50%;object-fit:cover;border:3px solid var(--paper);box-shadow:0 0 0 1px var(--line);display:block;margin-bottom:16px}
-.profile.mol{padding:10px 14px 12px;position:relative}
-#mol3d{width:100%;height:auto;aspect-ratio:520/420;display:block;cursor:grab;touch-action:pan-y}
-#mol3d:active{cursor:grabbing}
-.legend{display:flex;gap:12px;flex-wrap:wrap;font-size:.75rem;color:var(--muted);padding:4px 2px}
-.legend i{display:inline-block;width:10px;height:10px;border-radius:50%;margin-right:4px;vertical-align:-1px}
-h3.sub{font-size:1.15rem;margin:34px 0 14px}
-.people{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:12px}
-.person{display:flex;gap:12px;align-items:center;background:var(--paper);border:1px solid var(--line);border-radius:10px;padding:12px;min-width:0}
-.person img,.person .ph{flex:none;width:64px;height:64px;border-radius:50%;object-fit:cover}
-.person .ph{display:grid;place-items:center;background:var(--navy-soft);color:var(--navy);font-weight:600}
-.person small{display:block;color:var(--muted);font-size:.82rem}
-.cardimg{width:calc(100% + 40px);max-width:none;margin:-20px -20px 14px;height:180px;object-fit:cover;border-radius:12px 12px 0 0;display:block}
-:root{--at-C:#3d4652;--at-H:#e8e6e1;--at-N:#3b6fd4;--at-O:#d8452f;--at-S:#e2b62a}
-@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--at-C:#9aa5b4;--at-H:#f2f0ea}}
-:root[data-theme="dark"]{--at-C:#9aa5b4;--at-H:#f2f0ea}
-
-.gallery{display:grid;grid-template-columns:2fr 1fr 1fr;gap:12px;margin:4px 0 22px}
-.gallery figure{margin:0;min-width:0}
-.gallery img{width:100%;height:280px;object-fit:cover;border-radius:10px;border:1px solid var(--line);display:block}
-.gallery figcaption{font-size:.82rem;color:var(--muted);padding-top:6px}
-@media (max-width:860px){.gallery{grid-template-columns:1fr 1fr}.gallery .span2{grid-column:1/-1}.gallery img{height:220px}}
-
-#molview{position:relative;width:100%;aspect-ratio:520/420;max-width:100%;cursor:grab}
-#molview canvas{border-radius:10px}
-</style>
-<!-- /head -->
 <a class="skip-link" href="#conteudo"><span lang="pt">Pular para o conteúdo</span><span lang="en">Skip to content</span></a>
 
 <div class="preview" id="previewbar">
@@ -203,7 +32,7 @@ h3.sub{font-size:1.15rem;margin:34px 0 14px}
 <header class="hero" id="inicio">
   <div class="wrap">
     <div>
-      <img class="avatar" src="assets/foto_mario.jpg" alt="Mário Goulart Envall" width="96" height="96">
+      <picture><source type="image/webp" srcset="assets/foto_mario.webp"><img class="avatar" src="assets/foto_mario.jpg" alt="Retrato de Mário Goulart Envall" width="96" height="96" decoding="async"></picture>
       <div class="kicker"><span lang="pt">Química teórica e computacional</span><span lang="en">Theoretical &amp; computational chemistry</span></div>
       <h1>Mário Goulart Envall</h1>
       <p class="lead" lang="pt">Químico industrial, doutorando em Ciências Moleculares pela UEG e analista pleno de desenvolvimento analítico na Brainfarma. Mapeio estados de transição e cinética de reações para entender como fármacos e poluentes se degradam, e levo essa ciência para fora do laboratório.</p>
@@ -213,10 +42,10 @@ h3.sub{font-size:1.15rem;margin:34px 0 14px}
         <a class="btn ghost" href="#contato"><span lang="pt">Contato e redes</span><span lang="en">Contact &amp; socials</span></a>
       </div>
     </div>
-    <figure class="profile mol" style="margin:0">
+    <figure class="profile mol">
       <div id="molview" role="img" aria-label="Molécula de dipirona em 3D girando / Rotating 3D dipyrone molecule"></div>
       <canvas id="mol3d" hidden width="520" height="420" role="img" aria-label="Molécula de dipirona em 3D girando / Rotating 3D dipyrone molecule"></canvas>
-      <div class="legend mono" aria-hidden="true"><span><i style="background:var(--at-C)"></i>C</span><span><i style="background:var(--at-H)"></i>H</span><span><i style="background:var(--at-N)"></i>N</span><span><i style="background:var(--at-O)"></i>O</span><span><i style="background:var(--at-S)"></i>S</span></div>
+      <div class="legend mono" aria-hidden="true"><span><i class="at-C"></i>C</span><span><i class="at-H"></i>H</span><span><i class="at-N"></i>N</span><span><i class="at-O"></i>O</span><span><i class="at-S"></i>S</span></div>
       <figcaption lang="pt"><b>Dipirona</b> (ânion, C₁₃H₁₆N₃O₄S⁻): geometria otimizada no meu trabalho, <a href="glossario.html#m08-hx">M08-HX</a>/<a href="glossario.html#aug-cc-pvdz">aug-cc-pVDZ</a> em água (<a href="glossario.html#smd">SMD</a>). Arraste para girar.</figcaption>
       <figcaption lang="en"><b>Dipyrone</b> (anion, C₁₃H₁₆N₃O₄S⁻): geometry optimized in my own work, <a href="glossario.html#m08-hx">M08-HX</a>/<a href="glossario.html#aug-cc-pvdz">aug-cc-pVDZ</a> in water (<a href="glossario.html#smd">SMD</a>). Drag to rotate.</figcaption>
     </figure>
@@ -233,14 +62,14 @@ h3.sub{font-size:1.15rem;margin:34px 0 14px}
         <h3>Int. J. Mol. Sci. 26, 10573</h3>
         <p lang="pt">Reatividade de análogos cíclicos de chalconas com tióis celulares: reações tia-Michael de indanonas, tetralonas e benzosuberonas.</p>
         <p lang="en">Reactivity of cyclic chalcone analogs with cellular thiols: thia-Michael reactions of indanone, tetralone and benzosuberone analogs.</p>
-        <p style="margin-top:10px"><a href="https://doi.org/10.3390/ijms262110573">doi:10.3390/ijms262110573</a></p>
+        <p class="more"><a href="https://doi.org/10.3390/ijms262110573">doi:10.3390/ijms262110573</a></p>
       </article>
       <article class="card">
         <span class="tag"><span lang="pt">Preprint · 2025</span><span lang="en">Preprint · 2025</span></span>
         <h3 lang="pt">Solar-Fenton e tetraciclina</h3><h3 lang="en">Solar-Fenton &amp; tetracycline</h3>
         <p lang="pt">Degradação de tetraciclina em efluente secundário: otimização, rotas de degradação e fitotoxicidade.</p>
         <p lang="en">Tetracycline degradation in secondary wastewater: optimization, degradation pathways and phytotoxicity.</p>
-        <p style="margin-top:10px"><a href="https://doi.org/10.2139/ssrn.5387059">SSRN · doi:10.2139/ssrn.5387059</a></p>
+        <p class="more"><a href="https://doi.org/10.2139/ssrn.5387059">SSRN · doi:10.2139/ssrn.5387059</a></p>
       </article>
       <article class="card">
         <span class="tag hot"><span lang="pt">Prêmio · 2026</span><span lang="en">Award · 2026</span></span>
@@ -300,14 +129,14 @@ h3.sub{font-size:1.15rem;margin:34px 0 14px}
 <section class="block" id="premios">
   <div class="wrap">
     <div class="head"><h2><span lang="pt">Prêmios</span><span lang="en">Awards</span></h2><span class="num">03</span></div>
-    <div class="grid g2" style="margin-bottom:16px">
-      <article class="card" style="border-color:var(--accent)"><span class="tag hot">2026 · 1º lugar</span><h3 lang="pt">Melhor apresentação oral (doutorado) · 6º SQTEA / 5ª EQSB</h3><h3 lang="en">Best oral talk (Ph.D. level) · 6th SQTEA / 5th EQSB</h3><p>Pirenópolis, 19–21/08/2026 — <i>Theoretical Investigation of the Acid-Catalyzed Conversion of Dipyrone into 4-Methylaminoantipyrine</i> (<span lang="pt">comunicação oral; também em pôster, P21A</span><span lang="en">oral talk; also as poster P21A</span>).</p></article>
+    <div class="grid g2 mb16">
+      <article class="card hl"><span class="tag hot">2026 · 1º lugar</span><h3 lang="pt">Melhor apresentação oral (doutorado) · 6º SQTEA / 5ª EQSB</h3><h3 lang="en">Best oral talk (Ph.D. level) · 6th SQTEA / 5th EQSB</h3><p>Pirenópolis, 19–21/08/2026 — <i>Theoretical Investigation of the Acid-Catalyzed Conversion of Dipyrone into 4-Methylaminoantipyrine</i> (<span lang="pt">comunicação oral; também em pôster, P21A</span><span lang="en">oral talk; also as poster P21A</span>).</p></article>
       <article class="card"><span class="tag">2026</span><h3 lang="pt">Comissão organizadora</h3><h3 lang="en">Organizing committee</h3><p lang="pt">Membro da comissão organizadora do 6º SQTEA e da 5ª EQSB (UEG / UnB).</p><p lang="en">Member of the organizing committee of the 6th SQTEA and 5th EQSB (UEG / UnB).</p></article>
     </div>
     <div class="gallery">
-      <figure class="span2"><img src="assets/sqtea_palestra.jpg" alt="Mário apresentando a comunicação oral sobre a dipirona no 6º SQTEA"><figcaption lang="pt">Comunicação oral premiada: <i>“The observable model reproduces the trend — not every rate”</i>.</figcaption><figcaption lang="en">Award-winning oral talk: <i>“The observable model reproduces the trend — not every rate”</i>.</figcaption></figure>
-      <figure><img src="assets/sqtea_poster.jpg" alt="Mário ao lado do pôster P21A"><figcaption lang="pt">Pôster P21A.</figcaption><figcaption lang="en">Poster P21A.</figcaption></figure>
-      <figure><img src="assets/sqtea_premio.jpg" alt="Entrega do prêmio de melhor apresentação oral do doutorado"><figcaption lang="pt">Entrega do prêmio.</figcaption><figcaption lang="en">Award ceremony.</figcaption></figure>
+      <figure class="span2"><picture><source type="image/webp" srcset="assets/sqtea_palestra-640.webp 640w, assets/sqtea_palestra.webp 1400w" sizes="(max-width:860px) 100vw, 540px"><img src="assets/sqtea_palestra.jpg" alt="Mário apresentando a comunicação oral sobre a dipirona no 6º SQTEA" width="1400" height="1240" loading="lazy" decoding="async"></picture><figcaption lang="pt">Comunicação oral premiada: <i>“The observable model reproduces the trend — not every rate”</i>.</figcaption><figcaption lang="en">Award-winning oral talk: <i>“The observable model reproduces the trend — not every rate”</i>.</figcaption></figure>
+      <figure><picture><source type="image/webp" srcset="assets/sqtea_poster-640.webp 640w, assets/sqtea_poster.webp 800w" sizes="(max-width:860px) 50vw, 262px"><img src="assets/sqtea_poster.jpg" alt="Mário ao lado do pôster P21A, sobre a conversão da dipirona" width="800" height="1121" loading="lazy" decoding="async"></picture><figcaption lang="pt">Pôster P21A.</figcaption><figcaption lang="en">Poster P21A.</figcaption></figure>
+      <figure><picture><source type="image/webp" srcset="assets/sqtea_premio-640.webp 640w, assets/sqtea_premio.webp 800w" sizes="(max-width:860px) 50vw, 262px"><img src="assets/sqtea_premio.jpg" alt="Entrega do prêmio de melhor apresentação oral do doutorado no 6º SQTEA" width="800" height="870" loading="lazy" decoding="async"></picture><figcaption lang="pt">Entrega do prêmio.</figcaption><figcaption lang="en">Award ceremony.</figcaption></figure>
     </div>
     <div class="grid g3">
       <article class="card"><span class="tag hot">2022</span><h3 lang="pt">Menção Honrosa · 2º melhor trabalho</h3><h3 lang="en">Honourable mention · 2nd best work</h3><p>III SQTEA, Pirenópolis — <i>Zn/Al-derived layered double hydroxide for SOx gas removal</i>.</p></article>
@@ -332,9 +161,9 @@ h3.sub{font-size:1.15rem;margin:34px 0 14px}
     </ol>
     <h3 class="sub"><span lang="pt">Orientação</span><span lang="en">Advisors</span></h3>
     <div class="people">
-      <div class="person"><img src="assets/foto_valter.jpg" alt="Prof. Dr. Valter H. Carvalho-Silva" width="64" height="64"><div><b>Prof. Dr. Valter H. Carvalho-Silva</b><small lang="pt">UEG · orientador atual (doutorado; também no mestrado) · idealizador do Transitivity</small><small lang="en">UEG · current advisor (Ph.D.; also M.Sc.) · creator of Transitivity</small></div></div>
+      <div class="person"><picture><source type="image/webp" srcset="assets/foto_valter.webp"><img src="assets/foto_valter.jpg" alt="Retrato do Prof. Dr. Valter H. Carvalho-Silva" width="64" height="64" loading="lazy" decoding="async"></picture><div><b>Prof. Dr. Valter H. Carvalho-Silva</b><small lang="pt">UEG · orientador atual (doutorado; também no mestrado) · idealizador do Transitivity</small><small lang="en">UEG · current advisor (Ph.D.; also M.Sc.) · creator of Transitivity</small></div></div>
       <div class="person"><span class="ph mono">BN</span><div><b>Prof. Dr. Brenno Amaro da Silveira Neto</b><small lang="pt">UnB · coorientador atual (doutorado)</small><small lang="en">UnB · current co-advisor (Ph.D.)</small></div></div>
-      <div class="person"><img src="assets/foto_renato.jpg" alt="Prof. Dr. Renato Rosseto" width="64" height="64"><div><b>Prof. Dr. Renato Rosseto</b><small lang="pt">UEG · orientador da iniciação científica e do TCC</small><small lang="en">UEG · undergraduate research and final-thesis advisor</small></div></div>
+      <div class="person"><picture><source type="image/webp" srcset="assets/foto_renato.webp"><img src="assets/foto_renato.jpg" alt="Retrato do Prof. Dr. Renato Rosseto" width="64" height="64" loading="lazy" decoding="async"></picture><div><b>Prof. Dr. Renato Rosseto</b><small lang="pt">UEG · orientador da iniciação científica e do TCC</small><small lang="en">UEG · undergraduate research and final-thesis advisor</small></div></div>
     </div>
   </div>
 </section>
@@ -343,16 +172,16 @@ h3.sub{font-size:1.15rem;margin:34px 0 14px}
   <div class="wrap">
     <div class="head"><h2><span lang="pt">Divulgação científica</span><span lang="en">Science outreach</span></h2><span class="num">05</span></div>
     <div class="video">
-      <a class="thumb" href="https://www.youtube.com/watch?v=cuy9h5wwsVo"><img alt="Adsorção de gases em hidróxidos duplos lamelares" src="assets/hdl_video.jpg" width="320" height="180" decoding="async"><span>▶ YouTube</span></a>
+      <a class="thumb" href="https://www.youtube.com/watch?v=cuy9h5wwsVo"><picture><source type="image/webp" srcset="assets/hdl_video.webp"><img src="assets/hdl_video.jpg" alt="Miniatura do vídeo sobre adsorção de gases em hidróxidos duplos lamelares" width="320" height="180" loading="lazy" decoding="async"></picture><span>▶ YouTube</span></a>
       <div>
         <span class="tag">Motion graphics</span>
         <h3 lang="pt">Adsorção de gases em hidróxidos duplos lamelares</h3><h3 lang="en">Gas adsorption on layered double hydroxides</h3>
-        <p lang="pt" style="color:var(--ink2)">Vídeo da minha IC: o problema dos gases de combustão e como os HDL podem retirá-los do ambiente. Novos vídeos animados estão a caminho.</p>
-        <p lang="en" style="color:var(--ink2)">From my undergraduate research: the combustion-gas problem and how LDHs can remove these gases. New animated videos are on the way.</p>
+        <p lang="pt">Vídeo da minha IC: o problema dos gases de combustão e como os HDL podem retirá-los do ambiente. Novos vídeos animados estão a caminho.</p>
+        <p lang="en">From my undergraduate research: the combustion-gas problem and how LDHs can remove these gases. New animated videos are on the way.</p>
       </div>
     </div>
-    <div class="grid g2" style="margin-top:24px">
-      <article class="card"><img class="cardimg" src="assets/lab_ic_1.jpg" alt="Montagem experimental da iniciação científica no laboratório da UEG">
+    <div class="grid g2 mt24">
+      <article class="card"><picture><source type="image/webp" srcset="assets/lab_ic_1-640.webp 640w, assets/lab_ic_1.webp 900w" sizes="(max-width:860px) 100vw, 520px"><img class="cardimg" src="assets/lab_ic_1.jpg" alt="Montagem experimental da iniciação científica no laboratório da UEG" width="900" height="971" loading="lazy" decoding="async"></picture>
         <span class="tag"><span lang="pt">Origem</span><span lang="en">Origin</span></span>
         <h3 lang="pt">Por que este site existe</h3><h3 lang="en">Why this site exists</h3>
         <p lang="pt">Nasceu em 2020, quando a pandemia fechou os laboratórios: o ensaio experimental da IC virou um projeto de divulgação científica.</p>
@@ -362,7 +191,7 @@ h3.sub{font-size:1.15rem;margin:34px 0 14px}
         <h3><span lang="pt">Glossário: dúvida sobre algum termo?</span><span lang="en">Glossary: wondering what a term means?</span></h3>
         <p lang="pt">Explore definições de química e pesquisa em português e inglês, com busca e índice alfabético.</p>
         <p lang="en">Explore chemistry and research definitions in Portuguese and English, with search and an alphabetical index.</p>
-        <p style="margin-top:12px"><a href="glossario.html"><span lang="pt">Abrir o glossário →</span><span lang="en">Open the glossary →</span></a></p>
+        <p class="more12"><a href="glossario.html"><span lang="pt">Abrir o glossário →</span><span lang="en">Open the glossary →</span></a></p>
       </article>
     </div>
   </div>
@@ -372,9 +201,9 @@ h3.sub{font-size:1.15rem;margin:34px 0 14px}
   <div class="wrap">
     <div class="head"><h2><span lang="pt">Código e ferramentas</span><span lang="en">Code &amp; tools</span></h2><span class="num">06 · github.com/MrGoulart3</span></div>
     <div class="grid g3">
-      <article class="card"><span class="tag">Python · herdr</span><h3>MGE-AgentPortal</h3><p lang="pt">Portal web seguro para acompanhar e conversar com agentes de IA (Claude Code, Codex) rodando num PC remoto.</p><p lang="en">A secure web portal to follow and talk to AI coding agents (Claude Code, Codex) on a remote machine.</p><p style="margin-top:10px"><a href="https://github.com/MrGoulart3/MGE-AgentPortal">GitHub</a></p></article>
-      <article class="card"><span class="tag">Claude Code</span><h3>MGE-UAH-Orquestra</h3><p lang="pt">Kit para orquestrar vários agentes de IA em projetos de pesquisa: planos, checkpoints, vigias e avisos.</p><p lang="en">A kit to orchestrate many AI agents across research projects: plans, checkpoints, watchers and notifications.</p><p style="margin-top:10px"><a href="https://github.com/MrGoulart3/MGE-UAH-Orquestra">GitHub</a></p></article>
-      <article class="card"><span class="tag">Skills</span><h3>MGE-Skills</h3><p lang="pt">Skills para agentes de IA usadas no dia a dia da pesquisa.</p><p lang="en">Agent skills used in everyday research work.</p><p style="margin-top:10px"><a href="https://github.com/MrGoulart3/MGE-Skills">GitHub</a></p></article>
+      <article class="card"><span class="tag">Python · herdr</span><h3>MGE-AgentPortal</h3><p lang="pt">Portal web seguro para acompanhar e conversar com agentes de IA (Claude Code, Codex) rodando num PC remoto.</p><p lang="en">A secure web portal to follow and talk to AI coding agents (Claude Code, Codex) on a remote machine.</p><p class="more"><a href="https://github.com/MrGoulart3/MGE-AgentPortal">GitHub</a></p></article>
+      <article class="card"><span class="tag">Claude Code</span><h3>MGE-UAH-Orquestra</h3><p lang="pt">Kit para orquestrar vários agentes de IA em projetos de pesquisa: planos, checkpoints, vigias e avisos.</p><p lang="en">A kit to orchestrate many AI agents across research projects: plans, checkpoints, watchers and notifications.</p><p class="more"><a href="https://github.com/MrGoulart3/MGE-UAH-Orquestra">GitHub</a></p></article>
+      <article class="card"><span class="tag">Skills</span><h3>MGE-Skills</h3><p lang="pt">Skills para agentes de IA usadas no dia a dia da pesquisa.</p><p lang="en">Agent skills used in everyday research work.</p><p class="more"><a href="https://github.com/MrGoulart3/MGE-Skills">GitHub</a></p></article>
     </div>
   </div>
 </section>
@@ -397,12 +226,12 @@ h3.sub{font-size:1.15rem;margin:34px 0 14px}
   <div class="wrap">
     <div class="head"><h2><span lang="pt">Contato e redes</span><span lang="en">Contact &amp; socials</span></h2><span class="num">08</span></div>
     <div class="socials">
-      <div class="social"><span class="ic">@</span><div style="min-width:0"><b>E-mail</b><small id="mail">mariogoulart3@gmail.com</small></div><button type="button" class="copy" data-copy="mariogoulart3@gmail.com"><span lang="pt">copiar</span><span lang="en">copy</span></button></div>
-      <a class="social" href="https://www.instagram.com/mrgoulart3/"><span class="ic">IG</span><div style="min-width:0"><b>Instagram</b><small>@mrgoulart3</small></div></a>
-      <a class="social" href="https://github.com/MrGoulart3"><span class="ic">GH</span><div style="min-width:0"><b>GitHub</b><small>MrGoulart3</small></div></a>
-      <a class="social" href="http://lattes.cnpq.br/7173567211044314"><span class="ic">L</span><div style="min-width:0"><b>Lattes</b><small>CNPq <span class="pend">confirmar</span></small></div></a>
-      <a class="social" href="https://www.linkedin.com/in/mario-goulart-envall-7b3143200/"><span class="ic">in</span><div style="min-width:0"><b>LinkedIn</b><small>Mario Goulart Envall</small></div></a>
-      <a class="social" href="https://x.com/mrgoulart3"><span class="ic">X</span><div style="min-width:0"><b>X</b><small>@mrgoulart3</small></div></a>
+      <div class="social"><span class="ic">@</span><div class="minw"><b>E-mail</b><small id="mail">mariogoulart3@gmail.com</small></div><button type="button" class="copy" data-copy="mariogoulart3@gmail.com"><span lang="pt">copiar</span><span lang="en">copy</span></button></div>
+      <a class="social" href="https://www.instagram.com/mrgoulart3/"><span class="ic">IG</span><div class="minw"><b>Instagram</b><small>@mrgoulart3</small></div></a>
+      <a class="social" href="https://github.com/MrGoulart3"><span class="ic">GH</span><div class="minw"><b>GitHub</b><small>MrGoulart3</small></div></a>
+      <a class="social" href="https://lattes.cnpq.br/7173567211044314"><span class="ic">L</span><div class="minw"><b>Lattes</b><small>CNPq <span class="pend">confirmar</span></small></div></a>
+      <a class="social" href="https://www.linkedin.com/in/mario-goulart-envall-7b3143200/"><span class="ic">in</span><div class="minw"><b>LinkedIn</b><small>Mario Goulart Envall</small></div></a>
+      <a class="social" href="https://x.com/mrgoulart3"><span class="ic">X</span><div class="minw"><b>X</b><small>@mrgoulart3</small></div></a>
     </div>
   </div>
 </section>
@@ -417,101 +246,6 @@ h3.sub{font-size:1.15rem;margin:34px 0 14px}
   </div>
 </footer>
 
-<script id="site-script">{{SITE_SCRIPT}}</script>
 <script id="publicacoes-data" type="application/json">{{PUBLICACOES_JSON}}</script>
-<script>
-(function(){
-  var root=document.documentElement;
-  // marcações de pendência
-  var tp=document.getElementById('togglepend');if(tp)tp.addEventListener('click',function(){root.classList.toggle('nopend')});
-  // publicações
-  var P=JSON.parse(document.getElementById('publicacoes-data').textContent);
-  var ol=document.getElementById('pubs');
-  var items=ol.querySelectorAll('.pub');
-  P.forEach(function(p,i){if(items[i])items[i].dataset.k=p.k});
-  document.querySelectorAll('[data-f]').forEach(function(b){b.addEventListener('click',function(){
-    document.querySelectorAll('[data-f]').forEach(function(x){x.setAttribute('aria-pressed',String(x===b))});
-    ol.querySelectorAll('.pub').forEach(function(li){li.hidden=!(b.dataset.f==='all'||li.dataset.k===b.dataset.f)})})});
-  // copiar e-mail
-  document.querySelectorAll('[data-copy]').forEach(function(b){b.addEventListener('click',function(){
-    var t=b.dataset.copy;var ok=function(){b.textContent='✓';b.setAttribute('aria-label',root.dataset.lang==='en'?'Email copied':'E-mail copiado')};
-    if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(t).then(ok,function(){sel()})}else sel();
-    function sel(){var r=document.createRange();r.selectNodeContents(document.getElementById('mail'));var s=getSelection();s.removeAllRanges();s.addRange(r)}
-  })});
-})();
-</script>
 <script id="dipirona-data" type="application/json">{{DIPIRONA_JSON}}</script>
-<script src="https://cdn.jsdelivr.net/npm/3dmol@2.5.5/build/3Dmol-min.js"></script>
-<script>
-/* Dipirona 3D com 3Dmol.js (WebGL): esferas e bastões sombreados, cores Jmol, giro lento; arraste para girar. */
-(function(){
-  var el=document.getElementById('molview'); if(!el||!window.$3Dmol)return;
-  var A=JSON.parse(document.getElementById('dipirona-data').textContent);
-  var xyz=A.length+'\ndipirona\n'+A.map(function(a){return a[0]+' '+a[1]+' '+a[2]+' '+a[3]}).join('\n');
-  try{
-    var v=$3Dmol.createViewer(el,{backgroundColor:'white',backgroundAlpha:0,antialias:true});
-    if(!v)return;
-    v.addModel(xyz,'xyz');
-    v.setStyle({},{stick:{radius:0.15,colorscheme:'Jmol'},sphere:{scale:0.25,colorscheme:'Jmol'}});
-    v.zoomTo(); v.zoom(1.15); v.render();
-    /* gira sempre (pedido do Mario); pausa só fora da tela e volta a girar depois de arrastar */
-    var gira=function(on){try{v.spin(on?'y':false,0.8)}catch(_){}};
-    gira(true); setTimeout(function(){gira(true)},400);
-    if('IntersectionObserver' in window)new IntersectionObserver(function(e){gira(e[0].isIntersecting)}).observe(el);
-    ['pointerup','touchend','mouseup'].forEach(function(n){el.addEventListener(n,function(){setTimeout(function(){gira(true)},600)})});
-    addEventListener('resize',function(){v.resize();v.render()});
-    window.__mol3dmol=v;
-  }catch(e){window.__mol3dmol=null}
-})();
-</script>
-<script>
-/* Dipirona 3D: renderizador próprio em canvas (sem bibliotecas). Esferas sombreadas, ligações por distância,
-   ordem de pintura por profundidade, rotação automática, arraste para girar, pausa fora da tela. */
-(function(){
-  var cv=document.getElementById('mol3d'); if(!cv||!cv.getContext)return;
-  if(window.$3Dmol&&window.__mol3dmol)return; cv.hidden=false; var mv=document.getElementById('molview'); if(mv)mv.hidden=true;
-  var A=JSON.parse(document.getElementById('dipirona-data').textContent);
-  var R={H:0.31,C:0.76,N:0.71,O:0.66,S:1.05}, VIS={H:0.25,C:0.38,N:0.37,O:0.36,S:0.50};
-  var cx=0,cy=0,cz=0; A.forEach(function(a){cx+=a[1];cy+=a[2];cz+=a[3]}); cx/=A.length;cy/=A.length;cz/=A.length;
-  var P=A.map(function(a){return {e:a[0],x:a[1]-cx,y:a[2]-cy,z:a[3]-cz}});
-  var B=[]; for(var i=0;i<P.length;i++)for(var j=i+1;j<P.length;j++){var d=Math.hypot(P[i].x-P[j].x,P[i].y-P[j].y,P[i].z-P[j].z);
-    if(d<1.18*(R[P[i].e]+R[P[j].e]))B.push([i,j]);}
-  var ext=0; P.forEach(function(p){ext=Math.max(ext,Math.hypot(p.x,p.y,p.z))});
-  var ctx=cv.getContext('2d'), dpr=Math.min(window.devicePixelRatio||1,2);
-  function size(){var w=cv.clientWidth||cv.parentNode.clientWidth||520,h=w*420/520;cv.width=w*dpr;cv.height=h*dpr}
-  size(); addEventListener('resize',function(){size();draw()});
-  function col(e){return getComputedStyle(document.documentElement).getPropertyValue('--at-'+e).trim()||'#888'}
-  var C={}; function cols(){['H','C','N','O','S'].forEach(function(e){C[e]=col(e)});C.bond=getComputedStyle(document.documentElement).getPropertyValue('--ink2').trim()}
-  cols(); if(window.matchMedia)matchMedia('(prefers-color-scheme: dark)').addEventListener('change',cols);
-  new MutationObserver(cols).observe(document.documentElement,{attributes:true,attributeFilter:['data-theme']});
-  var ry=0.6, rx=-0.35, auto=true, vis=true, drag=null;
-  function shade(hex,k){var n=parseInt(hex.replace('#',''),16),r=n>>16,g=n>>8&255,b=n&255;
-    function f(c){return Math.max(0,Math.min(255,Math.round(k>0?c+(255-c)*k:c*(1+k))))}return 'rgb('+f(r)+','+f(g)+','+f(b)+')'}
-  function draw(){
-    var W=cv.width,H=cv.height,s=Math.min(W,H)/(1.75*ext+0.6), cyw=Math.cos(ry),syw=Math.sin(ry),cxw=Math.cos(rx),sxw=Math.sin(rx);
-    var Q=P.map(function(p){var x=p.x*cyw+p.z*syw, z=-p.x*syw+p.z*cyw, y=p.y*cxw-z*sxw; z=p.y*sxw+z*cxw;
-      var f=1+z*0.04; return {e:p.e,X:W/2+x*s*f,Y:H/2-y*s*f,z:z,r:VIS[p.e]*s*f}});
-    ctx.clearRect(0,0,W,H);
-    var items=[]; Q.forEach(function(q,i){items.push({z:q.z,t:0,i:i})});
-    B.forEach(function(b){items.push({z:(Q[b[0]].z+Q[b[1]].z)/2-0.01,t:1,b:b})});
-    items.sort(function(a,b){return a.z-b.z});
-    items.forEach(function(it){
-      if(it.t===1){var a=Q[it.b[0]],c=Q[it.b[1]],dx=c.X-a.X,dy=c.Y-a.Y,L=Math.hypot(dx,dy)||1,ux=dx/L,uy=dy/L;
-        /* bastão começa e termina na borda das esferas (não entra nelas) */
-        var ax=a.X+ux*a.r*0.82,ay=a.Y+uy*a.r*0.82,cx2=c.X-ux*c.r*0.82,cy2=c.Y-uy*c.r*0.82,mx=(ax+cx2)/2,my=(ay+cy2)/2;
-        if(L<(a.r+c.r)*0.82)return;
-        ctx.lineCap='butt';ctx.lineWidth=Math.max(2,0.13*s);
-        ctx.strokeStyle=shade(C[a.e],-0.1);ctx.beginPath();ctx.moveTo(ax,ay);ctx.lineTo(mx,my);ctx.stroke();
-        ctx.strokeStyle=shade(C[c.e],-0.1);ctx.beginPath();ctx.moveTo(mx,my);ctx.lineTo(cx2,cy2);ctx.stroke();return}
-      var q=Q[it.i],g=ctx.createRadialGradient(q.X-q.r*0.35,q.Y-q.r*0.4,q.r*0.1,q.X,q.Y,q.r);
-      g.addColorStop(0,shade(C[q.e],0.55));g.addColorStop(0.55,C[q.e]);g.addColorStop(1,shade(C[q.e],-0.45));
-      ctx.fillStyle=g;ctx.beginPath();ctx.arc(q.X,q.Y,q.r,0,6.2832);ctx.fill()});
-  }
-  draw(); var last=0; function loop(t){ if(vis&&auto&&!drag&&!document.hidden){ry+=(t-last)/1000*0.45} last=t; draw(); requestAnimationFrame(loop)}
-  requestAnimationFrame(function(t){last=t;loop(t)});
-  if('IntersectionObserver' in window)new IntersectionObserver(function(e){vis=e[0].isIntersecting}).observe(cv);
-  cv.addEventListener('pointerdown',function(e){drag={x:e.clientX,y:e.clientY};cv.setPointerCapture(e.pointerId)});
-  cv.addEventListener('pointermove',function(e){if(!drag)return;ry+=(e.clientX-drag.x)*0.01;rx=Math.max(-1.4,Math.min(1.4,rx+(e.clientY-drag.y)*0.01));drag={x:e.clientX,y:e.clientY}});
-  ['pointerup','pointercancel'].forEach(function(n){cv.addEventListener(n,function(){drag=null})});
-})();
-</script>
+{{SCRIPTS}}

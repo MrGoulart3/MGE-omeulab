@@ -45,12 +45,17 @@ class BuildTest(unittest.TestCase):
             self.assertNotRegex(page, r"\{\{[A-Z_]+\}\}")
             self.assertNotRegex(page.casefold(), r"atômicos|atomicos|anchor\.fm")
             for attributes, content in re.findall(r"<script([^>]*)>(.*?)</script>", page, re.S):
+                if " src=" in attributes:
+                    continue
                 if 'type="application/' in attributes:
                     json.loads(content)
                 else:
                     result = subprocess.run(["node", "--check"], input=content, text=True, capture_output=True)
                     self.assertEqual(0, result.returncode, f"{name}: {result.stderr}")
         self.assertNotIn("fonts.googleapis.com", text)
+        for script in ("site.js", "pubs.js", "mol.js", "glossario.js"):
+            result = subprocess.run(["node", "--check", str(ROOT / "assets" / script)], capture_output=True, text=True)
+            self.assertEqual(0, result.returncode, f"{script}: {result.stderr}")
 
     def test_glossary_data_and_unique_anchors(self) -> None:
         terms = json.loads((ROOT / "src/glossario.json").read_text(encoding="utf-8"))
@@ -124,8 +129,8 @@ class BuildTest(unittest.TestCase):
         for anchor in re.findall(r'href="glossario.html#([^"]+)"', index):
             self.assertIn(anchor, ids)
         self.assertEqual(
-            re.search(r"<style>.*?</style>", index, re.S).group(),
-            re.search(r"<style>.*?</style>", glossary, re.S).group(),
+            re.search(r'<link rel="stylesheet" href="[^"]+">', index).group(),
+            re.search(r'<link rel="stylesheet" href="[^"]+">', glossary).group(),
         )
         self.assertIn('href="https://omeulab.com/glossario.html"', glossary)
         self.assertIn('content="https://omeulab.com/glossario.html"', glossary)
@@ -136,14 +141,88 @@ class BuildTest(unittest.TestCase):
         self.assertIn("https://omeulab.com/glossario.html", locations)
 
     def test_deploy_artifact_contains_only_public_assets(self) -> None:
+        suffixes = {".jpg", ".png", ".svg", ".webp", ".css", ".js", ".woff2", ".txt"}
         expected = {
-            "index.html", "glossario.html", "404.html", "CNAME", ".nojekyll", "sitemap.xml", "robots.txt",
-        } | {"assets/" + f.name for f in (ROOT / "assets").iterdir() if f.suffix in (".jpg", ".png", ".svg")}
+            "index.html", "glossario.html", "404.html", "CNAME", ".nojekyll", "sitemap.xml",
+            "robots.txt", "favicon.ico", "manifest.webmanifest",
+        } | {
+            "assets/" + str(f.relative_to(ROOT / "assets"))
+            for f in (ROOT / "assets").rglob("*") if f.is_file() and f.suffix in suffixes
+        }
         actual = {str(path.relative_to(ROOT / "_site")) for path in (ROOT / "_site").rglob("*") if path.is_file()}
         self.assertEqual(expected, actual)
         self.assertEqual("omeulab.com\n", (ROOT / "_site/CNAME").read_text())
         for name in ("index.html", "glossario.html", "sitemap.xml"):
             self.assertEqual((ROOT / name).read_bytes(), (ROOT / "_site" / name).read_bytes())
+
+    def test_published_pages_have_no_inline_code_and_reference_existing_files(self) -> None:
+        for name in ("index.html", "glossario.html", "404.html"):
+            page = (ROOT / name).read_text(encoding="utf-8")
+            self.assertIn("Content-Security-Policy", page)
+            self.assertNotIn("unsafe-inline", page)
+            self.assertNotIn("unsafe-eval", page)
+            self.assertNotRegex(page, r'\sstyle="')
+            self.assertNotIn("<style", page)
+            self.assertNotRegex(page, r"\son[a-z]+=")
+            for attributes, content in re.findall(r"<script([^>]*)>(.*?)</script>", page, re.S):
+                if " src=" not in attributes:
+                    self.assertRegex(attributes, r'type="application/(ld\+)?json"')
+            for reference in re.findall(r'(?:href|src|srcset)="/(?:assets/)?([^"?\s,]+)', page):
+                candidates = [ROOT / reference, ROOT / "assets" / reference]
+                self.assertTrue(any(c.is_file() for c in candidates), f"{name}: {reference}")
+
+    def test_fonts_images_icons_and_social_card(self) -> None:
+        css = (ROOT / "assets/site.css").read_text(encoding="utf-8")
+        for family in ("Fraunces", "IBM Plex Sans", "IBM Plex Mono"):
+            self.assertIn(f'@font-face{{font-family:"{family}"', css)
+        self.assertNotIn("fonts.googleapis", css)
+        for file in re.findall(r"url\(fonts/([^)]+)\)", css):
+            self.assertTrue((ROOT / "assets/fonts" / file).is_file(), file)
+        self.assertEqual(css.count("font-display:swap"), css.count("@font-face"))
+        index = (ROOT / "index.html").read_text(encoding="utf-8")
+        self.assertEqual(2, index.count('rel="preload"'))
+        self.assertIn('<meta name="twitter:card" content="summary_large_image">', index)
+        self.assertIn('content="1200"', index)
+        from PIL import Image
+        for name, size in (("og.png", (1200, 630)), ("apple-touch-icon.png", (180, 180))):
+            with Image.open(ROOT / "assets" / name) as image:
+                self.assertEqual(size, image.size)
+        self.assertTrue((ROOT / "favicon.ico").is_file())
+        manifest = json.loads((ROOT / "manifest.webmanifest").read_text())
+        for icon in manifest["icons"]:
+            self.assertTrue((ROOT / icon["src"].lstrip("/")).is_file())
+        self.assertIn('media="(prefers-color-scheme: dark)"', index)
+        for image in re.findall(r"<img [^>]*>", index):
+            self.assertRegex(image, r'width="\d+"')
+            self.assertRegex(image, r'height="\d+"')
+            self.assertRegex(image, r'alt="[^"]+"')
+        self.assertIn("lattes.cnpq.br", index)
+        self.assertNotIn("http://lattes", index)
+
+    def test_structured_data_covers_person_publications_and_glossary(self) -> None:
+        def graph(name: str) -> list:
+            page = (ROOT / name).read_text(encoding="utf-8")
+            block = re.search(r'<script type="application/ld\+json">(.*?)</script>', page, re.S).group(1)
+            return json.loads(block)["@graph"]
+        home = graph("index.html")
+        types = [node["@type"] for node in home]
+        self.assertIn("WebSite", types)
+        person = next(node for node in home if node["@type"] == "Person")
+        for key in ("jobTitle", "affiliation", "sameAs", "knowsAbout"):
+            self.assertIn(key, person)
+        self.assertTrue(all(link.startswith("https://") for link in person["sameAs"]))
+        items = json.loads((ROOT / "src/publicacoes.json").read_text())
+        self.assertEqual(len(items), types.count("ScholarlyArticle"))
+        terms = json.loads((ROOT / "src/glossario.json").read_text(encoding="utf-8"))
+        termset = next(node for node in graph("glossario.html") if node["@type"] == "DefinedTermSet")
+        self.assertEqual(len(terms), len(termset["hasDefinedTerm"]))
+
+    def test_sitemap_has_lastmod(self) -> None:
+        sitemap = ET.parse(ROOT / "sitemap.xml")
+        mods = [node.text for node in sitemap.findall(".//{*}lastmod")]
+        self.assertEqual(2, len(mods))
+        for mod in mods:
+            self.assertRegex(mod, r"^\d{4}-\d{2}-\d{2}$")
 
 
 if __name__ == "__main__":
